@@ -1,183 +1,157 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, MessageCircle, ArrowRight, Info } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { MapPin, Phone, Mail, Clock, MessageCircle, ArrowRight, Globe, Building2, Navigation } from 'lucide-react';
 
 const Contact = () => {
-  const phoneNumber = "+918533915030";
-  const emailAddress = "j.seducationcollege@gmail.com";
-  const collegeAddress = "J.S COLLEGE OF EDUCATION Rajpur-Chhajpur, Kandhala Budhana Road, Muzzafnagar (U.P)";
-  
-  const googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(collegeAddress)}`;
-  const whatsappLink = `https://wa.me/${phoneNumber.replace('+', '')}?text=Hello! I am interested in J.S Education College. Please provide more information.`;
+  const contactInfo = {
+    phone: "+91 85339 15030",
+    email: "j.seducationcollege@gmail.com",
+    address: "J.S COLLEGE OF EDUCATION, Rajpur-Chhajpur, Kandhala Budhana Road, Muzzafnagar (U.P)",
+    whatsapp: "8533915030"
+  };
+
+  // Improved Maps Link
+  const googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.address)}`;
+
+  // WhatsApp Link
+  const whatsappLink = `https://wa.me/${contactInfo.whatsapp.replace(/\s+/g, '')}?text=Hello! I am interested in J.S Education College. Please provide more information.`;
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Modern Hero Section */}
-      <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:32px_32px]"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <div className="inline-block mb-4 px-4 py-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full text-sm font-medium text-blue-300">
-              Admissions Open 2026
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Get In Touch
-            </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Connect with our admissions team to start your journey in education excellence.
-            </p>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+      {/* 1. HERO HEADER: Clean & Professional */}
+      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
+            <span className="text-sm font-semibold">🎓 Admissions 2026 Open</span>
           </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Admissions</h1>
+          <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto">
+            We are here to help you build your future. Reach out to our counselors for course details, fee structure, and campus visits.
+          </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 -mt-16 relative z-10">
-        {/* Contact Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
-          {/* WhatsApp Card */}
-          <div className="group bg-white rounded-2xl border border-gray-200 hover:border-green-300 transition-all duration-300 overflow-hidden hover:shadow-2xl hover:shadow-green-500/10">
-            <div className="p-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-green-500/30">
-                <MessageCircle className="w-8 h-8 text-white" strokeWidth={2.5} />
+      {/* 2. LEFT COLUMN: Direct Communication (2/3 width) */}
+      <div className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8">
+        <div className="md:col-span-2 space-y-6">
+
+          {/* Quick Contact Cards */}
+          <div className="grid md:grid-cols-2 gap-4">
+
+            {/* Phone Card */}
+            <div className="bg-white rounded-xl shadow-md p-6 border border-blue-100 hover:shadow-lg transition-shadow">
+              <div className="flex items-start gap-4">
+                <div className="bg-blue-100 p-3 rounded-lg">
+                  <Phone className="w-6 h-6 text-blue-600" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-gray-900 mb-1">Call Us</h3>
+                  <p className="text-sm text-gray-500 mb-2">Mon-Sat from 9am to 5pm</p>
+                  <a href={`tel:${contactInfo.phone}`} className="text-blue-600 font-semibold hover:text-blue-700">
+                    {contactInfo.phone}
+                  </a>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">WhatsApp</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Quick response from our counselors. Chat with us instantly.
-              </p>
-              <a 
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-green-600 font-semibold group-hover:gap-4 transition-all"
-              >
-                Start Chat
-                <ArrowRight className="w-5 h-5" />
-              </a>
             </div>
-            <div className="h-1 bg-gradient-to-r from-green-500 to-emerald-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+
+            {/* Email Card */}
+            <div className="bg-white rounded-xl shadow-md p-6 border border-blue-100 hover:shadow-lg transition-shadow">
+              <div className="flex items-start gap-4">
+                <div className="bg-green-100 p-3 rounded-lg">
+                  <Mail className="w-6 h-6 text-green-600" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-gray-900 mb-1">Email Us</h3>
+                  <p className="text-sm text-gray-500 mb-2">Send documents & queries</p>
+                  <a
+                    href="mailto:j.seducationcollege@gmail.com"
+                    className="text-green-600 font-semibold hover:text-green-700 break-all cursor-pointer"
+                    onClick={(e) => {
+                      window.location.href = 'mailto:j.seducationcollege@gmail.com';
+                    }}
+                  >
+                    {contactInfo.email}
+                  </a>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-          {/* Phone Card */}
-          <div className="group bg-white rounded-2xl border border-gray-200 hover:border-blue-300 transition-all duration-300 overflow-hidden hover:shadow-2xl hover:shadow-blue-500/10">
-            <div className="p-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/30">
-                <Phone className="w-8 h-8 text-white" strokeWidth={2.5} />
+          {/* WhatsApp Large Card */}
+          <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl shadow-lg p-8 text-white">
+            <div className="flex items-start gap-4">
+              <div className="bg-white/20 backdrop-blur-sm p-4 rounded-xl">
+                <MessageCircle className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Phone</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Direct assistance from our team during office hours.
-              </p>
-              <a 
-                href={`tel:${phoneNumber}`}
-                className="inline-flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-4 transition-all"
-              >
-                {phoneNumber}
-                <ArrowRight className="w-5 h-5" />
-              </a>
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold mb-2">Chat on WhatsApp</h3>
+                <p className="text-green-50 mb-4">
+                  Get instant replies about admission criteria, scholarship eligibility, and seat availability directly from our admissions team.
+                </p>
+                <Link
+                  to="/inquiry"
+                  className="inline-flex items-center gap-2 bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Start Chat
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
             </div>
-            <div className="h-1 bg-gradient-to-r from-blue-500 to-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
           </div>
 
-          {/* Email Card */}
-          <div className="group bg-white rounded-2xl border border-gray-200 hover:border-purple-300 transition-all duration-300 overflow-hidden hover:shadow-2xl hover:shadow-purple-500/10">
-            <div className="p-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-purple-500/30">
-                <Mail className="w-8 h-8 text-white" strokeWidth={2.5} />
+          {/* FAQ / Info Banner */}
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+            <div className="flex items-start gap-3">
+              <Building2 className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+              <div>
+                <h4 className="font-semibold text-amber-900 mb-1">Visiting the Campus?</h4>
+                <p className="text-amber-800 text-sm">
+                  Please bring your original marksheets and ID proof if you are visiting for document verification or admission counseling.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Email</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Send detailed inquiries and documents anytime.
-              </p>
-              <a 
-                href={`mailto:${emailAddress}`}
-                className="inline-flex items-center gap-2 text-purple-600 font-semibold group-hover:gap-4 transition-all"
-              >
-                Send Email
-                <ArrowRight className="w-5 h-5" />
-              </a>
             </div>
-            <div className="h-1 bg-gradient-to-r from-purple-500 to-purple-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
           </div>
+
         </div>
 
-        {/* Campus Information */}
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
-          {/* Address & Hours */}
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-10 border border-gray-200">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Campus Details</h2>
-            
-            <div className="space-y-8">
-              <div className="flex gap-5">
-                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-white" strokeWidth={2.5} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-2 text-lg">Address</h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    J.S College of Education<br />
-                    Rajpur-Chhajpur, Kandhala Budhana Road<br />
-                    Muzaffarnagar, Uttar Pradesh, India
-                  </p>
-                </div>
-              </div>
+        {/* 3. RIGHT COLUMN: Location & Hours (1/3 width) */}
+        <div className="space-y-6">
 
-              <div className="flex gap-5">
-                <div className="w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-6 h-6 text-white" strokeWidth={2.5} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-2 text-lg">Office Hours</h3>
-                  <p className="text-gray-700">
-                    <span className="font-semibold text-gray-900">Monday - Saturday</span><br />
-                    09:00 AM - 05:00 PM
-                  </p>
-                </div>
+          {/* Location Card */}
+          <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="bg-indigo-100 p-2 rounded-lg">
+                <MapPin className="w-5 h-5 text-indigo-600" />
               </div>
+              <h3 className="font-semibold text-gray-900">Campus Location</h3>
             </div>
+            <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+              {contactInfo.address}
+            </p>
+
+            <div className="border-t border-gray-200 pt-4 mb-4">
+              <div className="flex items-center gap-3 mb-2">
+                <Clock className="w-5 h-5 text-gray-400" />
+                <h4 className="font-semibold text-gray-700">Office Hours</h4>
+              </div>
+              <p className="text-sm text-gray-600 ml-8">Mon - Sat: 09:00 AM - 05:00 PM</p>
+              <p className="text-sm text-red-600 ml-8 font-medium">Sunday Closed</p>
+            </div>
+
+            {/* Map Action */}
+            <a
+              href={googleMapsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full bg-indigo-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
+            >
+              <Navigation className="w-5 h-5" />
+              Get Directions
+            </a>
           </div>
 
-          {/* Helpdesk Notice */}
-          <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-10 text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32"></div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full -ml-24 -mb-24"></div>
-            
-            <div className="relative">
-              <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-6">
-                <Info className="w-6 h-6 text-white" strokeWidth={2.5} />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Admission Helpdesk</h3>
-              <p className="text-blue-100 leading-relaxed text-lg">
-                For scholarship inquiries or document verification, please visit our campus office during working hours with your original documents.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Map Section */}
-        <div className="mb-20">
-          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl overflow-hidden">
-            <div className="p-12 text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-teal-500/50">
-                <MapPin className="w-10 h-10 text-white" strokeWidth={2.5} />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Visit Our Campus
-              </h2>
-              <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-                Get directions to our campus using Google Maps for a seamless journey
-              </p>
-              <a
-                href={googleMapsLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-teal-500/50 transition-all hover:scale-105"
-              >
-                <MapPin className="w-6 h-6" strokeWidth={2.5} />
-                Open Google Maps
-                <ArrowRight className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>

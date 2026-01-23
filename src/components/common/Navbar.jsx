@@ -121,7 +121,7 @@ const Navbar = () => {
                         {/* Far Right: Inquiry Button */}
                         <div className="ml-6">
                             <Link
-                                to="/contact"
+                                to="/inquiry"
                                 className="bg-transparent border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-7 py-2.5 rounded-sm font-black text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-lg inline-flex items-center gap-2"
                             >
                                 Inquiry

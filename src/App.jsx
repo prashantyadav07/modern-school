@@ -15,6 +15,7 @@ import Admissions from './components/pages/Admissions';
 import Facilities from './components/pages/Facilities';
 import Gallery from './components/pages/Gallery';
 import Authenticity from './components/pages/Authenticity';
+import Inquiry from './components/pages/Inquiry';
 import Contact from './components/pages/Contact';
 
 // --- ScrollToTop Helper Component ---
@@ -51,6 +52,7 @@ function App() {
             <Route path="/facilities" element={<Facilities />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/authenticity" element={<Authenticity />} />
+            <Route path="/inquiry" element={<Inquiry />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

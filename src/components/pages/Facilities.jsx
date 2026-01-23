@@ -90,5 +90,4 @@ const Facilities = () => {
         </div>
     );
 };
-
 export default Facilities;

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { GraduationCap, Users, BookOpen, Award, ArrowRight, Trophy, Star, Medal } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -24,6 +24,7 @@ import g6 from '../../assets/g6.jpeg';
 
 const Home = () => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000, stopOnInteraction: false })]);
+    const [selectedIndex, setSelectedIndex] = useState(0);
 
     const scrollPrev = useCallback(() => {
         if (emblaApi) emblaApi.scrollPrev()
@@ -32,6 +33,20 @@ const Home = () => {
     const scrollNext = useCallback(() => {
         if (emblaApi) emblaApi.scrollNext()
     }, [emblaApi])
+
+    const onSelect = useCallback(() => {
+        if (!emblaApi) return;
+        setSelectedIndex(emblaApi.selectedScrollSnap());
+    }, [emblaApi]);
+
+    useEffect(() => {
+        if (!emblaApi) return;
+        onSelect();
+        emblaApi.on('select', onSelect);
+        return () => {
+            emblaApi.off('select', onSelect);
+        };
+    }, [emblaApi, onSelect]);
     const images = [img1, img2, img3, img4];
     const galleryImages = [img1, img2, img3, img4, g1, g2, g3, g4, g5, g6];
 
@@ -146,52 +161,52 @@ const Home = () => {
 
             {/* 4. DIRECTOR'S MESSAGE SECTION */}
             <section className="py-12 sm:py-14 md:py-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-sky-100 relative overflow-hidden text-slate-800">
-    {/* Background Decorations (Optional: for a premium look) */}
-    <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-    <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+                {/* Background Decorations (Optional: for a premium look) */}
+                <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
 
-    <div className="container mx-auto px-3 sm:px-4 relative z-10">
-        <div className="grid md:grid-cols-2 gap-8 sm:gap-10 items-center max-w-5xl mx-auto">
-            <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false }}
-                className="order-2 md:order-1"
-            >
-                <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">Principal's Message</span>
-                <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-slate-900">Inspiring The Next Generation</h2>
-                <p className="text-sm sm:text-base md:text-lg italic text-slate-600 mb-4 sm:mb-6 leading-relaxed">
-                    "Our mission is to nurture teachers who don't just teach from books, but inspire lives.
-                    At J.S. College, we provide the tools where creativity meets pedagogy."
-                </p>
-                <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-800">Dr. Deepali Gupta</h3>
-                    <p className="text-blue-600 font-medium text-xs sm:text-sm">Principal, J.S. College</p>
-                    <div className="flex gap-1 mt-2">
-                        {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-amber-500 fill-amber-500" />)}
+                <div className="container mx-auto px-3 sm:px-4 relative z-10">
+                    <div className="grid md:grid-cols-2 gap-8 sm:gap-10 items-center max-w-5xl mx-auto">
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: false }}
+                            className="order-2 md:order-1"
+                        >
+                            <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">Principal's Message</span>
+                            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-slate-900">Inspiring The Next Generation</h2>
+                            <p className="text-sm sm:text-base md:text-lg italic text-slate-600 mb-4 sm:mb-6 leading-relaxed">
+                                "Our mission is to nurture teachers who don't just teach from books, but inspire lives.
+                                At J.S. College, we provide the tools where creativity meets pedagogy."
+                            </p>
+                            <div>
+                                <h3 className="text-lg sm:text-xl font-bold text-slate-800">Dr. Deepali Gupta</h3>
+                                <p className="text-blue-600 font-medium text-xs sm:text-sm">Principal, J.S. College</p>
+                                <div className="flex gap-1 mt-2">
+                                    {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-amber-500 fill-amber-500" />)}
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: false }}
+                            className="order-1 md:order-2 flex justify-center"
+                        >
+                            <div className="relative group">
+                                {/* Border color changed to blue-400 for better match */}
+                                <div className="absolute inset-0 border-2 border-blue-400 rounded-2xl transform translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3 transition-transform group-hover:translate-x-0 group-hover:translate-y-0" />
+                                <img
+                                    src={directorImg}
+                                    alt="Director"
+                                    className="w-[240px] h-[280px] sm:w-[280px] sm:h-[340px] md:w-[320px] md:h-[380px] object-cover rounded-2xl relative z-10 shadow-2xl"
+                                />
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
-            </motion.div>
-
-            <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: false }}
-                className="order-1 md:order-2 flex justify-center"
-            >
-                <div className="relative group">
-                    {/* Border color changed to blue-400 for better match */}
-                    <div className="absolute inset-0 border-2 border-blue-400 rounded-2xl transform translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3 transition-transform group-hover:translate-x-0 group-hover:translate-y-0" />
-                    <img
-                        src={directorImg}
-                        alt="Director"
-                        className="w-[240px] h-[280px] sm:w-[280px] sm:h-[340px] md:w-[320px] md:h-[380px] object-cover rounded-2xl relative z-10 shadow-2xl"
-                    />
-                </div>
-            </motion.div>
-        </div>
-    </div>
-</section>
+            </section>
 
             {/* 5. ACHIEVEMENTS CTA WITH GALLERY */}
             <section className="py-12 sm:py-16 md:py-20 bg-gray-50 overflow-hidden">
@@ -206,9 +221,9 @@ const Home = () => {
                                 transition={{ duration: 0.6 }}
                             >
                                 <span className="text-[#ff4f5e] font-bold tracking-widest uppercase text-xs sm:text-sm mb-2 block">Innovate & Grow</span>
-                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Scale Your Business Through Innovation</h2>
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Scale Your Knowledge With Us</h2>
                                 <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                                    Transform your startup's potential through innovative solutions and strategic growth. We help businesses adapt, evolve, and thrive in today's competitive marketplace.
+                                    College is not just about degrees; it's about evolving your mindset. We empower students with the knowledge to adapt, the skills to innovate, and the confidence to lead in a competitive world.
                                 </p>
 
                                 <motion.div
@@ -216,8 +231,11 @@ const Home = () => {
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
-                                    <Link to="/achievements" className="px-6 py-2.5 sm:px-8 sm:py-3 bg-[#ff4f5e] text-white font-bold rounded-lg hover:bg-[#e04552] transition-all inline-block shadow-lg text-sm sm:text-base">
-                                        Start Scaling Today
+                                    <Link
+                                        to="/contact"
+                                        className="px-6 py-2.5 sm:px-8 sm:py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 hover:shadow-blue-500/30 transition-all inline-block shadow-lg text-sm sm:text-base"
+                                    >
+                                        Start Your Journey
                                     </Link>
                                 </motion.div>
                             </motion.div>
@@ -296,7 +314,7 @@ const Home = () => {
                         {galleryImages.map((_, i) => (
                             <div
                                 key={i}
-                                className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${i === 0 ? 'w-6 sm:w-8 bg-blue-600' : 'w-1.5 sm:w-2 bg-gray-300'}`}
+                                className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${i === selectedIndex ? 'w-6 sm:w-8 bg-blue-600' : 'w-1.5 sm:w-2 bg-gray-300'}`}
                             />
                         ))}
                     </div>
