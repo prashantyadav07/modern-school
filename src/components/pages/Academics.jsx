@@ -3,88 +3,91 @@ import { Link } from 'react-router-dom';
 import { BookOpen, Clock, Award, ArrowRight } from 'lucide-react';
 
 const Academics = () => {
-    const academicFeatures = [
-        {
-            icon: <BookOpen className="w-12 h-12" />,
-            title: 'Comprehensive Curriculum',
-            description: 'Well-structured B.Ed. program aligned with NEP 2020 and university guidelines'
-        },
-        {
-            icon: <Clock className="w-12 h-12" />,
-            title: 'Flexible Learning',
-            description: 'Balance of theoretical knowledge and practical teaching experience'
-        },
-        {
-            icon: <Award className="w-12 h-12" />,
-            title: 'Quality Assessment',
-            description: 'Regular evaluations and continuous feedback for student improvement'
-        }
-    ];
+  const academicFeatures = [
+    {
+      icon: <BookOpen className="w-12 h-12 text-blue-600" />,
+      title: "Comprehensive Curriculum",
+      description: "Modern pedagogy with practical teaching methodologies",
+      image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop"
+    },
+    {
+      icon: <Clock className="w-12 h-12 text-blue-600" />,
+      title: "Flexible Learning",
+      description: "Adaptable schedules for working professionals",
+      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&auto=format&fit=crop"
+    },
+    {
+      icon: <Award className="w-12 h-12 text-blue-600" />,
+      title: "Recognized Certification",
+      description: "NCTE approved programs with quality assurance",
+      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&auto=format&fit=crop"
+    }
+  ];
 
-    return (
-        <div className="bg-gray-50 py-12">
-            <div className="container mx-auto px-4">
-                {/* Page Header */}
-                <div className="text-center mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Academics</h1>
-                    <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-4"></div>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Excellence in Teacher Education through Innovative Programs and Methodologies
-                    </p>
-                </div>
-
-                {/* Academic Features */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                    {academicFeatures.map((feature, index) => (
-                        <div
-                            key={index}
-                            className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-                        >
-                            <div className="text-blue-600 mb-4 flex justify-center">{feature.icon}</div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                            <p className="text-gray-600">{feature.description}</p>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Quick Links */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                    <Link
-                        to="/academics/courses"
-                        className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group"
-                    >
-                        <h3 className="text-2xl font-bold mb-2">Courses Offered</h3>
-                        <p className="mb-4">Explore our B.Ed. program and specializations</p>
-                        <div className="flex items-center gap-2 text-amber-300 group-hover:gap-3 transition-all">
-                            Learn More <ArrowRight size={20} />
-                        </div>
-                    </Link>
-
-                    <Link
-                        to="/academics/faculty"
-                        className="bg-gradient-to-br from-amber-500 to-orange-600 text-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group"
-                    >
-                        <h3 className="text-2xl font-bold mb-2">Our Faculty</h3>
-                        <p className="mb-4">Meet our experienced and dedicated educators</p>
-                        <div className="flex items-center gap-2 text-blue-100 group-hover:gap-3 transition-all">
-                            View Faculty <ArrowRight size={20} />
-                        </div>
-                    </Link>
-
-                    <Link
-                        to="/academics/calendar"
-                        className="bg-gradient-to-br from-green-600 to-teal-700 text-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group"
-                    >
-                        <h3 className="text-2xl font-bold mb-2">Academic Calendar</h3>
-                        <p className="mb-4">View important dates and schedules</p>
-                        <div className="flex items-center gap-2 text-amber-300 group-hover:gap-3 transition-all">
-                            View Calendar <ArrowRight size={20} />
-                        </div>
-                    </Link>
-                </div>
-            </div>
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Page Header */}
+      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Academics</h1>
+          <p className="text-xl text-blue-100">
+            Excellence in Teacher Education through Innovative Programs and Methodologies
+          </p>
         </div>
-    );
+      </div>
+
+      {/* Academic Features */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid md:grid-cols-3 gap-8">
+          {academicFeatures.map((feature, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <img 
+                src={feature.image} 
+                alt={feature.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Quick Links */}
+      <div className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="border border-gray-200 rounded-lg p-6 hover:border-blue-600 transition-colors">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Courses Offered</h3>
+              <p className="text-gray-600 mb-4">Explore our B.Ed. program and specializations</p>
+              <Link to="/courses" className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center">
+                Learn More <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </div>
+            
+            <div className="border border-gray-200 rounded-lg p-6 hover:border-blue-600 transition-colors">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Our Faculty</h3>
+              <p className="text-gray-600 mb-4">Meet our experienced and dedicated educators</p>
+              <Link to="/faculty" className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center">
+                View Faculty <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </div>
+            
+            <div className="border border-gray-200 rounded-lg p-6 hover:border-blue-600 transition-colors">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Academic Calendar</h3>
+              <p className="text-gray-600 mb-4">View important dates and schedules</p>
+              <Link to="/calendar" className="text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center">
+                View Calendar <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Academics;

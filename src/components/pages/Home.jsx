@@ -21,6 +21,7 @@ import g4 from '../../assets/g4.jpeg';
 import g5 from '../../assets/g5.jpeg';
 import g6 from '../../assets/g6.jpeg';
 
+
 const Home = () => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000, stopOnInteraction: false })]);
 
@@ -62,11 +63,11 @@ const Home = () => {
                     <motion.h1
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
+                        className="text-1xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
                         J.S. College of Education
                     </motion.h1>
-                    <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-blue-100 italic px-2">Igniting Minds, Shaping Futures</p>
-                    <Link to="/admissions" className="px-6 py-2.5 sm:px-8 sm:py-3 bg-amber-500 hover:bg-amber-600 rounded-lg font-bold transition-all inline-block text-sm sm:text-base">Apply Now</Link>
+                    <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-blue-100 italic px-2">Rajpur-Chhajpur, Kandhala Budhana Road, Muzzafnagar</p>
+                    <Link to="/admissions" className="px-6 py-2.5 sm:px-8 sm:py-3 bg-amber-500 hover:bg-amber-600 rounded-lg font-bold transition-all inline-block text-sm sm:text-base">Admission Now</Link>
                 </div>
             </section>
 
@@ -144,48 +145,53 @@ const Home = () => {
             </section>
 
             {/* 4. DIRECTOR'S MESSAGE SECTION */}
-            <section className="py-12 sm:py-14 md:py-16 bg-slate-900 relative overflow-hidden text-white">
-                <div className="container mx-auto px-3 sm:px-4">
-                    <div className="grid md:grid-cols-2 gap-8 sm:gap-10 items-center max-w-5xl mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: false }} // Updated to repeat
-                            className="order-2 md:order-1"
-                        >
-                            <span className="text-amber-400 font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">Principal's Message</span>
-                            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Inspiring The Next Generation</h2>
-                            <p className="text-sm sm:text-base md:text-lg italic text-blue-100/80 mb-4 sm:mb-6 leading-relaxed">
-                                "Our mission is to nurture teachers who don't just teach from books, but inspire lives.
-                                At J.S. College, we provide the tools where creativity meets pedagogy."
-                            </p>
-                            <div>
-                                <h3 className="text-lg sm:text-xl font-bold">Dr. Deepali Gupta</h3>
-                                <p className="text-blue-400 text-xs sm:text-sm">Principal, J.S. College</p>
-                                <div className="flex gap-1 mt-2">
-                                    {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-amber-400 fill-amber-400" />)}
-                                </div>
-                            </div>
-                        </motion.div>
+            <section className="py-12 sm:py-14 md:py-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-sky-100 relative overflow-hidden text-slate-800">
+    {/* Background Decorations (Optional: for a premium look) */}
+    <div className="absolute top-0 left-0 w-64 h-64 bg-blue-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+    <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
 
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: false }} // Updated to repeat
-                            className="order-1 md:order-2 flex justify-center"
-                        >
-                            <div className="relative group">
-                                <div className="absolute inset-0 border-2 border-amber-400 rounded-2xl transform translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3 transition-transform group-hover:translate-x-0 group-hover:translate-y-0" />
-                                <img
-                                    src={directorImg}
-                                    alt="Director"
-                                    className="w-[240px] h-[280px] sm:w-[280px] sm:h-[340px] md:w-[320px] md:h-[380px] object-cover rounded-2xl relative z-10 shadow-xl"
-                                />
-                            </div>
-                        </motion.div>
+    <div className="container mx-auto px-3 sm:px-4 relative z-10">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-10 items-center max-w-5xl mx-auto">
+            <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                className="order-2 md:order-1"
+            >
+                <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">Principal's Message</span>
+                <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-slate-900">Inspiring The Next Generation</h2>
+                <p className="text-sm sm:text-base md:text-lg italic text-slate-600 mb-4 sm:mb-6 leading-relaxed">
+                    "Our mission is to nurture teachers who don't just teach from books, but inspire lives.
+                    At J.S. College, we provide the tools where creativity meets pedagogy."
+                </p>
+                <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-800">Dr. Deepali Gupta</h3>
+                    <p className="text-blue-600 font-medium text-xs sm:text-sm">Principal, J.S. College</p>
+                    <div className="flex gap-1 mt-2">
+                        {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-amber-500 fill-amber-500" />)}
                     </div>
                 </div>
-            </section>
+            </motion.div>
+
+            <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: false }}
+                className="order-1 md:order-2 flex justify-center"
+            >
+                <div className="relative group">
+                    {/* Border color changed to blue-400 for better match */}
+                    <div className="absolute inset-0 border-2 border-blue-400 rounded-2xl transform translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3 transition-transform group-hover:translate-x-0 group-hover:translate-y-0" />
+                    <img
+                        src={directorImg}
+                        alt="Director"
+                        className="w-[240px] h-[280px] sm:w-[280px] sm:h-[340px] md:w-[320px] md:h-[380px] object-cover rounded-2xl relative z-10 shadow-2xl"
+                    />
+                </div>
+            </motion.div>
+        </div>
+    </div>
+</section>
 
             {/* 5. ACHIEVEMENTS CTA WITH GALLERY */}
             <section className="py-12 sm:py-16 md:py-20 bg-gray-50 overflow-hidden">

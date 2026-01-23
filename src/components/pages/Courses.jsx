@@ -6,6 +6,8 @@ const Courses = () => {
     {
       title: "Bachelor of Arts (B.A.)",
       type: "Humanities",
+      // Image: Library/Books for Humanities
+      image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&q=80&w=800",
       icon: <Book className="w-5 h-5 text-blue-600" />,
       subjects: ["Hindi", "English", "History", "Sociology", "Home Science", "Economics", "Political Science"],
       accent: "border-blue-200 bg-blue-50/30",
@@ -14,6 +16,8 @@ const Courses = () => {
     {
       title: "B.A. Vocational",
       type: "Professional",
+      // Image: Yoga/Meditation for Vocational Yoga
+      image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&q=80&w=800",
       icon: <Flower2 className="w-5 h-5 text-emerald-600" />,
       subjects: ["Vocational Yoga", "Yogic Science"],
       accent: "border-emerald-200 bg-emerald-50/30",
@@ -22,6 +26,8 @@ const Courses = () => {
     {
       title: "Bachelor of Science (B.Sc.)",
       type: "Science",
+      // Image: Laboratory/Microscope for Science
+      image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800",
       icon: <Microscope className="w-5 h-5 text-indigo-600" />,
       subjects: ["Physics", "Chemistry", "Mathematics", "Zoology", "Botany"],
       accent: "border-indigo-200 bg-indigo-50/30",
@@ -51,10 +57,21 @@ const Courses = () => {
           {courses.map((course, index) => (
             <div 
               key={index} 
-              className="group bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-300 flex flex-col"
+              className="group bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-300 flex flex-col overflow-hidden"
             >
+              {/* IMAGE SECTION - Added Here */}
+              <div className="relative h-48 overflow-hidden">
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-10" />
+                <img 
+                  src={course.image} 
+                  alt={course.title} 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
               {/* Card Header */}
-              <div className={`p-6 rounded-t-2xl border-b border-slate-100 ${course.accent}`}>
+              {/* Removed rounded-t-2xl here so it attaches to the image seamlessly */}
+              <div className={`p-6 border-b border-slate-100 ${course.accent}`}>
                 <div className="flex items-center justify-between mb-4">
                   <div className="p-2.5 bg-white rounded-xl shadow-sm border border-slate-100">
                     {course.icon}
@@ -91,7 +108,7 @@ const Courses = () => {
               </div>
 
               {/* Card Footer */}
-              <div className="px-6 py-4 bg-slate-50/50 border-t border-slate-100 rounded-b-2xl flex items-center justify-between">
+              <div className="px-6 py-4 bg-slate-50/50 border-t border-slate-100 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-slate-500">
                   <Clock className="w-4 h-4" />
                   <span className="text-xs font-semibold uppercase tracking-tight">3 Years Degree</span>
