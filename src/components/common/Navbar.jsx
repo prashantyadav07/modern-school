@@ -1,20 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Phone, BookOpen, Users, Calendar } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, BookOpen, Users, Calendar, Home } from 'lucide-react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
     const [scrolled, setScrolled] = useState(false);
+    const [visible, setVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
     const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            const currentScrollY = window.scrollY;
+
+            // Set scrolled state for background color
+            setScrolled(currentScrollY > 50);
+
+            // Hide/show navbar based on scroll direction
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // Scrolling down & past 100px
+                setVisible(false);
+            } else {
+                // Scrolling up
+                setVisible(true);
+            }
+
+            setLastScrollY(currentScrollY);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [lastScrollY]);
 
     const navItems = [
         { name: 'Home', path: '/' },
@@ -25,7 +41,7 @@ const Navbar = () => {
             dropdown: [
                 { name: 'Courses Offered', path: '/academics/courses', icon: <BookOpen size={14} /> },
                 { name: 'Faculty Members', path: '/academics/faculty', icon: <Users size={14} /> },
-               // { name: 'Academic Calendar', path: '/academics/calendar', icon: <Calendar size={14} /> }
+                // { name: 'Academic Calendar', path: '/academics/calendar', icon: <Calendar size={14} /> }
             ]
         },
         { name: 'Admissions', path: '/admissions' },
@@ -42,7 +58,7 @@ const Navbar = () => {
 
     return (
         <nav className={`sticky top-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#001a35] shadow-2xl' : 'bg-[#002147]'
-            }`}>
+            } ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
             {/* Bottom highlight line */}
             <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/10"></div>
 
@@ -62,8 +78,8 @@ const Navbar = () => {
                                         >
                                             <button
                                                 className={`flex items-center gap-1.5 font-bold text-[13px] uppercase tracking-[0.12em] transition-all duration-300 ${isActive(item.path)
-                                                        ? 'text-orange-500'
-                                                        : 'text-gray-100 hover:text-orange-400'
+                                                    ? 'text-orange-500'
+                                                    : 'text-gray-100 hover:text-orange-400'
                                                     }`}
                                             >
                                                 {item.name}
@@ -91,8 +107,8 @@ const Navbar = () => {
                                         <Link
                                             to={item.path}
                                             className={`relative py-2 font-bold text-[13px] uppercase tracking-[0.12em] transition-all duration-300 ${isActive(item.path)
-                                                    ? 'text-orange-500 after:content-[""] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-orange-500'
-                                                    : 'text-gray-100 hover:text-orange-400'
+                                                ? 'text-orange-500 after:content-[""] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-orange-500'
+                                                : 'text-gray-100 hover:text-orange-400'
                                                 }`}
                                         >
                                             {item.name}
@@ -116,7 +132,7 @@ const Navbar = () => {
                     {/* Mobile View: Home Link and Menu Toggle */}
                     <div className="lg:hidden flex justify-between w-full items-center">
                         <Link to="/" className="text-white font-black uppercase tracking-widest text-sm">
-                            Home
+                            <Home size={24} />
                         </Link>
                         <button
                             onClick={() => setIsOpen(!isOpen)}

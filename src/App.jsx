@@ -13,6 +13,7 @@ import Faculty from './components/pages/Faculty';
 // import Calendar from './components/pages/Calendar';
 import Admissions from './components/pages/Admissions';
 import Facilities from './components/pages/Facilities';
+import Gallery from './components/pages/Gallery';
 import Authenticity from './components/pages/Authenticity';
 import Contact from './components/pages/Contact';
 
@@ -48,6 +49,7 @@ function App() {
             {/* <Route path="/academics/calendar" element={<Calendar />} /> */}
             <Route path="/admissions" element={<Admissions />} />
             <Route path="/facilities" element={<Facilities />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/authenticity" element={<Authenticity />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

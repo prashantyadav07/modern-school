@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <header className="w-full font-sans">
             {/* 1. Top Utility Bar - Dark Blue */}
-            <div className="bg-[#002147] text-white py-2 px-2 sm:px-4 border-b border-blue-800">
+            <div className="hidden md:block bg-[#002147] text-white py-2 px-2 sm:px-4 border-b border-blue-800">
                 <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center text-[11px] sm:text-xs md:text-[13px] font-medium gap-2">
                     <div className="flex items-center gap-2 sm:gap-4 md:gap-6 flex-wrap">
                         <div className="flex items-center gap-1 sm:gap-1.5 hover:text-orange-400 transition-colors">
@@ -30,7 +30,7 @@ const Header = () => {
                     <div className="flex flex-col lg:flex-row justify-between items-center gap-3 sm:gap-4 pb-2 sm:pb-3">
 
                         {/* Left: Logo & College Name */}
-                        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 md:gap-5 text-center lg:text-left w-full lg:w-auto">
+                        <div className="flex flex-row items-center gap-2 sm:gap-3 md:gap-5 text-left w-full lg:w-auto">
                             <img
                                 src={collegeLogo}
                                 alt="College Logo"

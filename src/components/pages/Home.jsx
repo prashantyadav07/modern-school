@@ -160,8 +160,8 @@ const Home = () => {
                                 At J.S. College, we provide the tools where creativity meets pedagogy."
                             </p>
                             <div>
-                                <h3 className="text-lg sm:text-xl font-bold">Dr. Rajesh Kumar</h3>
-                                <p className="text-blue-400 text-xs sm:text-sm">Director, J.S. College</p>
+                                <h3 className="text-lg sm:text-xl font-bold">Dr. Deepali Gupta</h3>
+                                <p className="text-blue-400 text-xs sm:text-sm">Principal, J.S. College</p>
                                 <div className="flex gap-1 mt-2">
                                     {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-amber-400 fill-amber-400" />)}
                                 </div>
@@ -220,7 +220,7 @@ const Home = () => {
                         {/* Gallery Side */}
                         <div className="relative z-10">
                             <ContainerStagger>
-                                <GalleryGrid className="h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px]">
+                                <GalleryGrid className="h-[500px] sm:h-[500px] md:h-[500px] lg:h-[500px]">
                                     <GalleryGridCell index={0}>
                                         <img src={g1} alt="Achievement 1" className="w-full h-full object-cover" />
                                     </GalleryGridCell>
