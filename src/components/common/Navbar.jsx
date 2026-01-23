@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Phone, BookOpen, Users, Calendar, Home } from 'lucide-react';
+import { Menu, X, ChevronDown, BookOpen, Users, Home } from 'lucide-react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +41,6 @@ const Navbar = () => {
             dropdown: [
                 { name: 'Courses Offered', path: '/academics/courses', icon: <BookOpen size={14} /> },
                 { name: 'Faculty Members', path: '/academics/faculty', icon: <Users size={14} /> },
-                // { name: 'Academic Calendar', path: '/academics/calendar', icon: <Calendar size={14} /> }
             ]
         },
         { name: 'Admissions', path: '/admissions' },
@@ -57,15 +56,18 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`sticky top-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#001a35] shadow-2xl' : 'bg-[#002147]'
-            } ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+        <nav 
+            className={`sticky top-0 z-50 transition-all duration-500 
+            ${scrolled || isOpen ? 'bg-[#001a35] shadow-2xl' : 'bg-[#002147]'} 
+            ${(visible || isOpen) ? 'translate-y-0' : '-translate-y-full'}`}
+        >
             {/* Bottom highlight line */}
             <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/10"></div>
 
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center h-16 md:h-20">
 
-                    {/* Desktop Navigation - All items separated with good distance */}
+                    {/* Desktop Navigation */}
                     <div className="hidden lg:flex items-center justify-between w-full">
                         <div className="flex items-center lg:gap-8 xl:gap-12">
                             {navItems.map((item, index) => (
