@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react'; // useEffect add kiya
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'; // useLocation add kiya
 import Header from './components/common/Header';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
@@ -10,15 +10,30 @@ import About from './components/pages/About';
 import Academics from './components/pages/Academics';
 import Courses from './components/pages/Courses';
 import Faculty from './components/pages/Faculty';
-//import Calendar from './components/pages/Calendar';
+// import Calendar from './components/pages/Calendar';
 import Admissions from './components/pages/Admissions';
 import Facilities from './components/pages/Facilities';
 import Authenticity from './components/pages/Authenticity';
 import Contact from './components/pages/Contact';
 
+// --- ScrollToTop Helper Component ---
+// Ye component har route change par page ko top par le jata hai
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 function App() {
   return (
     <Router>
+      {/* ScrollToTop ko hamesha Router ke andar aur baki sabse upar rakhein */}
+      <ScrollToTop />
+
       <div className="min-h-screen flex flex-col">
         <Header />
         <Navbar />
