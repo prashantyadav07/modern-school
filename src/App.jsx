@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'; // useEffect add kiya
+import React, { useState, useEffect } from 'react'; // useEffect add kiya
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'; // useLocation add kiya
 import Header from './components/common/Header';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
+import Preloader from './components/common/Preloader';
 
 // Pages
 import Home from './components/pages/Home';
@@ -31,6 +32,19 @@ const ScrollToTop = () => {
 };
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Preloader />;
+  }
+
   return (
     <Router>
       {/* ScrollToTop ko hamesha Router ke andar aur baki sabse upar rakhein */}

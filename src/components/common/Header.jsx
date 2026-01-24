@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Clock, Facebook, Instagram, Twitter } from 'lucide-react';
-import collegeLogo from '../../assets/college1.png';
+import collegeLogo from '../../assets/logo1.png';
 
 const Header = () => {
     return (
@@ -45,7 +45,7 @@ const Header = () => {
                                         Affiliated to Maa Shakumbhari University, Saharanpur (U.P)
                                     </span>
                                     <span className="text-gray-600 font-medium text-[10px] sm:text-xs md:text-sm lg:text-[15px]">
-                                        Recognized by NCTE | A Premier Teacher Training Institute
+                                        Recognized by UGC | A Premier Teacher Training Institute
                                     </span>
                                 </div>
                             </div>
@@ -60,8 +60,9 @@ const Header = () => {
                                         <Phone className="w-4 h-4 lg:w-5 lg:h-5 text-orange-600" />
                                     </div>
                                     <div>
-                                        <p className="text-[10px] lg:text-[11px] uppercase text-gray-500 font-bold leading-none mb-1">Call Us Today</p>
-                                        <p className="text-base lg:text-lg font-bold text-[#002147] leading-none">+91 8533915030</p>
+                                        <p className="text-[10px] lg:text-[11px] uppercase text-gray-500 font-bold leading-none mb-1">Call Us</p>
+                                        <p className="text-base lg:text-lg font-bold text-[#002147] leading-none">+91 9759378701 <br/>
+                                        +91 8273737248</p>
                                     </div>
                                 </div>
 

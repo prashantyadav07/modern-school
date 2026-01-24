@@ -56,7 +56,7 @@ const About = () => {
                             <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-slate-100 shadow-lg max-w-sm mx-auto lg:mx-0">
                                 <img
                                     src={directorImg}
-                                    alt="Dr. J.S. Sharma"
+                                    alt="Ashok Kumar"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -86,7 +86,7 @@ const About = () => {
 
                             {/* Professional Signature Style */}
                             <div className="mt-8 pt-6 border-t border-slate-100">
-                                <h3 className="text-xl font-bold text-slate-900">Dr. J.S. Sharma</h3>
+                                <h3 className="text-xl font-bold text-slate-900">Ashok Kumar</h3>
                                 <p className="text-blue-600 font-semibold text-sm">Chairman & Director</p>
                                 <p className="text-slate-400 text-xs mt-1">J.S. College of Education</p>
                             </div>
@@ -152,7 +152,7 @@ const About = () => {
             {/* --- FOOTER CTA --- */}
             <div className="py-10 bg-white text-center border-t border-slate-100 px-4">
                 <p className="text-slate-400 text-xs font-medium tracking-widest uppercase">
-                    Recognized by NCTE & Affiliated with MSU Saharanpur
+                    Recognized by UGC & Affiliated with MSU Saharanpur
                 </p>
             </div>
 
