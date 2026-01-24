@@ -1,7 +1,13 @@
 import React from 'react';
-import { Award, GraduationCap, Calendar, UserCheck, BookOpen, Fingerprint, Mail } from 'lucide-react';
+import { Award, GraduationCap, Calendar, UserCheck, BookOpen, Fingerprint, Mail, CheckCircle2 } from 'lucide-react';
 
-const InstitutionalFaculty = () => {
+const customFontStyle = {
+  fontFamily: "'Neue Montreal Regular', sans-serif",
+  fontWeight: 600,
+  fontStyle: "normal",
+};
+
+const Faculty = () => {
   const staff = {
     principal: {
       name: "Dr. Deepali Gupta",
@@ -24,139 +30,142 @@ const InstitutionalFaculty = () => {
   };
 
   return (
-    <div className="bg-slate-100 min-h-screen p-4 md:p-10 font-sans text-slate-900">
-      <div className="max-w-7xl mx-auto bg-white shadow-2xl rounded-sm border-t-8 border-blue-900 overflow-hidden">
-        
-        {/* Top Official Header */}
-        <div className="p-8 border-b border-slate-200 flex flex-col md:flex-row justify-between items-center gap-6 bg-slate-50/50">
-          <div>
-            <h1 className="text-3xl font-serif font-bold text-blue-950 uppercase tracking-tight">Academic Staff Registry</h1>
-            <p className="text-slate-500 font-medium flex items-center gap-2 mt-1 italic">
-              <UserCheck size={16} className="text-blue-700"/> University Approved Faculty List 2024-25
-            </p>
+    <div style={customFontStyle} className="bg-slate-50 min-h-screen font-sans text-slate-800 pb-20">
+
+      {/* Hero Header */}
+      <div className="bg-white border-b border-slate-100 pt-16 pb-12 md:pt-24 md:pb-16 mb-16 px-4">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-6">
+            <UserCheck className="w-3 h-3" />
+            Academic Session 2024-25
           </div>
-          <div className="text-right hidden md:block border-l-2 border-slate-200 pl-6">
-            <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Document Ref</p>
-            <p className="font-mono text-sm text-slate-700 font-bold">UGC/FAC/REG-9021</p>
-          </div>
-        </div>
-
-        <div className="p-8">
-          {/* Principal Section - Hero Card */}
-          <div className="mb-12">
-            <div className="bg-blue-950 rounded-lg p-1 text-white shadow-lg overflow-hidden flex flex-col md:flex-row">
-              <div className="md:w-1/4 bg-white/10 flex items-center justify-center p-8 backdrop-blur-sm border-r border-white/10">
-                <div className="text-center">
-                    <div className="w-24 h-24 bg-white rounded-full mx-auto mb-4 flex items-center justify-center text-blue-950 shadow-inner">
-                        <GraduationCap size={48} />
-                    </div>
-                    <span className="text-[10px] bg-amber-500 px-2 py-0.5 rounded-full font-black uppercase tracking-widest text-blue-950">Seal of Authority</span>
-                </div>
-              </div>
-              <div className="flex-1 p-8 space-y-4">
-                <div>
-                    <h2 className="text-3xl font-serif font-bold tracking-wide">{staff.principal.name}</h2>
-                    <p className="text-blue-300 font-bold uppercase tracking-[0.2em] text-sm">{staff.principal.designation}</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-white/20">
-                  <div className="flex items-center gap-3">
-                    <Award size={20} className="text-amber-400" />
-                    <div>
-                      <p className="text-[10px] text-blue-300 uppercase font-bold">Qualification</p>
-                      <p className="text-sm font-semibold">{staff.principal.qualification}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Calendar size={20} className="text-blue-400" />
-                    <div>
-                      <p className="text-[10px] text-blue-300 uppercase font-bold">Date of Birth</p>
-                      <p className="text-sm font-semibold">{staff.principal.dob}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Fingerprint size={20} className="text-emerald-400" />
-                    <div>
-                      <p className="text-[10px] text-blue-300 uppercase font-bold">Staff ID</p>
-                      <p className="text-sm font-mono tracking-tighter">{staff.principal.id}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Faculty Grid - Modern Minimalist Cards */}
-          <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center gap-2">
-            <BookOpen size={20} className="text-blue-900" /> Departmental Faculty Members
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {staff.faculty.map((member, index) => (
-              <div key={index} className="group border border-slate-200 rounded-lg p-5 hover:border-blue-900 hover:shadow-xl transition-all duration-300 relative bg-slate-50/30">
-                <div className="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-100 group-hover:text-blue-900 transition-opacity">
-                    <Award size={24} />
-                </div>
-                
-                <h4 className="text-lg font-bold text-slate-800 mb-1">{member.name}</h4>
-                <div className="text-blue-700 text-xs font-black uppercase tracking-wider mb-4 flex items-center">
-                    <span className="w-2 h-2 bg-blue-700 rounded-full mr-2"></span>
-                    {member.dept}
-                </div>
-
-                <div className="space-y-3 border-t border-slate-100 pt-4">
-                  <div className="flex justify-between items-center text-xs">
-                    <span className="text-slate-400 font-bold uppercase">Designation</span>
-                    <span className="text-slate-700 font-bold">{member.desig}</span>
-                  </div>
-                  <div className="flex justify-between items-center text-xs">
-                    <span className="text-slate-400 font-bold uppercase">Degree/NET</span>
-                    <span className="text-slate-900 font-black">{member.qual}</span>
-                  </div>
-                  <div className="flex justify-between items-center text-xs bg-slate-100 p-2 rounded">
-                    <span className="text-slate-500 font-medium">D.O.B</span>
-                    <span className="text-slate-600 font-mono tracking-tighter">{member.dob}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Formal Footer with Hindi Text */}
-          <div className="mt-16 pt-10 border-t-2 border-slate-100">
-            <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-blue-900 text-white rounded-lg hidden sm:block">
-                    <Mail size={24} />
-                </div>
-                <div className="flex-1">
-                    <p className="text-slate-700 text-lg leading-relaxed font-serif text-justify italic">
-                      "कुलपति जी के आदेशानुसार उपर्युक्त अभ्यर्थियों को चयन समिति की संस्तुति के आधार पर अनुमोदित पदों पर नियुक्ति प्रदान करने का अनुरोध किया गया है, जिनका विवरण इस पोर्टल पर आधिकारिक रूप से दर्ज किया गया है।"
-                    </p>
-                    <div className="mt-8 flex flex-col md:flex-row justify-between items-end gap-6">
-                        <div className="text-left">
-                            <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Status</p>
-                            <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full border border-emerald-200">Document Verified & Digitalized</span>
-                        </div>
-                        <div className="text-center md:text-right">
-                            <div className="h-12 w-32 border-b-2 border-slate-300 mb-2 ml-auto"></div>
-                            <p className="text-sm font-black text-slate-800">Authorized Signatory</p>
-                            <p className="text-xs text-slate-500">Registrar / Administrative Office</p>
-                        </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+            Our Esteemed <span className="text-blue-700">Faculty</span>
+          </h1>
+          <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
+            Meet the dedicated educators and mentors shaping the future of our students with their expertise and guidance.
+          </p>
         </div>
       </div>
-      
-      {/* Copyright style bottom line */}
-      <p className="text-center text-slate-400 text-[10px] mt-8 uppercase tracking-[0.3em]">
-        © 2024 Institutional Academic Records Management System
-      </p>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+
+        {/* Principal Card - Featured */}
+        <div className="max-w-4xl mx-auto mb-20">
+          <div className="relative bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-1 shadow-2xl overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+            <div className="absolute bottom-0 left-0 w-40 h-40 bg-purple-500/20 rounded-full blur-2xl -ml-10 -mb-10"></div>
+
+            <div className="relative bg-white/5 backdrop-blur-sm rounded-[1.3rem] p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              <div className="shrink-0 relative">
+                <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-full flex items-center justify-center shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                  <GraduationCap className="w-16 h-16 text-blue-700" />
+                </div>
+                <div className="absolute -bottom-3 -right-3 bg-amber-400 text-amber-900 text-[10px] font-bold px-3 py-1 rounded-full shadow-lg border border-white">
+                  PRINCIPAL
+                </div>
+              </div>
+              <div className="flex-1 text-center md:text-left text-white">
+                <h2 className="text-3xl font-bold mb-2">{staff.principal.name}</h2>
+                <p className="text-blue-200 text-sm font-bold uppercase tracking-widest mb-6">{staff.principal.designation}</p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 border-t border-white/20 pt-6">
+                  <div>
+                    <p className="text-blue-200 text-xs uppercase font-bold mb-1">Qualification</p>
+                    <p className="font-semibold text-white/90">{staff.principal.qualification}</p>
+                  </div>
+                  <div>
+                    <p className="text-blue-200 text-xs uppercase font-bold mb-1">Date of Birth</p>
+                    <p className="font-semibold text-white/90">{staff.principal.dob}</p>
+                  </div>
+                  <div>
+                    <p className="text-blue-200 text-xs uppercase font-bold mb-1">Staff ID</p>
+                    <p className="font-mono text-sm bg-white/10 px-2 py-1 rounded inline-block">{staff.principal.id}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Section Title */}
+        <div className="flex items-center gap-4 mb-10 px-2">
+          <div className="h-10 w-1 bg-blue-600 rounded-full"></div>
+          <h3 className="text-2xl font-bold text-slate-800">
+            Departmental Heads & Professors
+          </h3>
+        </div>
+
+        {/* Faculty Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
+          {staff.faculty.map((member, index) => (
+            <div key={index} className="group bg-white rounded-2xl p-6 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] transition-all duration-300 border border-slate-100 hover:border-blue-100 relative overflow-hidden">
+              {/* Hover Gradient Bar */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+
+              <div className="flex items-start justify-between mb-4">
+                <div className="p-3 bg-slate-50 rounded-xl group-hover:bg-blue-50 transition-colors">
+                  <BookOpen className="w-6 h-6 text-slate-400 group-hover:text-blue-600 transition-colors" />
+                </div>
+                <div className="text-right">
+                  <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">DOB</span>
+                  <span className="text-xs font-mono font-medium text-slate-600">{member.dob}</span>
+                </div>
+              </div>
+
+              <h4 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-blue-700 transition-colors">{member.name}</h4>
+              <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">{member.desig}</p>
+
+              <div className="space-y-3 pt-4 border-t border-slate-100">
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-indigo-500"></div>
+                  <p className="text-sm text-slate-600 font-medium">{member.dept}</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Award className="w-4 h-4 text-emerald-500" />
+                  <p className="text-sm text-slate-800 font-bold">{member.qual}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Official Certification Footer */}
+        <div className="bg-slate-900 text-slate-300 rounded-2xl overflow-hidden shadow-2xl">
+          <div className="flex flex-col md:flex-row">
+            <div className="p-8 md:p-12 md:w-2/3">
+              <div className="flex items-center gap-3 mb-6 text-emerald-400">
+                <CheckCircle2 size={24} />
+                <span className="text-xs font-bold uppercase tracking-widest">Official Declaration</span>
+              </div>
+              <p className="text-lg font-serif italic leading-relaxed text-slate-100 mb-6">
+                "कुलपति जी के आदेशानुसार उपर्युक्त अभ्यर्थियों को चयन समिति की संस्तुति के आधार पर अनुमोदित पदों पर नियुक्ति प्रदान करने का अनुरोध किया गया है, जिनका विवरण इस पोर्टल पर आधिकारिक रूप से दर्ज किया गया है।"
+              </p>
+              <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500">
+                <span>• REF: UGC/FAC/REG-9021</span>
+                <span>• LAST UPDATED: AUG 2024</span>
+              </div>
+            </div>
+            <div className="bg-slate-800 p-8 md:w-1/3 flex flex-col justify-center items-center text-center border-t md:border-t-0 md:border-l border-slate-700">
+              <div className="w-16 h-16 rounded-full bg-slate-700 flex items-center justify-center mb-4">
+                <Fingerprint className="text-slate-500" />
+              </div>
+              <div className="w-32 h-0.5 bg-slate-600 mb-2"></div>
+              <p className="text-white font-bold text-sm uppercase">Authorized Signatory</p>
+              <p className="text-slate-500 text-xs">Registrar Office</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="text-center mt-12 pb-8">
+          <p className="text-slate-400 text-xs uppercase tracking-[0.2em] font-medium">
+            © 2024 Institutional Academic Records System
+          </p>
+        </div>
+
+      </div>
     </div>
   );
 };
 
-export default InstitutionalFaculty;
+export default Faculty;

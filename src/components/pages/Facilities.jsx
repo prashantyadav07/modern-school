@@ -53,6 +53,25 @@ const Facilities = () => {
         }
     ];
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.5, ease: "easeOut" }
+        }
+    };
+
     return (
         <div className="bg-gray-50 py-16">
             <div className="container mx-auto px-4">
@@ -103,17 +122,17 @@ const Facilities = () => {
                 <div className="max-w-5xl mx-auto">
                     <div className="bg-blue-900 rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row">
                         <div className="md:w-1/3 relative h-48 md:h-auto">
-                             <img 
+                            <img
                                 src={img1}
-                                alt="Campus" 
+                                alt="Campus"
                                 className="w-full h-full object-cover"
-                             />
-                             <div className="absolute inset-0 bg-blue-900/40"></div>
+                            />
+                            <div className="absolute inset-0 bg-blue-900/40"></div>
                         </div>
                         <div className="md:w-2/3 p-8 text-white flex flex-col justify-center">
                             <h2 className="text-2xl font-bold mb-3">Committed to Excellence</h2>
                             <p className="text-blue-100 text-sm md:text-base leading-relaxed">
-                                At J.S. College of Education, we believe a conducive environment is key to holistic development. 
+                                At J.S. College of Education, we believe a conducive environment is key to holistic development.
                                 We continuously upgrade our campus to provide world-class resources for academic success.
                             </p>
                         </div>
