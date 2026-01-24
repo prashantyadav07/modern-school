@@ -3,6 +3,11 @@ import { MapPin, Phone, Mail, Clock, MessageCircle, ArrowRight, ExternalLink, Gr
 
 // NOTE: Apni image yahan import karein
 import imge from '../../assets/image.png'; 
+const customFontStyle = {
+  fontFamily: "'Neue Montreal Regular', sans-serif",
+  fontWeight: 600,
+  fontStyle: "normal",
+};
 
 const Contact = () => {
   const contactInfo = {
@@ -16,7 +21,7 @@ const Contact = () => {
   const googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.address)}`;
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50 p-6 font-sans text-slate-800">
+    <div style={customFontStyle} className="min-h-screen flex items-center justify-center bg-slate-50 p-6 font-sans text-slate-800">
       
       <div className="max-w-6xl w-full bg-white rounded-2xl shadow-sm border border-slate-200 flex flex-col md:flex-row overflow-hidden">
         

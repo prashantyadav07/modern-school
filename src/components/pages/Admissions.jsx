@@ -10,6 +10,11 @@ import {
 // IMPORT THE PDF FILE HERE
 // Make sure the path matches where your file is located
 import AdmissionFormPdf from '../../assets/admission from.pdf';
+const customFontStyle = {
+  fontFamily: "'Neue Montreal Regular', sans-serif",
+  fontWeight: 600,
+  fontStyle: "normal",
+};
 
 const Admissions = () => {
     
@@ -42,7 +47,7 @@ const Admissions = () => {
     ];
 
     return (
-        <div className="bg-slate-50 min-h-screen font-sans text-slate-600 selection:bg-blue-100 selection:text-blue-900">
+        <div style={customFontStyle} className="bg-slate-50 min-h-screen font-sans text-slate-600 selection:bg-blue-100 selection:text-blue-900">
 
             {/* --- HERO SECTION --- */}
             <div className="relative bg-white border-b border-slate-200 overflow-hidden">

@@ -51,7 +51,7 @@ const Footer = () => {
       <div className="hidden md:flex absolute bottom-0 left-0 right-0 pointer-events-none justify-center w-full z-0">
         <h1 style={customFontStyle} className="text-[12vw] md:text-[13rem] font-bold leading-none text-black-400 opacity-[0.1] 
                         whitespace-nowrap select-none uppercase tracking-tighter transform translate-y-[10%]">
-          J.S. COLLEGE 
+          J.S. COLLEGE
         </h1>
       </div>
 
