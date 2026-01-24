@@ -2,6 +2,7 @@ import React from 'react';
 import { Mail, Phone, MapPin, Clock, Facebook, Instagram, Twitter } from 'lucide-react';
 import collegeLogo from '../../assets/logo1.png';
 
+
 const Header = () => {
     return (
         <header className="w-full font-sans">
