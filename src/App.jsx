@@ -3,11 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Header from './components/common/Header';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
-<<<<<<< HEAD
 import Preloader from './components/common/Preloader';
-=======
-import './fonts.css'
->>>>>>> 7af46e1 (fuck)
 
 // Pages
 import Home from './components/pages/Home';

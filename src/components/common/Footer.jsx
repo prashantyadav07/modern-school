@@ -51,7 +51,7 @@ const Footer = () => {
       <div className="hidden md:flex absolute bottom-0 left-0 right-0 pointer-events-none justify-center w-full z-0">
         <h1 style={customFontStyle} className="text-[12vw] md:text-[13rem] font-bold leading-none text-black-400 opacity-[0.1] 
                         whitespace-nowrap select-none uppercase tracking-tighter transform translate-y-[10%]">
-          J.S. COLLEGE OF EDUCATION
+          J.S. COLLEGE 
         </h1>
       </div>
 
@@ -62,14 +62,13 @@ const Footer = () => {
 
           {/* 1. Identity Section */}
           <div className="lg:col-span-5 text-center lg:text-left">
-<<<<<<< HEAD
-            
+
             {/* LOGO AND TITLE */}
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 mb-4">
-              <img 
-                src={collegeLogo} 
-                alt="J.S. College Logo" 
-                className="w-20 h-20 md:w-24 md:h-24 object-contain bg-white/5 rounded-lg p-1" 
+              <img
+                src={collegeLogo}
+                alt="J.S. College Logo"
+                className="w-20 h-20 md:w-24 md:h-24 object-contain bg-white/5 rounded-lg p-1"
               />
               <div className="mt-1">
                 <h2 className="text-xl md:text-3xl font-bold tracking-tight">
@@ -78,72 +77,56 @@ const Footer = () => {
                 <div className="h-1 w-12 bg-white rounded-full mt-2 mx-auto lg:mx-0"></div>
               </div>
             </div>
-            
-=======
-            <h2 className="text-xl md:text-3xl font-bold tracking-tight mb-2">
-              J.S. COLLEGE OF EDUCATION <span className="text-zinc-400 font-light"></span>
-            </h2>
-            <div className="h-1 w-12 bg-white rounded-full mb-4 mx-auto lg:mx-0"></div>
 
->>>>>>> 7af46e1 (fuck)
             <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 max-w-md mx-auto lg:mx-0">
               Affiliated with Maa Shakumbhari University. Empowering future educators with excellence and innovation since 2010.
             </p>
 
-<<<<<<< HEAD
             {/* --- COMBINED SECTION: AFFILIATIONS & SOCIALS --- */}
             {/* Added flex-wrap so they sit side-by-side */}
             <div className="flex flex-col xl:flex-row gap-4 xl:items-end mb-2">
-              
+
               {/* Affiliations Group */}
               <div>
-                 <h4 className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold mb-2">
-                   Official Links & Socials
-                 </h4>
-                 <div className="flex flex-wrap justify-center lg:justify-start gap-2">
-                   {affiliationLinks.map((link, idx) => (
-                     <a 
-                       key={idx}
-                       href={link.url}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       className="flex items-center gap-1.5 px-3 py-2 rounded-md border border-zinc-800 bg-zinc-900/50 text-xs text-zinc-300 hover:text-white hover:border-zinc-600 transition-all"
-                     >
-                       {link.name}
-                       <ExternalLink className="w-3 h-3 opacity-70" />
-                     </a>
-                   ))}
-                   
-                   {/* Divider Line (Visible on Desktop) */}
-                   <div className="hidden xl:block w-px h-auto bg-zinc-800 mx-1"></div>
+                <h4 className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold mb-2">
+                </h4>
+                <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+                  {affiliationLinks.map((link, idx) => (
+                    <a
+                      key={idx}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 px-3 py-2 rounded-md border border-zinc-800 bg-zinc-900/50 text-xs text-zinc-300 hover:text-white hover:border-zinc-600 transition-all"
+                    >
+                      {link.name}
+                      <ExternalLink className="w-3 h-3 opacity-70" />
+                    </a>
+                  ))}
 
-                   {/* Social Icons (Moved Here) */}
-                   <div className="flex gap-2">
+                  {/* Divider Line (Visible on Desktop) */}
+                  <div className="hidden xl:block w-px h-auto bg-zinc-800 mx-1"></div>
+
+                  {/* Social Icons (Moved Here) */}
+                  <div className="flex gap-2">
                     {[Facebook, Twitter, Instagram, Linkedin].map((Icon, idx) => (
-                        <a key={idx} href="#" className="p-2 rounded-md border border-zinc-800 bg-zinc-900/50 hover:bg-white hover:text-black text-white transition-all duration-300 flex items-center justify-center">
+                      <a key={idx} href="#" className="p-2 rounded-md border border-zinc-800 bg-zinc-900/50 hover:bg-white hover:text-black text-white transition-all duration-300 flex items-center justify-center">
                         <Icon className="w-3.5 h-3.5" />
-                        </a>
+                      </a>
                     ))}
-                   </div>
+                  </div>
 
-                 </div>
+                </div>
               </div>
 
-=======
-            <div className="flex justify-center lg:justify-start gap-3">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, idx) => (
-                <a key={idx} href="#" className="p-2 rounded-lg bg-zinc-900 hover:bg-white hover:text-black text-white transition-all duration-300">
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
->>>>>>> 7af46e1 (fuck)
             </div>
+
           </div>
 
-          {/* 2. Compact Links Grid */}
-          <div className="hidden lg:block lg:col-span-4">
-            <h3 className="text-white text-xs font-bold uppercase tracking-widest mb-4 text-center lg:text-left">
-              Quick Navigation
+          {/* 2. Quick Links Section */}
+          <div className="lg:col-span-4 text-center lg:text-left">
+            <h3 className="text-white text-xs font-bold uppercase tracking-widest mb-4">
+              Quick Links
             </h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
               {quickLinks.map((link, index) => (
@@ -175,7 +158,7 @@ const Footer = () => {
               <div className="flex items-center gap-3 text-zinc-400">
                 <Phone className="h-4 w-4 text-white shrink-0" />
                 <a href="tel:+918533915030" className="text-xs hover:text-white transition-colors">
-                  +91 9759378701 <br/>
+                  +91 9759378701 <br />
                   +91 8273737248
                 </a>
               </div>
