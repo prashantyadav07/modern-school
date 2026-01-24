@@ -3,7 +3,11 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Header from './components/common/Header';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
+<<<<<<< HEAD
 import Preloader from './components/common/Preloader';
+=======
+import './fonts.css'
+>>>>>>> 7af46e1 (fuck)
 
 // Pages
 import Home from './components/pages/Home';
@@ -18,6 +22,11 @@ import Gallery from './components/pages/Gallery';
 import Authenticity from './components/pages/Authenticity';
 import Inquiry from './components/pages/Inquiry';
 import Contact from './components/pages/Contact';
+const customFontStyle = {
+  fontFamily: "'Neue Montreal Regular', sans-serif",
+  fontWeight: 800,
+  fontStyle: "normal",
+};
 
 // --- ScrollToTop Helper Component ---
 // Ye component har route change par page ko top par le jata hai
@@ -30,6 +39,8 @@ const ScrollToTop = () => {
 
   return null;
 };
+
+
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -50,7 +61,7 @@ function App() {
       {/* ScrollToTop ko hamesha Router ke andar aur baki sabse upar rakhein */}
       <ScrollToTop />
 
-      <div className="min-h-screen flex flex-col">
+      <div style={customFontStyle} className="min-h-screen flex flex-col">
         <Header />
         <Navbar />
 

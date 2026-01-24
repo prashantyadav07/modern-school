@@ -4,6 +4,12 @@ import subjectsPDF from '../../assets/subjects.pdf';
 import trustPDF from '../../assets/trust.pdf';
 import facultyPDF from '../../assets/faculty.pdf';
 
+const customFontStyle = {
+  fontFamily: "'Neue Montreal Regular', sans-serif",
+  fontWeight: 600,
+  fontStyle: "normal",
+};
+
 const Authenticity = () => {
   // NOTE: Certifications section removed/commented out from grid based on your request 
   // to focus on document cards with images, but keeping the array if you need it later.
@@ -51,23 +57,23 @@ const Authenticity = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
-      
+    <div style={customFontStyle} className="min-h-screen bg-slate-50 font-sans text-slate-800">
+
       {/* 1. HERO SECTION */}
       <section className="relative bg-white pt-20 pb-24 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-        
+
         <div className="container mx-auto px-4 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full mb-8 shadow-sm">
             <ShieldCheck className="text-blue-600 w-4 h-4" />
             <span className="text-blue-700 font-semibold text-xs uppercase tracking-widest">Official Verification Portal</span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight mb-6">
             Transparency & <span className="text-blue-700">Authenticity</span>
           </h1>
-          
+
           <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
             We believe in complete transparency. Explore our official documents to verify our commitment to educational excellence.
           </p>
@@ -86,35 +92,35 @@ const Authenticity = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {documents.map((doc, index) => (
-              <div 
+              <div
                 key={index}
                 onClick={() => handlePDFClick(doc.pdfUrl)}
                 className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200 hover:border-blue-300 transition-all duration-300 cursor-pointer flex flex-col"
               >
                 {/* Image Section - Matches Courses Style */}
                 <div className="relative h-40 overflow-hidden">
-                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-10" />
-                   <img 
-                     src={doc.image} 
-                     alt={doc.title} 
-                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                   />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-10" />
+                  <img
+                    src={doc.image}
+                    alt={doc.title}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
 
                 {/* Card Header */}
                 <div className="p-5 border-b border-slate-100">
-                   <div className="flex items-center justify-between mb-3">
-                      <div className="p-2 bg-slate-50 rounded-lg border border-slate-100">
-                         {doc.icon}
-                      </div>
-                      <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-2 py-1 rounded-md">
-                        PDF Document
-                      </span>
-                   </div>
-                   <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
-                     {doc.title}
-                   </h3>
-                   <span className="text-xs font-medium text-slate-400 block mt-1">{doc.subtitle}</span>
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="p-2 bg-slate-50 rounded-lg border border-slate-100">
+                      {doc.icon}
+                    </div>
+                    <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-2 py-1 rounded-md">
+                      PDF Document
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
+                    {doc.title}
+                  </h3>
+                  <span className="text-xs font-medium text-slate-400 block mt-1">{doc.subtitle}</span>
                 </div>
 
                 {/* Card Body */}
@@ -122,7 +128,7 @@ const Authenticity = () => {
                   <p className="text-slate-500 text-sm leading-relaxed mb-4 line-clamp-2">
                     {doc.description}
                   </p>
-                  
+
                   {/* Footer / Action */}
                   <div className="mt-auto pt-3 border-t border-slate-50 flex items-center justify-between">
                     <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
@@ -147,7 +153,7 @@ const Authenticity = () => {
               <div>
                 <h4 className="text-white font-bold text-lg">Verification Authenticity</h4>
                 <p className="text-blue-100 text-sm max-w-xl mt-1 leading-relaxed">
-                  All documents listed above are the sole property of the institution. 
+                  All documents listed above are the sole property of the institution.
                   For third-party background verification, please contact the administration directly.
                 </p>
               </div>

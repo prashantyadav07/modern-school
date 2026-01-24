@@ -6,6 +6,12 @@ import Autoplay from 'embla-carousel-autoplay';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { ContainerStagger, GalleryGrid, GalleryGridCell } from '../cta-section-with-gallery';
+const customFontStyle = {
+    fontFamily: "'Neue Montreal Regular', sans-serif",
+    fontWeight: 600,
+    fontStyle: "normal",
+};
+
 
 // Images imports
 import img1 from '../../assets/1.jpeg';
@@ -120,41 +126,72 @@ const Home = () => {
             </section>
 
             {/* 3. BETTER EDUCATION SECTION */}
-            <section className="py-12 sm:py-16 md:py-20 bg-white text-gray-900">
-                <div className="container mx-auto px-3 sm:px-4 grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false }} // Isse ye bhi harr baar animate hoga
-                    >
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-slate-900">Better Education For A <span className="text-blue-600">Brighter Future</span></h2>
-                        <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed text-justify">
-                            Established with a vision to create world-class educators, J.S. College of Education provides a
-                            transformative learning environment. We focus on holistic development, combining academic
-                            excellence with practical teaching skills.
-                        </p>
-                        <Link to="/about" className="px-4 py-2 sm:px-6 sm:py-2 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-all font-semibold uppercase tracking-wide text-xs sm:text-sm inline-block">Learn More</Link>
-                    </motion.div>
+            {/* 3. BETTER EDUCATION SECTION */}
+            <section className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
+                {/* Decorative Blob */}
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
 
-                    <div className="grid gap-3 sm:gap-4">
-                        <motion.div whileHover={{ scale: 1.02 }} className="bg-blue-50 p-4 sm:p-5 md:p-6 rounded-xl flex items-center gap-3 sm:gap-4 md:gap-5 border-l-4 border-blue-600">
-                            <div className="p-2 sm:p-3 bg-blue-600 rounded-lg text-white flex-shrink-0">
-                                <Award className="w-5 h-5 sm:w-6 sm:h-6" />
-                            </div>
-                            <div>
-                                <h3 className="text-slate-900 text-base sm:text-lg md:text-xl font-bold">Undergraduate</h3>
-                                <p className="text-gray-600 text-xs sm:text-sm">B.Ed & Professional Degree</p>
-                            </div>
+                <div className="container mx-auto px-4 sm:px-6 relative z-10">
+                    <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                        {/* Left Content */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: false }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            {/* Curved decorative line */}
+                            <div className="w-20 h-2 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full mb-6"></div>
+
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-slate-900 leading-tight">
+                                Better Education For A <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Brighter Future</span>
+                            </h2>
+
+                            <p className="text-slate-600 text-base sm:text-lg mb-8 leading-relaxed text-justify">
+                                Established with a vision to create world-class educators, J.S. College of Education provides a
+                                transformative learning environment. We focus on holistic development, combining academic
+                                excellence with practical teaching skills.
+                            </p>
+
+                            <Link to="/about" className="group relative inline-flex items-center px-8 py-3 overflow-hidden text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/40">
+                                <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                                <span className="relative font-bold tracking-wide">Learn More</span>
+                                <ArrowRight className="w-5 h-5 ml-2 relative group-hover:translate-x-1 transition-transform" />
+                            </Link>
                         </motion.div>
-                        <motion.div whileHover={{ scale: 1.02 }} className="bg-amber-50 p-4 sm:p-5 md:p-6 rounded-xl flex items-center gap-3 sm:gap-4 md:gap-5 border-l-4 border-amber-500">
-                            <div className="p-2 sm:p-3 bg-amber-500 rounded-lg text-white flex-shrink-0">
-                                <Medal className="w-5 h-5 sm:w-6 sm:h-6" />
-                            </div>
-                            <div>
-                                <h3 className="text-slate-900 text-base sm:text-lg md:text-xl font-bold">Postgraduate</h3>
-                                <p className="text-gray-600 text-xs sm:text-sm">Advanced Research & Pedagogy</p>
-                            </div>
-                        </motion.div>
+
+                        {/* Right Content - Curved Cards */}
+                        <div className="grid gap-6">
+                            <motion.div
+                                whileHover={{ scale: 1.02, translateY: -5 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                                className="bg-gradient-to-br from-blue-50 to-white p-6 sm:p-8 rounded-[2.5rem] shadow-xl border border-blue-100/50 flex items-center gap-6 group cursor-pointer relative overflow-hidden"
+                            >
+                                <div className="absolute right-0 top-0 w-32 h-32 bg-blue-100/30 rounded-full blur-2xl -mr-10 -mt-10 transition-transform group-hover:scale-150"></div>
+                                <div className="w-16 h-16 bg-blue-600 rounded-2xl rotate-3 group-hover:rotate-6 transition-all duration-300 shadow-lg shadow-blue-500/30 flex items-center justify-center text-white flex-shrink-0 relative z-10">
+                                    <Award className="w-8 h-8" />
+                                </div>
+                                <div className="relative z-10">
+                                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-1">Undergraduate</h3>
+                                    <p className="text-slate-600 text-sm font-medium">B.A. , B.Sc , B.Com  Degree</p>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                whileHover={{ scale: 1.02, translateY: -5 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                                className="bg-gradient-to-br from-amber-50 to-white p-6 sm:p-8 rounded-[2.5rem] shadow-xl border border-amber-100/50 flex items-center gap-6 group cursor-pointer relative overflow-hidden"
+                            >
+                                <div className="absolute right-0 top-0 w-32 h-32 bg-amber-100/30 rounded-full blur-2xl -mr-10 -mt-10 transition-transform group-hover:scale-150"></div>
+                                <div className="w-16 h-16 bg-amber-500 rounded-2xl -rotate-3 group-hover:-rotate-6 transition-all duration-300 shadow-lg shadow-amber-500/30 flex items-center justify-center text-white flex-shrink-0 relative z-10">
+                                    <Medal className="w-8 h-8" />
+                                </div>
+                                <div className="relative z-10">
+                                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-1">Postgraduate</h3>
+                                    <p className="text-slate-600 text-sm font-medium">Advanced Research & Pedagogy</p>
+                                </div>
+                            </motion.div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -267,7 +304,7 @@ const Home = () => {
             <section className="py-12 sm:py-16 md:py-20 bg-white">
                 <div className="container mx-auto px-3 sm:px-4">
                     {/* Section Header */}
-                    <div className="text-center mb-8 sm:mb-10 md:mb-12">
+                    <div style={customFontStyle} className="text-center mb-8 sm:mb-10 md:mb-12">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-2 sm:mb-3">Campus Gallery</h2>
                         <div className="w-16 sm:w-20 h-1 bg-amber-500 mx-auto rounded-full"></div>
                         <p className="mt-3 sm:mt-4 text-sm sm:text-base text-gray-500 px-2">Glimpses of life and activities at J.S. College</p>

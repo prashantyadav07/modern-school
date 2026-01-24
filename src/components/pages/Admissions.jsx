@@ -1,4 +1,6 @@
+
 import React from 'react';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
 import {
     FileText, CheckCircle2, AlertCircle, Phone, Mail,
@@ -14,6 +16,103 @@ const Admissions = () => {
     
     // UPDATED: Direct Unsplash Link for "College/Admission" theme
     const heroImageUrl = "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop";
+=======
+import { FileText, Check, Info, Phone, Mail, Calendar, GraduationCap } from 'lucide-react';
+import { Timeline } from '../ui/timeline';
+
+const customFontStyle = {
+    fontFamily: "'Neue Montreal Regular', sans-serif",
+    fontWeight: 600,
+    fontStyle: "normal",
+};
+
+const Admissions = () => {
+    const timelineData = [
+        {
+            title: "Step 1: Application",
+            content: (
+                <div>
+                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+                        Begin your journey by filling out the admission form. You can apply online through our portal or visit the campus for an offline application.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4">
+                        <img
+                            src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800"
+                            alt="Application Process"
+                            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md"
+                        />
+                        <div className="bg-blue-50 rounded-lg p-4 flex items-center justify-center text-center h-20 md:h-44 lg:h-60 w-full">
+                            <p className="text-blue-800 font-bold text-sm">Online / Offline Modes Available</p>
+                        </div>
+                    </div>
+                </div>
+            ),
+        },
+        {
+            title: "Step 2: Verification",
+            content: (
+                <div>
+                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+                        Visit the campus with your original documents for verification. Our dedicated admission cell will assist you with the process.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4">
+                        <img
+                            src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800"
+                            alt="Document Verification"
+                            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md"
+                        />
+                        <div className="bg-amber-50 rounded-lg p-4 flex items-center justify-center text-center h-20 md:h-44 lg:h-60 w-full">
+                            <p className="text-amber-800 font-bold text-sm">Bring Original Documents</p>
+                        </div>
+                    </div>
+                </div>
+            ),
+        },
+        {
+            title: "Step 3: Merit List",
+            content: (
+                <div>
+                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+                        Selection is strictly based on academic merit. The merit list will be displayed on the college notice board and website.
+                    </p>
+                    <div className="mb-8">
+                        <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+                            ✅ Transparent Selection
+                        </div>
+                        <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+                            ✅ University Guidelines Adhered
+                        </div>
+                    </div>
+                    <img
+                        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800"
+                        alt="Merit List"
+                        className="rounded-lg object-cover h-40 md:h-60 w-full shadow-md"
+                    />
+                </div>
+            ),
+        },
+        {
+            title: "Step 4: Enrollment",
+            content: (
+                <div>
+                    <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+                        Confirm your seat by paying the admission fees. Welcome to J.S. College of Education!
+                    </p>
+                    <div className="grid grid-cols-2 gap-4">
+                        <img
+                            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800"
+                            alt="Enrollment"
+                            className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-md"
+                        />
+                        <div className="bg-green-50 rounded-lg p-4 flex items-center justify-center text-center h-20 md:h-44 lg:h-60 w-full">
+                            <p className="text-green-800 font-bold text-sm">Welcome Aboard!</p>
+                        </div>
+                    </div>
+                </div>
+            ),
+        }
+    ];
+>>>>>>> 7af46e1 (fuck)
 
     const eligibilityCriteria = [
         'Passed graduation in any discipline from a recognized university',
@@ -22,6 +121,7 @@ const Admissions = () => {
         'Age limit as per university norms'
     ];
 
+<<<<<<< HEAD
     const admissionProcess = [
         { step: '01', title: 'Online Application', desc: 'Complete the digital admission form with basic details.', icon: FileText },
         { step: '02', title: 'Document Verification', desc: 'Visit campus for physical verification of original documents.', icon: ShieldCheck },
@@ -29,6 +129,8 @@ const Admissions = () => {
         { step: '04', title: 'Final Enrollment', desc: 'Payment of fees and confirmation of your seat.', icon: GraduationCap }
     ];
 
+=======
+>>>>>>> 7af46e1 (fuck)
     const requiredDocuments = [
         '10th Mark Sheet & Cert',
         '12th Mark Sheet & Cert',
@@ -41,6 +143,7 @@ const Admissions = () => {
     ];
 
     return (
+<<<<<<< HEAD
         <div className="bg-slate-50 min-h-screen font-sans text-slate-600 selection:bg-blue-100 selection:text-blue-900">
 
             {/* --- HERO SECTION --- */}
@@ -99,11 +202,30 @@ const Admissions = () => {
                                 className="w-full h-[400px] object-cover rounded-2xl shadow-2xl shadow-blue-900/10 ring-1 ring-slate-900/5 transform hover:scale-[1.02] transition-transform duration-500"
                             />
                         </div>
+=======
+        <div style={customFontStyle} className="bg-[#fcfcfd] min-h-screen text-slate-800 font-sans">
+
+            {/* 1. PROFESSIONAL HERO SECTION */}
+            <div className="bg-white border-b border-slate-100 pt-16 pb-12 md:pt-20 md:pb-16">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-6">
+                        <Calendar className="w-3 h-3" />
+                        Session 2025-26
+>>>>>>> 7af46e1 (fuck)
                     </div>
                 </div>
             </div>
 
+<<<<<<< HEAD
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+=======
+            {/* Timeline Section */}
+            <div className="w-full bg-slate-50">
+                <Timeline data={timelineData} />
+            </div>
+
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+>>>>>>> 7af46e1 (fuck)
 
                 {/* --- DEADLINE ALERT --- */}
                 <div className="mb-16">
@@ -132,8 +254,13 @@ const Admissions = () => {
                                 <h2 className="text-2xl font-bold text-slate-900">Eligibility Criteria</h2>
                             </div>
 
+<<<<<<< HEAD
                             <div className="bg-white rounded-2xl border border-slate-200 p-1 shadow-sm">
                                 <ul className="divide-y divide-slate-100">
+=======
+                            <div className="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm">
+                                <ul className="space-y-4">
+>>>>>>> 7af46e1 (fuck)
                                     {eligibilityCriteria.map((item, i) => (
                                         <li key={i} className="p-5 flex items-start gap-4 hover:bg-slate-50 transition-colors rounded-xl group">
                                             <div className="mt-0.5 w-6 h-6 rounded-full bg-green-50 flex items-center justify-center shrink-0 border border-green-100 group-hover:scale-110 transition-transform">
@@ -170,6 +297,7 @@ const Admissions = () => {
                         </section>
                     </div>
 
+<<<<<<< HEAD
                     {/* --- RIGHT COLUMN: PROCESS & CONTACT (Span 5) --- */}
                     <div className="lg:col-span-5 space-y-10">
 
@@ -211,6 +339,15 @@ const Admissions = () => {
                             {/* Abstract Shapes */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-600/30 transition-all duration-700"></div>
                             <div className="absolute bottom-0 left-0 w-48 h-48 bg-indigo-600/20 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4"></div>
+=======
+                    {/* RIGHT COLUMN: CONTACT ONLY (Span 5) */}
+                    <div className="lg:col-span-5 space-y-10">
+
+                        {/* Contact Card - Professional */}
+                        <div className="bg-slate-900 text-white rounded-2xl p-6 md:p-8 shadow-xl relative overflow-hidden sticky top-24">
+                            {/* Decorative circle */}
+                            <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+>>>>>>> 7af46e1 (fuck)
 
                             <div className="relative z-10">
                                 <h3 className="text-xl font-bold mb-2">Need Assistance?</h3>

@@ -6,6 +6,12 @@ import { motion } from 'framer-motion';
 import heroImg from '../../assets/2.jpeg';
 import directorImg from '../../assets/g1.jpeg';
 
+const customFontStyle = {
+    fontFamily: "'Neue Montreal Regular', sans-serif",
+    fontWeight: 600,
+    fontStyle: "normal",
+};
+
 const About = () => {
     const fadeIn = {
         initial: { opacity: 0, y: 20 },
@@ -15,11 +21,11 @@ const About = () => {
     };
 
     // Professional High-Quality Unsplash Images (Working Links)
-    const visionImg = "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=800&auto=format&fit=crop"; 
+    const visionImg = "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=800&auto=format&fit=crop";
     const missionImg = "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop";
 
     return (
-        <div className="bg-white text-slate-900 font-sans antialiased">
+        <div style={customFontStyle} className="bg-white text-slate-900 font-sans antialiased">
 
             {/* --- SECTION 1: HERO (MEDIUM TEXT & IMAGE) --- */}
             <section className="relative min-h-[40vh] sm:min-h-[50vh] flex items-center bg-slate-50 overflow-hidden py-10 sm:py-14">
@@ -106,9 +112,9 @@ const About = () => {
                             className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden group hover:shadow-md transition-shadow duration-300"
                         >
                             <div className="h-48 sm:h-56 overflow-hidden">
-                                <img 
-                                    src={visionImg} 
-                                    alt="Our Vision" 
+                                <img
+                                    src={visionImg}
+                                    alt="Our Vision"
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
@@ -129,9 +135,9 @@ const About = () => {
                             className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden group hover:shadow-md transition-shadow duration-300"
                         >
                             <div className="h-48 sm:h-56 overflow-hidden">
-                                <img 
-                                    src={missionImg} 
-                                    alt="Our Mission" 
+                                <img
+                                    src={missionImg}
+                                    alt="Our Mission"
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
