@@ -1,49 +1,70 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
     FileText, CheckCircle2, AlertCircle, Phone, Mail,
     GraduationCap, ArrowRight, ChevronRight,
-    Clock, ShieldCheck, Download
+    Clock, ShieldCheck, Download, Globe, CreditCard, UserCheck
 } from 'lucide-react';
 
 // IMPORT THE PDF FILE HERE
-// Make sure the path matches where your file is located
 import AdmissionFormPdf from '../../assets/admission from.pdf';
+
 const customFontStyle = {
-  fontFamily: "'Neue Montreal Regular', sans-serif",
-  fontWeight: 600,
-  fontStyle: "normal",
+    fontFamily: "'Neue Montreal Regular', sans-serif",
+    fontWeight: 600,
+    fontStyle: "normal",
 };
 
 const Admissions = () => {
     
-    // UPDATED: Direct Unsplash Link for "College/Admission" theme
     const heroImageUrl = "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop";
 
+    // Updated based on the "Requirements for admission" image
     const eligibilityCriteria = [
-        'Passed graduation in any discipline from a recognized university',
-        'Minimum 50% marks in graduation (45% for reserved categories)',
-        'Candidates appearing in final year graduation can also apply',
-        'Age limit as per university norms'
+        'High School & Intermediate Marksheets are mandatory',
+        'Graduation Marksheet (For Post-Graduate applicants)',
+        'Valid Identification Proof (Aadhar/Pan/Driving License)',
+        'Original Transfer, Migration & Character Certificates'
     ];
 
+    // Updated based on the "Admission Process" images (Steps 1-7)
     const admissionProcess = [
-        { step: '01', title: 'Online Application', desc: 'Complete the digital admission form with basic details.', icon: FileText },
-        { step: '02', title: 'Document Verification', desc: 'Visit campus for physical verification of original documents.', icon: ShieldCheck },
-        { step: '03', title: 'Merit Selection', desc: 'Shortlisting based on academic performance and cutoff.', icon: CheckCircle2 },
-        { step: '04', title: 'Final Enrollment', desc: 'Payment of fees and confirmation of your seat.', icon: GraduationCap }
+        { 
+            step: '01', 
+            title: 'Online Registration', 
+            desc: 'Visit the official portal (admission.msuweb.in) to fill the registration form.', 
+            icon: Globe 
+        },
+        { 
+            step: '02', 
+            title: 'Get Registration ID', 
+            desc: 'After submission, receive your Unique Registration ID via SMS/Email.', 
+            icon: UserCheck 
+        },
+        { 
+            step: '03', 
+            title: 'Fee Payment', 
+            desc: 'Print the application & bank challan, then submit the fee at the bank.', 
+            icon: CreditCard 
+        },
+        { 
+            step: '04', 
+            title: 'Physical Verification', 
+            desc: 'Submit the University Copy & Student Copy along with original documents at the college.', 
+            icon: ShieldCheck 
+        }
     ];
 
+    // Updated based on the specific list in your images
     const requiredDocuments = [
-        '10th Mark Sheet & Cert',
-        '12th Mark Sheet & Cert',
-        'Graduation Mark Sheets',
-        'Degree / Provisional',
-        'Transfer Certificate',
-        'Caste/Income Cert',
-        'Passport Photos (6)',
-        'Aadhar Card Copy'
+        '10th & 12th Marksheets (Original + Copies)',
+        'Graduation Marksheets (For PG Courses)',
+        'Transfer Certificate (TC) - Original',
+        'Migration Certificate - Original',
+        'Character Certificate - Original',
+        '4 Passport Size Photos (Latest, Front Facing)',
+        'Caste/Reservation Certificate (If applicable)',
+        'Weightage Certs (NCC/NSS/Sports)'
     ];
 
     return (
@@ -74,7 +95,7 @@ const Admissions = () => {
                             </h1>
 
                             <p className="text-lg text-slate-500 max-w-2xl leading-relaxed mb-8">
-                                J.S. Education College invites bright minds to join our community. Our transparent, merit-based admission process is designed to identify and nurture tomorrow's leaders.
+                                Join J.S. Education College. Follow our transparent, step-by-step admission process designed to ensure a smooth transition into your academic future.
                             </p>
 
                             <div className="flex flex-wrap gap-4">
@@ -118,9 +139,9 @@ const Admissions = () => {
                             <Clock className="text-amber-700 w-6 h-6" />
                         </div>
                         <div className="flex-1">
-                            <h4 className="text-amber-900 font-bold text-base mb-1">Application Deadline Approaching</h4>
+                            <h4 className="text-amber-900 font-bold text-base mb-1">Important Notice</h4>
                             <p className="text-amber-800/80 text-sm">
-                                The last date for application submission is <span className="font-bold text-amber-900">30th August 2025</span>. Ensure all documents are ready before this date.
+                                Admissions are subject to <strong>State Government</strong> and <strong>Maa Shakumbhari University</strong> rules. Please ensure all original documents are produced at the time of admission to avoid inconvenience.
                             </p>
                         </div>
                     </div>
@@ -131,24 +152,28 @@ const Admissions = () => {
                     {/* --- LEFT COLUMN: CONTENT (Span 7) --- */}
                     <div className="lg:col-span-7 space-y-16">
 
-                        {/* 1. ELIGIBILITY */}
+                        {/* 1. ADMISSION PROCESS (MOVED UP FOR BETTER FLOW) */}
                         <section>
                             <div className="flex items-center gap-3 mb-8">
                                 <div className="h-8 w-1 bg-blue-600 rounded-full"></div>
-                                <h2 className="text-2xl font-bold text-slate-900">Eligibility Criteria</h2>
+                                <h2 className="text-2xl font-bold text-slate-900">Admission Process</h2>
                             </div>
 
-                            <div className="bg-white rounded-2xl border border-slate-200 p-1 shadow-sm">
-                                <ul className="divide-y divide-slate-100">
-                                    {eligibilityCriteria.map((item, i) => (
-                                        <li key={i} className="p-5 flex items-start gap-4 hover:bg-slate-50 transition-colors rounded-xl group">
-                                            <div className="mt-0.5 w-6 h-6 rounded-full bg-green-50 flex items-center justify-center shrink-0 border border-green-100 group-hover:scale-110 transition-transform">
-                                                <CheckCircle2 className="text-green-600 w-4 h-4" />
+                            <div className="space-y-6">
+                                {admissionProcess.map((item, i) => (
+                                    <div key={i} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex gap-5 hover:border-blue-100 transition-colors group">
+                                        <div className="shrink-0">
+                                            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                                                <item.icon className="w-6 h-6" />
                                             </div>
-                                            <span className="text-slate-700 font-medium leading-relaxed">{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                                        </div>
+                                        <div>
+                                            <span className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1 block">Step {item.step}</span>
+                                            <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                                            <p className="text-slate-500 leading-relaxed text-sm">{item.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </section>
 
@@ -156,59 +181,49 @@ const Admissions = () => {
                         <section>
                             <div className="flex items-center gap-3 mb-8">
                                 <div className="h-8 w-1 bg-indigo-600 rounded-full"></div>
-                                <h2 className="text-2xl font-bold text-slate-900">Required Documents</h2>
+                                <h2 className="text-2xl font-bold text-slate-900">Documents Required</h2>
+                                <span className="ml-auto text-xs font-bold bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full border border-indigo-100">
+                                    Physical Verification
+                                </span>
                             </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                {requiredDocuments.map((doc, i) => (
-                                    <div key={i} className="group flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-xl hover:border-indigo-200 hover:shadow-md transition-all duration-300">
-                                        <div className="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center shrink-0 group-hover:bg-indigo-100 transition-colors">
-                                            <FileText className="w-5 h-5 text-indigo-600" />
+                            <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                                <div className="grid grid-cols-1 md:grid-cols-2">
+                                    {requiredDocuments.map((doc, i) => (
+                                        <div key={i} className="p-4 border-b border-r border-slate-100 hover:bg-slate-50 transition-colors flex items-start gap-3">
+                                            <CheckCircle2 className="w-5 h-5 text-indigo-500 shrink-0 mt-0.5" />
+                                            <span className="text-slate-700 text-sm font-medium">{doc}</span>
                                         </div>
-                                        <span className="text-slate-700 text-sm font-semibold">{doc}</span>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
+                                <div className="bg-indigo-50/50 p-4 border-t border-indigo-100 flex gap-3">
+                                    <AlertCircle className="w-5 h-5 text-indigo-600 shrink-0" />
+                                    <p className="text-sm text-indigo-800">
+                                        <strong>Note:</strong> No benefit will be given for reserved categories (SC/ST/OBC/Phy.Challenged) if the original certificate is not produced at the time of admission.
+                                    </p>
+                                </div>
                             </div>
-                            <p className="mt-4 flex items-center gap-2 text-sm text-slate-500">
-                                <AlertCircle className="w-4 h-4" />
-                                <span>Note: Bring <strong>Originals</strong> + <strong>2 Sets of Photocopies</strong>.</span>
-                            </p>
                         </section>
+
                     </div>
 
-                    {/* --- RIGHT COLUMN: PROCESS & CONTACT (Span 5) --- */}
+                    {/* --- RIGHT COLUMN: ELIGIBILITY & CONTACT (Span 5) --- */}
                     <div className="lg:col-span-5 space-y-10">
 
-                        {/* PROCESS CARD */}
+                        {/* ELIGIBILITY CARD */}
                         <div className="bg-white rounded-2xl border border-slate-200 shadow-xl shadow-slate-200/50 overflow-hidden">
-                            <div className="bg-slate-50 px-6 py-4 border-b border-slate-100 flex justify-between items-center">
-                                <h3 className="font-bold text-slate-900">Admission Process</h3>
-                                <span className="text-xs font-semibold px-2 py-1 bg-white border border-slate-200 rounded text-slate-500">4 Steps</span>
+                            <div className="bg-slate-50 px-6 py-4 border-b border-slate-100">
+                                <h3 className="font-bold text-slate-900">Eligibility Criteria</h3>
                             </div>
-
-                            <div className="p-6 md:p-8">
-                                <div className="relative">
-                                    {/* Vertical Line */}
-                                    <div className="absolute left-6 top-4 bottom-4 w-0.5 bg-slate-100"></div>
-
-                                    <div className="space-y-8">
-                                        {admissionProcess.map((item, i) => (
-                                            <div key={i} className="relative flex gap-5 group">
-                                                <div className="relative z-10 w-12 h-12 rounded-full bg-white border-2 border-slate-100 flex items-center justify-center shrink-0 group-hover:border-blue-500 group-hover:scale-110 transition-all shadow-sm">
-                                                    <span className="text-sm font-bold text-slate-400 group-hover:text-blue-600">{item.step}</span>
-                                                </div>
-                                                <div className="pt-1.5 pb-2">
-                                                    <h4 className="font-bold text-slate-900 text-lg mb-1 group-hover:text-blue-700 transition-colors">
-                                                        {item.title}
-                                                    </h4>
-                                                    <p className="text-sm text-slate-500 leading-relaxed">
-                                                        {item.desc}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                            <div className="p-6">
+                                <ul className="space-y-4">
+                                    {eligibilityCriteria.map((item, i) => (
+                                        <li key={i} className="flex gap-3">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"></div>
+                                            <span className="text-slate-600 text-sm leading-relaxed">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </div>
 
@@ -221,7 +236,7 @@ const Admissions = () => {
                             <div className="relative z-10">
                                 <h3 className="text-xl font-bold mb-2">Need Assistance?</h3>
                                 <p className="text-slate-400 text-sm mb-8 leading-relaxed">
-                                    Our admission counselors are here to guide you through every step of the process.
+                                    Our admission counselors are here to guide you through the online registration and verification process.
                                 </p>
 
                                 <div className="space-y-4">
@@ -256,7 +271,7 @@ const Admissions = () => {
             <div className="border-t border-slate-200 bg-white py-8">
                 <div className="max-w-7xl mx-auto px-4 text-center">
                     <p className="text-slate-400 text-sm font-medium">
-                        © 2025 J.S. Education College • Admission Department
+                        © 2026 J.S. Education College • Admission Department
                     </p>
                 </div>
             </div>

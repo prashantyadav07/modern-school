@@ -3,6 +3,8 @@ import { ShieldCheck, Award, CheckCircle, FileCheck, Building2, GraduationCap, F
 import subjectsPDF from '../../assets/subjects.pdf';
 import trustPDF from '../../assets/trust.pdf';
 import facultyPDF from '../../assets/faculty.pdf';
+import aishePDF from '../../assets/AISHE Certificate (2023-24).pdf';
+import certificate from '../../assets/certifiacte.png'
 
 const customFontStyle = {
   fontFamily: "'Neue Montreal Regular', sans-serif",
@@ -49,6 +51,16 @@ const Authenticity = () => {
       icon: <GraduationCap className="w-5 h-5 text-sky-600" />,
       // Image: Teacher / Classroom
       image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      title: "AISHE Certificate",
+      subtitle: "Academic Session 2023-24",
+      description: "All India Survey on Higher Education certification for institutional recognition.",
+      pdfUrl: aishePDF,
+      fileName: "AISHE_Certificate_2023-24.pdf",
+      icon: <Award className="w-5 h-5 text-emerald-600" />,
+      // Image: Clear Certificate / Diploma Scroll (FIXED)
+      image: certificate
     }
   ];
 
