@@ -35,10 +35,10 @@ const About = () => {
                             J.S. College of Education
                         </span>
                         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight mb-4">
-                            Excellence in <br className="hidden sm:block" /> Teacher Training.
+                            Excellence in <br className="hidden sm:block" /> Education.
                         </h1>
                         <p className="text-sm sm:text-base text-slate-600 max-w-md mb-6 leading-relaxed">
-                            Established in 2008, we are dedicated to developing skilled educators
+                            Established in 2020, we are dedicated to developing skilled Students
                             through a curriculum that balances tradition and modern technology.
                         </p>
                         <div className="h-1 w-16 bg-blue-600"></div>

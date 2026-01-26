@@ -11,10 +11,10 @@ const customFontStyle = {
 
 const Contact = () => {
   const contactInfo = {
-    phone: "+91 9759378701",
+    phone: "+91 8273737248",
     email: "j.seducationcollege@gmail.com",
     address: "J.S COLLEGE OF EDUCATION, Rajpur-Chhajpur, Kandhala Budhana Road, Muzzafnagar (U.P)",
-    whatsapp: "9759378701"
+    whatsapp: "8273737248"
   };
 
   const whatsappLink = `https://wa.me/${contactInfo.whatsapp.replace(/\s+/g, '')}?text=Hello! I am interested in admission details.`;

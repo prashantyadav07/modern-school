@@ -18,12 +18,13 @@ import g4 from "../../assets/g4.jpeg";
 import g5 from "../../assets/g5.jpeg";
 import g6 from "../../assets/g6.jpeg";
 
+
 const images = [
   { id: 1, src: img1 }, { id: 2, src: img2 }, { id: 3, src: img3 },
   { id: 4, src: img4 }, { id: 5, src: img12 }, { id: 6, src: img13 },
   { id: 7, src: img14 }, { id: 8, src: img15 }, { id: 9, src: g1 },
   { id: 10, src: g2 }, { id: 11, src: g3 }, { id: 12, src: g4 },
-  { id: 13, src: g5 }, { id: 14, src: g6 },
+  { id: 13, src: g5 }, { id: 14, src: g6 }, 
 ];
 
 const Gallery = () => {
@@ -33,14 +34,14 @@ const Gallery = () => {
     <div className="bg-slate-50 min-h-screen py-16 px-4 md:px-10">
       {/* --- HEADER --- */}
       <div className="max-w-7xl mx-auto text-center mb-16">
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight"
         >
           Life at <span className="text-amber-500">J.S. College</span>
         </motion.h1>
-        <motion.div 
+        <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "80px" }}
           className="h-1.5 bg-amber-500 mx-auto mt-4 rounded-full"
@@ -65,7 +66,7 @@ const Gallery = () => {
                 alt="Gallery"
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              
+
               {/* Subtle Hover Overlay */}
               <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <div className="bg-white/90 p-3 rounded-full shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 text-slate-800">

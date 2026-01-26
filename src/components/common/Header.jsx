@@ -12,7 +12,7 @@ const Header = () => {
                     <div className="flex items-center gap-2 sm:gap-4 md:gap-6 flex-wrap">
                         <div className="flex items-center gap-1 sm:gap-1.5 hover:text-orange-400 transition-colors">
                             <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-orange-400 flex-shrink-0" />
-                            <span className="text-[10px] sm:text-xs md:text-[13px] leading-tight">Rajpur-Chhajpur, Kandhala Budhana Road, Muzzafnagar (U.P)</span>
+                            <span className="text-[10px] sm:text-xs md:text-[13px] leading-tight">Rajpur-Chhajpur, Kandhala Budhana Road, Muzzafarnagar (U.P)</span>
                         </div>
                         <div className="hidden sm:flex items-center gap-1 sm:gap-1.5 border-l border-blue-700 pl-2 sm:pl-4 md:pl-6">
                             <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-orange-400 flex-shrink-0" />
@@ -46,7 +46,7 @@ const Header = () => {
                                         Affiliated to Maa Shakumbhari University, Saharanpur (U.P)
                                     </span>
                                     <span className="text-gray-600 font-medium text-[10px] sm:text-xs md:text-sm lg:text-[15px]">
-                                        Recognized by UGC | A Premier Teacher Training Institute
+                                        Recognized by UGC | A Tradition of Quality Education
                                     </span>
                                 </div>
                             </div>

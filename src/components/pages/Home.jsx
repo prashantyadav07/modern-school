@@ -87,7 +87,7 @@ const Home = () => {
                         className="text-1xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
                         J.S. College of Education
                     </motion.h1>
-                    <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-blue-100 italic px-2">Rajpur-Chhajpur, Kandhala Budhana Road, Muzzafnagar</p>
+                    <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-blue-100 italic px-2">Rajpur-Chhajpur, Kandhala Budhana Road, Muzzafarnagar</p>
                     <Link to="/admissions" className="px-6 py-2.5 sm:px-8 sm:py-3 bg-amber-500 hover:bg-amber-600 rounded-lg font-bold transition-all inline-block text-sm sm:text-base">Admission Now</Link>
                 </div>
             </section>
@@ -104,23 +104,23 @@ const Home = () => {
                     className="max-w-6xl mx-auto bg-slate-900 border-b-4 border-amber-500 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-white text-center shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
                     <div className="flex flex-col items-center">
                         <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8 mb-2 sm:mb-3 text-amber-400" />
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">50K+</h2>
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">1K+</h2>
                         <p className="text-gray-400 text-[10px] sm:text-xs md:text-sm uppercase tracking-wider">Graduates</p>
                     </div>
                     <div className="flex flex-col items-center border-l border-white/10">
                         <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 mb-2 sm:mb-3 text-amber-400" />
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">21+</h2>
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">2</h2>
                         <p className="text-gray-400 text-[10px] sm:text-xs md:text-sm uppercase tracking-wider">Courses</p>
                     </div>
                     <div className="flex flex-col items-center border-l border-white/10">
                         <Trophy className="w-6 h-6 sm:w-8 sm:h-8 mb-2 sm:mb-3 text-amber-400" />
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">75+</h2>
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">5</h2>
                         <p className="text-gray-400 text-[10px] sm:text-xs md:text-sm uppercase tracking-wider">Years Legacy</p>
                     </div>
                     <div className="flex flex-col items-center border-l border-white/10">
                         <Users className="w-6 h-6 sm:w-8 sm:h-8 mb-2 sm:mb-3 text-amber-400" />
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">120+</h2>
-                        <p className="text-gray-400 text-[10px] sm:text-xs md:text-sm uppercase tracking-wider">Recruiters</p>
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">12</h2>
+                        <p className="text-gray-400 text-[10px] sm:text-xs md:text-sm uppercase tracking-wider">Subjects</p>
                     </div>
                 </motion.div>
             </section>
@@ -172,8 +172,8 @@ const Home = () => {
                                     <Award className="w-8 h-8" />
                                 </div>
                                 <div className="relative z-10">
-                                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-1">Undergraduate</h3>
-                                    <p className="text-slate-600 text-sm font-medium">B.A. , B.Sc , B.Com  Degree</p>
+                                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-1">B.A.</h3>
+                                    <p className="text-slate-600 text-sm font-medium"></p>
                                 </div>
                             </motion.div>
 
@@ -187,8 +187,8 @@ const Home = () => {
                                     <Medal className="w-8 h-8" />
                                 </div>
                                 <div className="relative z-10">
-                                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-1">Postgraduate</h3>
-                                    <p className="text-slate-600 text-sm font-medium">Advanced Research & Pedagogy</p>
+                                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-1"> B.Sc</h3>
+                                    <p className="text-slate-600 text-sm font-medium"></p>
                                 </div>
                             </motion.div>
                         </div>

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const Inquiry = () => {
     useEffect(() => {
         // WhatsApp number with country code (without + and spaces)
-        const phoneNumber = '919759378701';
+        const phoneNumber = '918273737248';
         // Optional pre-filled message
         const message = 'Hello! I would like to make an inquiry.';
 

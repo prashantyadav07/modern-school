@@ -79,7 +79,7 @@ const Footer = () => {
             </div>
 
             <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 max-w-md mx-auto lg:mx-0">
-              Affiliated with Maa Shakumbhari University. Empowering future educators with excellence and innovation since 2010.
+              Affiliated with Maa Shakumbhari University. Empowering future educators with excellence and innovation since 2020.
             </p>
 
             {/* --- COMBINED SECTION: AFFILIATIONS & SOCIALS --- */}
