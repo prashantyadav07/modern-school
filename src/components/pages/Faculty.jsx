@@ -1,6 +1,6 @@
 import React from 'react';
 import { Award, GraduationCap, Calendar, UserCheck, BookOpen, Fingerprint, Mail, CheckCircle2 } from 'lucide-react';
-
+import director from "../../assets/director.jpeg"
 const customFontStyle = {
   fontFamily: "'Neue Montreal Regular', sans-serif",
   fontWeight: 600,
@@ -11,10 +11,11 @@ const Faculty = () => {
   const staff = {
     principal: {
       name: "Dr. Deepali Gupta",
+      img: director,
       dob: "25-12-85",
       designation: "Principal",
-      qualification: "M.A., Ph.D (2018)",
-      id: "PRIN-2024-01"
+      qualification: "M.A., Ph.D (2018)"
+
     },
     faculty: [
       { name: "Dr. Satish Kumar", dob: "15-07-77", dept: "B.Sc. Physics", desig: "Asstt. Prof.", qual: "M.Sc., Ph.D (2007)" },
@@ -25,7 +26,8 @@ const Faculty = () => {
       { name: "Sh. Susheel Kumar", dob: "01-03-84", dept: "B.A. Hindi", desig: "Asstt. Prof.", qual: "M.A., NET (2018)" },
       { name: "Dr. Arun Kumar", dob: "02-02-93", dept: "B.A. English", desig: "Asstt. Prof.", qual: "M.A., Ph.D (2022)" },
       { name: "Sh. Rashid Ali", dob: "15-08-95", dept: "B.A. Sociology", desig: "Asstt. Prof.", qual: "M.A., NET (2019)" },
-      { name: "Ms. Pooja Chouhan", dob: "01-03-84", dept: "B.A. Home Science", desig: "Asstt. Prof.", qual: "M.Sc., NET (2021)" }
+      { name: "Ms. Pooja Chouhan", dob: "01-03-84", dept: "B.A. Home Science", desig: "Asstt. Prof.", qual: "M.Sc., NET (2021)" },
+      { name: "Sh. Dhruv Kumar Yadav", dob: "24/08/97", dept: "B.A.  History", desig: "Asstt. Prof.", qual: "M.A., NET  (2019)" }
     ]
   };
 
@@ -58,9 +60,14 @@ const Faculty = () => {
 
             <div className="relative bg-white/5 backdrop-blur-sm rounded-[1.3rem] p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 md:gap-12">
               <div className="shrink-0 relative">
-                <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-full flex items-center justify-center shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                  <GraduationCap className="w-16 h-16 text-blue-700" />
+                <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-full overflow-hidden shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                  <img
+                    src={staff.principal.img}
+                    alt={staff.principal.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
+
                 <div className="absolute -bottom-3 -right-3 bg-amber-400 text-amber-900 text-[10px] font-bold px-3 py-1 rounded-full shadow-lg border border-white">
                   PRINCIPAL
                 </div>
@@ -79,8 +86,7 @@ const Faculty = () => {
                     <p className="font-semibold text-white/90">{staff.principal.dob}</p>
                   </div>
                   <div>
-                    <p className="text-blue-200 text-xs uppercase font-bold mb-1">Staff ID</p>
-                    <p className="font-mono text-sm bg-white/10 px-2 py-1 rounded inline-block">{staff.principal.id}</p>
+
                   </div>
                 </div>
               </div>

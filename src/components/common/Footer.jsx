@@ -79,7 +79,7 @@ const Footer = () => {
             </div>
 
             <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 max-w-md mx-auto lg:mx-0">
-              Affiliated with Maa Shakumbhari University. Empowering future educators with excellence and innovation since 2020.
+              Affiliated with Maa Shakumbhari University. Empowering future graduates with excellence and innovation since 2021.
             </p>
 
             {/* --- COMBINED SECTION: AFFILIATIONS & SOCIALS --- */}
@@ -149,15 +149,24 @@ const Footer = () => {
               Get In Touch
             </h3>
             <div className="space-y-4 flex flex-col items-center lg:items-start">
-              <div className="flex items-start gap-3 text-zinc-400">
+              
+              {/* --- UPDATED ADDRESS SECTION START --- */}
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=J.S.+College+of+Education+Rajpur-Chhajpur+Kandhala+Road+Muzaffarnagar+(U.P)"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 text-zinc-400 hover:text-white transition-colors"
+              >
                 <MapPin className="h-4 w-4 text-white shrink-0 mt-0.5" />
                 <p className="text-xs leading-snug">
                   Rajpur-Chhajpur, Kandhala Road,<br /> Muzaffarnagar (U.P)
                 </p>
-              </div>
+              </a>
+              {/* --- UPDATED ADDRESS SECTION END --- */}
+
               <div className="flex items-center gap-3 text-zinc-400">
                 <Phone className="h-4 w-4 text-white shrink-0" />
-                <a href="tel:+918533915030" className="text-xs hover:text-white transition-colors">
+                <a href="tel:+91 8273737248" className="text-xs hover:text-white transition-colors">
                   +91 9759378701 <br />
                   +91 8273737248
                 </a>
@@ -183,7 +192,7 @@ const Footer = () => {
             <span>Privacy Policy</span>
             <span>Terms</span>
             <span className="flex items-center gap-1">
-              Designed by <span className="text-white font-bold">Synapse Solutions</span>
+              Designed by <span className="text-white font-bold">Synapse Forge</span>
             </span>
           </div>
         </div>

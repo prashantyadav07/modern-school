@@ -38,7 +38,7 @@ const About = () => {
                             Excellence in <br className="hidden sm:block" /> Education.
                         </h1>
                         <p className="text-sm sm:text-base text-slate-600 max-w-md mb-6 leading-relaxed">
-                            Established in 2020, we are dedicated to developing skilled Students
+                            Established in 2021, we are dedicated to developing skilled Students
                             through a curriculum that balances tradition and modern technology.
                         </p>
                         <div className="h-1 w-16 bg-blue-600"></div>
@@ -74,7 +74,7 @@ const About = () => {
                             </h2>
                             <div className="space-y-4 text-slate-600 leading-relaxed text-sm sm:text-base italic font-serif">
                                 <p>
-                                    "Our mission is to empower the next generation of teachers with the
+                                    "Our mission is to empower the next generation of students with the
                                     knowledge and values necessary to lead in the 21st century. At J.S. College,
                                     we focus on character building and professional competence."
                                 </p>
@@ -84,7 +84,7 @@ const About = () => {
                                     encouraged to think critically and innovate in their teaching methods."
                                 </p>
                                 <p>
-                                    "Since our inception in 2008, we have maintained a standard of
+                                    "Since our inception in 2021, we have maintained a standard of
                                     excellence that ensures our graduates are well-prepared for the
                                     challenges of the global educational landscape."
                                 </p>
@@ -121,9 +121,9 @@ const About = () => {
                             <div className="p-6 lg:p-8">
                                 <h3 className="text-xl sm:text-2xl font-bold mb-3 text-slate-900">Our Vision</h3>
                                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                                    To be a leading institution in teacher education, recognized for
-                                    academic excellence, research, and the development of ethical
-                                    professionals who contribute to society.
+                                    To be a leading institution providing quality education.
+                                    We strive to nurture knowledgeable, skilled, and socially responsible graduates.
+
                                 </p>
                             </div>
                         </motion.div>
@@ -144,9 +144,9 @@ const About = () => {
                             <div className="p-6 lg:p-8">
                                 <h3 className="text-xl sm:text-2xl font-bold mb-3 text-slate-900">Our Mission</h3>
                                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                                    To provide high-quality teacher training that integrates modern
-                                    teaching techniques with moral values, ensuring our students
-                                    become inspiring mentors for future generations.
+                                    To offer education that promote academic excellence and critical thinking.
+                                    We are committed to holistic development through quality teaching, research, and ethical values.
+
                                 </p>
                             </div>
                         </motion.div>

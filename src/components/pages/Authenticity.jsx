@@ -5,6 +5,9 @@ import trustPDF from '../../assets/trust.pdf';
 import facultyPDF from '../../assets/faculty.pdf';
 import aishePDF from '../../assets/AISHE Certificate (2023-24).pdf';
 import certificate from '../../assets/certifiacte.png'
+import crc from "../../assets/crc.png"
+import t from "../../assets/trust.webp"
+import gemini from "../../assets/gemini.png"
 
 const customFontStyle = {
   fontFamily: "'Neue Montreal Regular', sans-serif",
@@ -30,7 +33,7 @@ const Authenticity = () => {
       fileName: "curriculum_2024.pdf",
       icon: <FileText className="w-5 h-5 text-blue-600" />,
       // Image: Library / Books
-      image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800"
+      image: crc
     },
     {
       title: "Trust & Governance",
@@ -40,7 +43,7 @@ const Authenticity = () => {
       fileName: "trust_deed.pdf",
       icon: <Building2 className="w-5 h-5 text-indigo-600" />,
       // Image: Legal / Gavel / Office
-      image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800"
+      image: t
     },
     {
       title: "Faculty Registry",
@@ -50,7 +53,7 @@ const Authenticity = () => {
       fileName: "faculty_list.pdf",
       icon: <GraduationCap className="w-5 h-5 text-sky-600" />,
       // Image: Teacher / Classroom
-      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800"
+      image: gemini
     },
     {
       title: "AISHE Certificate",

@@ -148,9 +148,9 @@ const Home = () => {
                             </h2>
 
                             <p className="text-slate-600 text-base sm:text-lg mb-8 leading-relaxed text-justify">
-                                Established with a vision to create world-class educators, J.S. College of Education provides a
+                                Established with a vision to create world-class graduate, J.S. College of Education provides a
                                 transformative learning environment. We focus on holistic development, combining academic
-                                excellence with practical teaching skills.
+                                excellence with practical learning skills.
                             </p>
 
                             <Link to="/about" className="group relative inline-flex items-center px-8 py-3 overflow-hidden text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/40">
@@ -213,8 +213,7 @@ const Home = () => {
                             <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-widest uppercase mb-2 block">Principal's Message</span>
                             <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-slate-900">Inspiring The Next Generation</h2>
                             <p className="text-sm sm:text-base md:text-lg italic text-slate-600 mb-4 sm:mb-6 leading-relaxed">
-                                "Our mission is to nurture teachers who don't just teach from books, but inspire lives.
-                                At J.S. College, we provide the tools where creativity meets pedagogy."
+                                "At J.S. College, we prepare students for the future, not just exams. Through our BA and BSc programs, we combine strong academics with skill development and ethical values. Our goal is to empower students to become capable professionals and responsible individuals."
                             </p>
                             <div>
                                 <h3 className="text-lg sm:text-xl font-bold text-slate-800">Dr. Deepali Gupta</h3>

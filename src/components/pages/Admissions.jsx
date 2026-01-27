@@ -16,7 +16,7 @@ const customFontStyle = {
 };
 
 const Admissions = () => {
-    
+
     const heroImageUrl = "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop";
 
     // Updated based on the "Requirements for admission" image
@@ -29,29 +29,43 @@ const Admissions = () => {
 
     // Updated based on the "Admission Process" images (Steps 1-7)
     const admissionProcess = [
-        { 
-            step: '01', 
-            title: 'Online Registration', 
-            desc: 'Visit the official portal (admission.msuweb.in) to fill the registration form.', 
-            icon: Globe 
+        {
+            step: '01',
+            title: 'Online Registration',
+            desc: (
+                <>
+                    Visit the official portal (
+                    <a
+                        href="https://msuweb.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 underline hover:text-blue-800"
+                    >
+                        https://msuweb.in/
+                    </a>
+                    ) to fill the registration form.
+                </>
+            ),
+            icon: Globe
+        }
+        ,
+        {
+            step: '02',
+            title: 'Get Registration ID',
+            desc: 'After submission, receive your Unique Registration ID via SMS/Email.',
+            icon: UserCheck
         },
-        { 
-            step: '02', 
-            title: 'Get Registration ID', 
-            desc: 'After submission, receive your Unique Registration ID via SMS/Email.', 
-            icon: UserCheck 
+        {
+            step: '03',
+            title: 'Fee Payment',
+            desc: 'Print the application & bank challan, then submit the fee at the bank.',
+            icon: CreditCard
         },
-        { 
-            step: '03', 
-            title: 'Fee Payment', 
-            desc: 'Print the application & bank challan, then submit the fee at the bank.', 
-            icon: CreditCard 
-        },
-        { 
-            step: '04', 
-            title: 'Physical Verification', 
-            desc: 'Submit the University Copy & Student Copy along with original documents at the college.', 
-            icon: ShieldCheck 
+        {
+            step: '04',
+            title: 'Physical Verification',
+            desc: 'Submit the University Copy & Student Copy along with original documents at the college.',
+            icon: ShieldCheck
         }
     ];
 
@@ -119,7 +133,7 @@ const Admissions = () => {
                         {/* Image Section */}
                         <div className="lg:col-span-5 hidden md:block relative">
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-blue-100 to-indigo-100 blur-3xl opacity-50 rounded-full -z-10"></div>
-                            
+
                             <img
                                 src={heroImageUrl}
                                 alt="College Campus Admission"
@@ -240,13 +254,13 @@ const Admissions = () => {
                                 </p>
 
                                 <div className="space-y-4">
-                                    <a href="tel:8533915030" className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all group/item">
+                                    <a href="tel: 8273737248" className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all group/item">
                                         <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover/item:text-blue-300 group-hover/item:bg-blue-500/30">
                                             <Phone className="w-5 h-5" />
                                         </div>
                                         <div>
                                             <p className="text-xs text-slate-400 uppercase tracking-wider font-semibold">Call Us</p>
-                                            <p className="font-medium tracking-wide">+91 85339 15030</p>
+                                            <p className="font-medium tracking-wide">+91 8273737248</p>
                                         </div>
                                         <ChevronRight className="w-5 h-5 ml-auto text-slate-600 group-hover/item:text-white transition-colors" />
                                     </a>
