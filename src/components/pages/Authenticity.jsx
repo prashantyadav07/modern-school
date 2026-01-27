@@ -1,13 +1,21 @@
-import React from 'react';
-import { ShieldCheck, Award, CheckCircle, FileCheck, Building2, GraduationCap, FileText, ChevronRight, ExternalLink } from 'lucide-react';
-import subjectsPDF from '../../assets/subjects.pdf';
-import trustPDF from '../../assets/trust.pdf';
+import React, { useState } from 'react';
+import { ShieldCheck, Award, CheckCircle, FileCheck, Building2, GraduationCap, FileText, ChevronRight, ExternalLink, Landmark, Users, X, Download } from 'lucide-react';
+
 import facultyPDF from '../../assets/faculty.pdf';
 import aishePDF from '../../assets/AISHE Certificate (2023-24).pdf';
 import certificate from '../../assets/certifiacte.png'
-import crc from "../../assets/crc.png"
-import t from "../../assets/trust.webp"
+import trustimg from '../../assets/trustimg.png'
+import affilation from '../../assets/affilation.png'
+import commite from "../../assets/commite.png"
 import gemini from "../../assets/gemini.png"
+import Landpapers from "../../assets/Landpapers.jpg"
+
+// New PDF imports
+import trustDeedPDF from '../../assets/js.pdf';
+import managementCommitteePDF from '../../assets/mdm.pdf';
+import msuAffiliationPDF from '../../assets/msuaf.pdf';
+import landRecordPDF from '../../assets/land.pdf';
+import landRecord1PDF from '../../assets/land1.pdf';
 
 const customFontStyle = {
   fontFamily: "'Neue Montreal Regular', sans-serif",
@@ -16,6 +24,8 @@ const customFontStyle = {
 };
 
 const Authenticity = () => {
+  const [showPDFModal, setShowPDFModal] = useState(false);
+
   // NOTE: Certifications section removed/commented out from grid based on your request 
   // to focus on document cards with images, but keeping the array if you need it later.
   const certifications = [
@@ -26,25 +36,43 @@ const Authenticity = () => {
 
   const documents = [
     {
-      title: "Academic Curriculum",
-      subtitle: "Syllabus & Structure",
-      description: "Detailed breakdown of subjects, learning outcomes, and assessment patterns.",
-      pdfUrl: subjectsPDF,
-      fileName: "curriculum_2024.pdf",
-      icon: <FileText className="w-5 h-5 text-blue-600" />,
-      // Image: Library / Books
-      image: crc
+      title: "Trust Deed",
+      subtitle: "Legal Documentation",
+      description: "Official trust deed document establishing the institution's legal foundation.",
+      pdfUrl: trustDeedPDF,
+      fileName: "js.pdf",
+      icon: <FileText className="w-5 h-5 text-purple-600" />,
+      image: trustimg
     },
     {
-      title: "Trust & Governance",
-      subtitle: "Legal Framework",
-      description: "Official registration details of the educational trust and governance policies.",
-      pdfUrl: trustPDF,
-      fileName: "trust_deed.pdf",
-      icon: <Building2 className="w-5 h-5 text-indigo-600" />,
-      // Image: Legal / Gavel / Office
-      image: t
+      title: "Management Committee",
+      subtitle: "Governing Body",
+      description: "Details of the management committee members and their roles.",
+      pdfUrl: managementCommitteePDF,
+      fileName: "mdm.pdf",
+      icon: <Users className="w-5 h-5 text-orange-600" />,
+      image: commite
     },
+    {
+      title: "MSU AFFILIATION",
+      subtitle: "University Recognition",
+      description: "Official affiliation certificate from Maharaja Sayajirao University.",
+      pdfUrl: msuAffiliationPDF,
+      fileName: "msuaf.pdf",
+      icon: <Building2 className="w-5 h-5 text-indigo-600" />,
+      image: affilation
+    },
+    {
+      title: "LAND RECORD",
+      subtitle: "Property Documentation",
+      description: "Official land records and property documents of the institution.",
+      pdfUrl: landRecordPDF,
+      pdfUrl2: landRecord1PDF,
+      fileName: "land.pdf, land1.pdf",
+      icon: <Landmark className="w-5 h-5 text-green-600" />,
+      image: Landpapers
+    },
+
     {
       title: "Faculty Registry",
       subtitle: "Staff Credentials",
@@ -67,8 +95,19 @@ const Authenticity = () => {
     }
   ];
 
-  const handlePDFClick = (pdfUrl) => {
+  const handlePDFClick = (pdfUrl, pdfUrl2) => {
+    // If there are two PDFs (Land Record case), show modal
+    if (pdfUrl2) {
+      setShowPDFModal(true);
+    } else {
+      // Otherwise, directly open the PDF
+      window.open(pdfUrl, '_blank');
+    }
+  };
+
+  const handlePDFSelection = (pdfUrl) => {
     window.open(pdfUrl, '_blank');
+    setShowPDFModal(false);
   };
 
   return (
@@ -109,7 +148,7 @@ const Authenticity = () => {
             {documents.map((doc, index) => (
               <div
                 key={index}
-                onClick={() => handlePDFClick(doc.pdfUrl)}
+                onClick={() => handlePDFClick(doc.pdfUrl, doc.pdfUrl2)}
                 className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200 hover:border-blue-300 transition-all duration-300 cursor-pointer flex flex-col"
               >
                 {/* Image Section - Matches Courses Style */}
@@ -179,6 +218,86 @@ const Authenticity = () => {
           </div>
         </div>
       </section>
+
+      {/* PDF Selection Modal */}
+      {showPDFModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setShowPDFModal(false)}>
+          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 transform transition-all" onClick={(e) => e.stopPropagation()}>
+            {/* Modal Header */}
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-green-50 rounded-lg">
+                  <Landmark className="w-6 h-6 text-green-600" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900">Land Record Documents</h3>
+                  <p className="text-sm text-slate-500">Select a document to view or download</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setShowPDFModal(false)}
+                className="p-2 hover:bg-slate-100 rounded-lg transition-colors"
+              >
+                <X className="w-5 h-5 text-slate-400" />
+              </button>
+            </div>
+
+            {/* PDF Options */}
+            <div className="space-y-3">
+              {/* PDF 1 */}
+              <button
+                onClick={() => handlePDFSelection(landRecordPDF)}
+                className="w-full p-4 bg-gradient-to-r from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 border-2 border-green-200 hover:border-green-400 rounded-xl transition-all duration-300 group"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-white rounded-lg shadow-sm">
+                      <FileCheck className="w-5 h-5 text-green-600" />
+                    </div>
+                    <div className="text-left">
+                      <p className="font-bold text-slate-900 group-hover:text-green-700 transition-colors">Land Record - Part 1</p>
+                      <p className="text-xs text-slate-500 font-mono">land.pdf</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Download className="w-4 h-4 text-green-600 group-hover:translate-y-0.5 transition-transform" />
+                    <ChevronRight className="w-4 h-4 text-green-600 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </button>
+
+              {/* PDF 2 */}
+              <button
+                onClick={() => handlePDFSelection(landRecord1PDF)}
+                className="w-full p-4 bg-gradient-to-r from-blue-50 to-sky-50 hover:from-blue-100 hover:to-sky-100 border-2 border-blue-200 hover:border-blue-400 rounded-xl transition-all duration-300 group"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-white rounded-lg shadow-sm">
+                      <FileCheck className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <div className="text-left">
+                      <p className="font-bold text-slate-900 group-hover:text-blue-700 transition-colors">Land Record - Part 2</p>
+                      <p className="text-xs text-slate-500 font-mono">land1.pdf</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Download className="w-4 h-4 text-blue-600 group-hover:translate-y-0.5 transition-transform" />
+                    <ChevronRight className="w-4 h-4 text-blue-600 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </button>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="mt-6 pt-4 border-t border-slate-100">
+              <p className="text-xs text-slate-400 text-center">
+                Click on any document to open it in a new tab
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
