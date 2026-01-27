@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // 1. Added Import
 import { ShieldCheck, Award, CheckCircle, FileCheck, Building2, GraduationCap, FileText, ChevronRight, ExternalLink, Landmark, Users, X, Download } from 'lucide-react';
 
 import facultyPDF from '../../assets/faculty.pdf';
@@ -25,6 +26,7 @@ const customFontStyle = {
 
 const Authenticity = () => {
   const [showPDFModal, setShowPDFModal] = useState(false);
+  const navigate = useNavigate(); // 2. Added Hook for navigation
 
   // NOTE: Certifications section removed/commented out from grid based on your request 
   // to focus on document cards with images, but keeping the array if you need it later.
@@ -212,7 +214,12 @@ const Authenticity = () => {
                 </p>
               </div>
             </div>
-            <button className="whitespace-nowrap px-6 py-3 bg-white text-blue-900 rounded-lg font-bold text-sm hover:bg-blue-50 transition-colors flex items-center gap-2 shadow-lg">
+            
+            {/* 3. Added onClick handler here */}
+            <button 
+              onClick={() => navigate('/contact')}
+              className="whitespace-nowrap px-6 py-3 bg-white text-blue-900 rounded-lg font-bold text-sm hover:bg-blue-50 transition-colors flex items-center gap-2 shadow-lg"
+            >
               Contact Admin <ExternalLink size={16} />
             </button>
           </div>
