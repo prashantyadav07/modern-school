@@ -12,15 +12,15 @@ const Courses = () => {
       accent: "border-blue-200 bg-blue-50/30",
       description: "A versatile program focusing on cultural, social, and linguistic studies."
     },
-    {
-      title: "B.A. Vocational",
-      type: "Professional",
-      image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&q=80&w=800",
-      icon: <Flower2 className="w-4 h-4 text-emerald-600" />,
-      subjects: ["Vocational Yoga", "Yogic Science"],
-      accent: "border-emerald-200 bg-emerald-50/30",
-      description: "Specialized training combining academic knowledge with practical yogic expertise."
-    },
+    // {
+    //   title: "B.A. Vocational",
+    //   type: "Professional",
+    //   image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&q=80&w=800",
+    //   icon: <Flower2 className="w-4 h-4 text-emerald-600" />,
+    //   subjects: ["Vocational Yoga", "Yogic Science"],
+    //   accent: "border-emerald-200 bg-emerald-50/30",
+    //   description: "Specialized training combining academic knowledge with practical yogic expertise."
+    // },
     {
       title: "Bachelor of Science (B.Sc.)",
       type: "Science",

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // 1. Added Import
-import { ShieldCheck, Award, CheckCircle, FileCheck, Building2, GraduationCap, FileText, ChevronRight, ExternalLink, Landmark, Users, X, Download } from 'lucide-react';
+import { ShieldCheck, Award, CheckCircle, FileCheck, Building2, GraduationCap, FileText, ChevronRight, ExternalLink, Landmark, Users, X, Download, Calendar, DollarSign } from 'lucide-react';
 
 import facultyPDF from '../../assets/faculty.pdf';
 import aishePDF from '../../assets/AISHE Certificate (2023-24).pdf';
@@ -10,6 +10,8 @@ import affilation from '../../assets/affilation.png'
 import commite from "../../assets/commite.png"
 import gemini from "../../assets/gemini.png"
 import Landpapers from "../../assets/Landpapers.jpg"
+import feeimg from "../../assets/feeimg.png"
+import modenc from "../../assets/clc.png"
 
 // New PDF imports
 import trustDeedPDF from '../../assets/js.pdf';
@@ -17,6 +19,8 @@ import managementCommitteePDF from '../../assets/mdm.pdf';
 import msuAffiliationPDF from '../../assets/msuaf.pdf';
 import landRecordPDF from '../../assets/land.pdf';
 import landRecord1PDF from '../../assets/land1.pdf';
+import calendarPDF from '../../assets/calendar.pdf';
+import feePDF from '../../assets/fee.pdf';
 
 const customFontStyle = {
   fontFamily: "'Neue Montreal Regular', sans-serif",
@@ -74,7 +78,24 @@ const Authenticity = () => {
       icon: <Landmark className="w-5 h-5 text-green-600" />,
       image: Landpapers
     },
-
+    {
+      title: "Academic Calendar",
+      subtitle: "Academic Year Schedule",
+      description: "Complete academic calendar with important dates and events for the current session.",
+      pdfUrl: calendarPDF,
+      fileName: "calendar.pdf",
+      icon: <Calendar className="w-5 h-5 text-rose-600" />,
+      image: modenc
+    },
+    {
+      title: "FEE Structure",
+      subtitle: "Fee Details",
+      description: "Detailed fee structure for all courses and programs offered by the institution.",
+      pdfUrl: feePDF,
+      fileName: "fee.pdf",
+      icon: <DollarSign className="w-5 h-5 text-amber-600" />,
+      image: feeimg
+    },
     {
       title: "Faculty Registry",
       subtitle: "Staff Credentials",
@@ -214,9 +235,9 @@ const Authenticity = () => {
                 </p>
               </div>
             </div>
-            
+
             {/* 3. Added onClick handler here */}
-            <button 
+            <button
               onClick={() => navigate('/contact')}
               className="whitespace-nowrap px-6 py-3 bg-white text-blue-900 rounded-lg font-bold text-sm hover:bg-blue-50 transition-colors flex items-center gap-2 shadow-lg"
             >
