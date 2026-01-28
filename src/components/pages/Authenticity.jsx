@@ -10,13 +10,13 @@ import affilation from '../../assets/affilation.png'
 import commite from "../../assets/commite.png"
 import gemini from "../../assets/gemini.png"
 import Landpapers from "../../assets/Landpapers.jpg"
-import feeimg from "../../assets/feeimg.png"
+import feeimg from "../../assets/feecollg.png"
 import modenc from "../../assets/clc.png"
 
 // New PDF imports
 import trustDeedPDF from '../../assets/js.pdf';
 import managementCommitteePDF from '../../assets/mdm.pdf';
-import msuAffiliationPDF from '../../assets/msuaf.pdf';
+import msuAffiliationPDF from '../../assets/msuaffilation.pdf';
 import landRecordPDF from '../../assets/land.pdf';
 import landRecord1PDF from '../../assets/land1.pdf';
 import calendarPDF from '../../assets/calendar.pdf';
@@ -62,14 +62,14 @@ const Authenticity = () => {
     {
       title: "MSU AFFILIATION",
       subtitle: "University Recognition",
-      description: "Official affiliation certificate from Maharaja Sayajirao University.",
+      description: "Official affiliation certificate from  Maa Shakumbhari University.",
       pdfUrl: msuAffiliationPDF,
       fileName: "msuaf.pdf",
       icon: <Building2 className="w-5 h-5 text-indigo-600" />,
       image: affilation
     },
     {
-      title: "LAND RECORD",
+      title: "Land Record",
       subtitle: "Property Documentation",
       description: "Official land records and property documents of the institution.",
       pdfUrl: landRecordPDF,
@@ -88,7 +88,7 @@ const Authenticity = () => {
       image: modenc
     },
     {
-      title: "FEE Structure",
+      title: "Fee Structure",
       subtitle: "Fee Details",
       description: "Detailed fee structure for all courses and programs offered by the institution.",
       pdfUrl: feePDF,
