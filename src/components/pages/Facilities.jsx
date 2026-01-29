@@ -1,5 +1,6 @@
 import React from 'react';
 import { Library, Wifi, FlaskConical, Users, Monitor, Utensils, Bus, Award } from 'lucide-react';
+import { SEOHead, seoConfig } from '../seo';
 import img1 from '../../assets/1.jpeg';
 const Facilities = () => {
     const facilities = [
@@ -74,6 +75,14 @@ const Facilities = () => {
 
     return (
         <div className="bg-gray-50 py-16">
+            {/* SEO Meta Tags */}
+            <SEOHead
+                title={seoConfig.facilities.title}
+                description={seoConfig.facilities.description}
+                keywords={seoConfig.facilities.keywords}
+                canonicalUrl={seoConfig.facilities.canonicalUrl}
+            />
+
             <div className="container mx-auto px-4">
                 {/* Page Header */}
                 <div className="text-center mb-12">

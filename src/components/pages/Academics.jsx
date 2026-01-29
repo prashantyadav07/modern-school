@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, Clock, Award, ArrowRight } from 'lucide-react';
+import { SEOHead, seoConfig } from '../seo';
 
 const Academics = () => {
   const academicFeatures = [
@@ -26,6 +27,14 @@ const Academics = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* SEO Meta Tags */}
+      <SEOHead
+        title={seoConfig.academics.title}
+        description={seoConfig.academics.description}
+        keywords={seoConfig.academics.keywords}
+        canonicalUrl={seoConfig.academics.canonicalUrl}
+      />
+
       {/* Page Header */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,8 +50,8 @@ const Academics = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {academicFeatures.map((feature, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <img 
-                src={feature.image} 
+              <img
+                src={feature.image}
                 alt={feature.title}
                 className="w-full h-48 object-cover"
               />
@@ -67,7 +76,7 @@ const Academics = () => {
                 Learn More <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </div>
-            
+
             <div className="border border-gray-200 rounded-lg p-6 hover:border-blue-600 transition-colors">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Our Faculty</h3>
               <p className="text-gray-600 mb-4">Meet our experienced and dedicated educators</p>
@@ -75,7 +84,7 @@ const Academics = () => {
                 View Faculty <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </div>
-            
+
             <div className="border border-gray-200 rounded-lg p-6 hover:border-blue-600 transition-colors">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Academic Calendar</h3>
               <p className="text-gray-600 mb-4">View important dates and schedules</p>

@@ -5,6 +5,7 @@ import {
     GraduationCap, ArrowRight, ChevronRight,
     Clock, ShieldCheck, Download, Globe, CreditCard, UserCheck
 } from 'lucide-react';
+import { SEOHead, seoConfig } from '../seo';
 
 // IMPORT THE PDF FILE HERE
 import AdmissionFormPdf from '../../assets/admission from.pdf';
@@ -83,6 +84,13 @@ const Admissions = () => {
 
     return (
         <div style={customFontStyle} className="bg-slate-50 min-h-screen font-sans text-slate-600 selection:bg-blue-100 selection:text-blue-900">
+            {/* SEO Meta Tags */}
+            <SEOHead
+                title={seoConfig.admissions.title}
+                description={seoConfig.admissions.description}
+                keywords={seoConfig.admissions.keywords}
+                canonicalUrl={seoConfig.admissions.canonicalUrl}
+            />
 
             {/* --- HERO SECTION --- */}
             <div className="relative bg-white border-b border-slate-200 overflow-hidden">
@@ -155,7 +163,7 @@ const Admissions = () => {
                         <div className="flex-1">
                             <h4 className="text-amber-900 font-bold text-base mb-1">Important Notice</h4>
                             <p className="text-amber-800/80 text-sm">
-                                Admissions are subject to <strong>State Government</strong> and <strong>Maa Shakumbhari University</strong> rules. Please ensure all original documents are produced at the time of admission to avoid inconvenience.
+                                Admissions are subject to <strong>State Government</strong> and <strong>Maa Shakambhari University</strong> rules. Please ensure all original documents are produced at the time of admission to avoid inconvenience.
                             </p>
                         </div>
                     </div>

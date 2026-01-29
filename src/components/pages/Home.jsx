@@ -6,6 +6,8 @@ import Autoplay from 'embla-carousel-autoplay';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { ContainerStagger, GalleryGrid, GalleryGridCell } from '../cta-section-with-gallery';
+import { SEOHead, seoConfig } from '../seo';
+
 const customFontStyle = {
     fontFamily: "'Neue Montreal Regular', sans-serif",
     fontWeight: 600,
@@ -65,9 +67,16 @@ const Home = () => {
 
 
 
-
     return (
         <div className="bg-white overflow-hidden">
+            {/* SEO Meta Tags */}
+            <SEOHead
+                title={seoConfig.home.title}
+                description={seoConfig.home.description}
+                keywords={seoConfig.home.keywords}
+                canonicalUrl={seoConfig.home.canonicalUrl}
+            />
+
             {/* 1. HERO SECTION */}
             <section className="relative h-[400px] sm:h-[500px] md:h-[550px] lg:h-[600px] flex items-center">
                 <div className="absolute inset-0 z-0 bg-gray-900" ref={emblaRef}>

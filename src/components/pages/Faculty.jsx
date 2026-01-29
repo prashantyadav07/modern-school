@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, GraduationCap, Calendar, UserCheck, BookOpen, Fingerprint, Mail, CheckCircle2 } from 'lucide-react';
+import { SEOHead, seoConfig } from '../seo';
 import director from "../../assets/director.jpeg"
 const customFontStyle = {
   fontFamily: "'Neue Montreal Regular', sans-serif",
@@ -33,6 +34,13 @@ const Faculty = () => {
 
   return (
     <div style={customFontStyle} className="bg-slate-50 min-h-screen font-sans text-slate-800 pb-20">
+      {/* SEO Meta Tags */}
+      <SEOHead
+        title={seoConfig.faculty.title}
+        description={seoConfig.faculty.description}
+        keywords={seoConfig.faculty.keywords}
+        canonicalUrl={seoConfig.faculty.canonicalUrl}
+      />
 
       {/* Hero Header */}
       <div className="bg-white border-b border-slate-100 pt-16 pb-12 md:pt-24 md:pb-16 mb-16 px-4">

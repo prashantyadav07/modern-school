@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Maximize2 } from "lucide-react"; // npm i lucide-react
+import { SEOHead, seoConfig } from '../seo';
 
 // Images imports
 import img1 from "../../assets/1.jpeg";
@@ -24,7 +25,7 @@ const images = [
   { id: 4, src: img4 }, { id: 5, src: img12 }, { id: 6, src: img13 },
   { id: 7, src: img14 }, { id: 8, src: img15 }, { id: 9, src: g1 },
   { id: 10, src: g2 }, { id: 11, src: g3 }, { id: 12, src: g4 },
-  { id: 13, src: g5 }, { id: 14, src: g6 }, 
+  { id: 13, src: g5 }, { id: 14, src: g6 },
 ];
 
 const Gallery = () => {
@@ -32,6 +33,14 @@ const Gallery = () => {
 
   return (
     <div className="bg-slate-50 min-h-screen py-16 px-4 md:px-10">
+      {/* SEO Meta Tags */}
+      <SEOHead
+        title={seoConfig.gallery.title}
+        description={seoConfig.gallery.description}
+        keywords={seoConfig.gallery.keywords}
+        canonicalUrl={seoConfig.gallery.canonicalUrl}
+      />
+
       {/* --- HEADER --- */}
       <div className="max-w-7xl mx-auto text-center mb-16">
         <motion.h1

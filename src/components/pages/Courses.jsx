@@ -1,5 +1,6 @@
 import React from 'react';
 import { Book, Microscope, Flower2, GraduationCap, Check, Clock } from 'lucide-react';
+import { SEOHead, seoConfig } from '../seo';
 
 const Courses = () => {
   const courses = [
@@ -34,6 +35,14 @@ const Courses = () => {
 
   return (
     <div className="bg-[#fcfcfd] min-h-screen py-10 md:py-16">
+      {/* SEO Meta Tags */}
+      <SEOHead
+        title={seoConfig.courses.title}
+        description={seoConfig.courses.description}
+        keywords={seoConfig.courses.keywords}
+        canonicalUrl={seoConfig.courses.canonicalUrl}
+      />
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Professional Header */}

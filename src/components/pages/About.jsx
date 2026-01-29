@@ -1,6 +1,7 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import { SEOHead, seoConfig } from '../seo';
 
 // Images
 import heroImg from '../../assets/2.jpeg';
@@ -26,6 +27,13 @@ const About = () => {
 
     return (
         <div style={customFontStyle} className="bg-white text-slate-900 font-sans antialiased">
+            {/* SEO Meta Tags */}
+            <SEOHead
+                title={seoConfig.about.title}
+                description={seoConfig.about.description}
+                keywords={seoConfig.about.keywords}
+                canonicalUrl={seoConfig.about.canonicalUrl}
+            />
 
             {/* --- SECTION 1: HERO (MEDIUM TEXT & IMAGE) --- */}
             <section className="relative min-h-[40vh] sm:min-h-[50vh] flex items-center bg-slate-50 overflow-hidden py-10 sm:py-14">

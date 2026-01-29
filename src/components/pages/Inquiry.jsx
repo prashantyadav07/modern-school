@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { SEOHead, seoConfig } from '../seo';
 
 const Inquiry = () => {
     useEffect(() => {
@@ -15,6 +16,13 @@ const Inquiry = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002147] to-[#001a35]">
+            {/* SEO Meta Tags */}
+            <SEOHead
+                title={seoConfig.inquiry.title}
+                description={seoConfig.inquiry.description}
+                keywords={seoConfig.inquiry.keywords}
+                canonicalUrl={seoConfig.inquiry.canonicalUrl}
+            />
             <div className="text-center text-white">
                 <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-orange-500 mx-auto mb-6"></div>
                 <h2 className="text-2xl font-bold mb-2">Redirecting to WhatsApp...</h2>

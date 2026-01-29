@@ -43,7 +43,7 @@ const Header = () => {
                                 </h1>
                                 <div className="flex flex-col mt-1">
                                     <span className="text-orange-600 font-bold text-[10px] sm:text-xs md:text-sm lg:text-base uppercase tracking-wide sm:tracking-wider">
-                                        Affiliated to Maa Shakumbhari University, Saharanpur (U.P)
+                                        Affiliated to Maa Shakambhari University, Saharanpur (U.P)
                                     </span>
                                     <span className="text-gray-600 font-medium text-[10px] sm:text-xs md:text-sm lg:text-[15px]">
                                         Recognized by UGC | A Tradition of Quality Education
@@ -62,8 +62,8 @@ const Header = () => {
                                     </div>
                                     <div>
                                         <p className="text-[10px] lg:text-[11px] uppercase text-gray-500 font-bold leading-none mb-1">Call Us</p>
-                                        <p className="text-base lg:text-lg font-bold text-[#002147] leading-none">+91 9759378701 <br/>
-                                        +91 8273737248</p>
+                                        <p className="text-base lg:text-lg font-bold text-[#002147] leading-none">+91 9759378701 <br />
+                                            +91 8273737248</p>
                                     </div>
                                 </div>
 

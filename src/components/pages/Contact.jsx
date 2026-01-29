@@ -1,8 +1,9 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, MessageCircle, ArrowRight, ExternalLink, GraduationCap, Navigation } from 'lucide-react';
+import { SEOHead, seoConfig } from '../seo';
 
 // NOTE: Apni image yahan import karein
-import imge from '../../assets/image.png'; 
+import imge from '../../assets/image.png';
 const customFontStyle = {
   fontFamily: "'Neue Montreal Regular', sans-serif",
   fontWeight: 600,
@@ -22,9 +23,16 @@ const Contact = () => {
 
   return (
     <div style={customFontStyle} className="min-h-screen flex items-center justify-center bg-slate-50 p-6 font-sans text-slate-800">
-      
+      {/* SEO Meta Tags */}
+      <SEOHead
+        title={seoConfig.contact.title}
+        description={seoConfig.contact.description}
+        keywords={seoConfig.contact.keywords}
+        canonicalUrl={seoConfig.contact.canonicalUrl}
+      />
+
       <div className="max-w-6xl w-full bg-white rounded-2xl shadow-sm border border-slate-200 flex flex-col md:flex-row overflow-hidden">
-        
+
         {/* LEFT PANEL */}
         <div className="w-full md:w-5/12 p-10 flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-100 relative bg-white">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
@@ -70,9 +78,9 @@ const Contact = () => {
           </div>
 
           <div className="mt-10">
-            <a 
+            <a
               href={whatsappLink}
-              target="_blank" 
+              target="_blank"
               rel="noreferrer"
               className="group flex items-center justify-between w-full border border-green-200 bg-green-50/50 hover:bg-green-500 hover:border-green-500 text-green-700 hover:text-white px-5 py-4 rounded-xl transition-all duration-300"
             >
@@ -87,54 +95,54 @@ const Contact = () => {
 
         {/* RIGHT PANEL */}
         <div className="w-full md:w-7/12 bg-slate-50/50 p-10 flex flex-col">
-          
+
           <div className="grid sm:grid-cols-2 gap-8 mb-8">
             {/* Address */}
             <div>
-               <div className="flex items-center gap-2 mb-3 text-slate-900">
+              <div className="flex items-center gap-2 mb-3 text-slate-900">
                 <MapPin className="w-4 h-4 text-blue-600" />
                 <h4 className="font-bold text-sm uppercase tracking-wide">Campus Address</h4>
-               </div>
-               <p className="text-sm text-slate-600 leading-6 pl-6 border-l-2 border-slate-200">
+              </div>
+              <p className="text-sm text-slate-600 leading-6 pl-6 border-l-2 border-slate-200">
                 {contactInfo.address}
-               </p>
+              </p>
             </div>
 
-             {/* Hours */}
-             <div>
-               <div className="flex items-center gap-2 mb-3 text-slate-900">
+            {/* Hours */}
+            <div>
+              <div className="flex items-center gap-2 mb-3 text-slate-900">
                 <Clock className="w-4 h-4 text-blue-600" />
                 <h4 className="font-bold text-sm uppercase tracking-wide">Visiting Hours</h4>
-               </div>
-               <ul className="text-sm text-slate-600 space-y-1 pl-6 border-l-2 border-slate-200">
-                 <li className="flex justify-between w-40"><span>Mon - Fri</span> <span className="font-medium text-slate-900">09:00 - 17:00</span></li>
-                 <li className="flex justify-between w-40"><span>Saturday</span> <span className="font-medium text-slate-900">09:00 - 14:00</span></li>
-                 <li className="flex justify-between w-40"><span>Sunday</span> <span className="text-red-500 font-medium">Closed</span></li>
-               </ul>
+              </div>
+              <ul className="text-sm text-slate-600 space-y-1 pl-6 border-l-2 border-slate-200">
+                <li className="flex justify-between w-40"><span>Mon - Fri</span> <span className="font-medium text-slate-900">09:00 - 17:00</span></li>
+                <li className="flex justify-between w-40"><span>Saturday</span> <span className="font-medium text-slate-900">09:00 - 14:00</span></li>
+                <li className="flex justify-between w-40"><span>Sunday</span> <span className="text-red-500 font-medium">Closed</span></li>
+              </ul>
             </div>
           </div>
 
           {/* MAP IMAGE SECTION */}
           <div className="flex-1 rounded-xl shadow-sm border border-slate-200 relative group overflow-hidden bg-white">
-            
-            <img 
-              src={imge} 
-              alt="Campus Location Map" 
+
+            <img
+              src={imge}
+              alt="Campus Location Map"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
 
             {/* --- RED PIN MARKER (Adjust top/left if needed) --- */}
             <div className="absolute top-[45%] left-[40%] z-20 -translate-x-1/2 -translate-y-full">
-                <div className="relative flex flex-col items-center group/pin">
-                    <MapPin className="w-10 h-10 text-red-600 fill-red-600 drop-shadow-xl filter" />
-                    <span className="absolute -bottom-1 flex h-4 w-4">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-4 w-4 bg-red-500"></span>
-                    </span>
-                    <div className="absolute -top-8 bg-slate-900 text-white text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover/pin:opacity-100 transition-opacity whitespace-nowrap">
-                        JS College
-                    </div>
+              <div className="relative flex flex-col items-center group/pin">
+                <MapPin className="w-10 h-10 text-red-600 fill-red-600 drop-shadow-xl filter" />
+                <span className="absolute -bottom-1 flex h-4 w-4">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-4 w-4 bg-red-500"></span>
+                </span>
+                <div className="absolute -top-8 bg-slate-900 text-white text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover/pin:opacity-100 transition-opacity whitespace-nowrap">
+                  JS College
                 </div>
+              </div>
             </div>
 
             {/* Dark Overlay */}
@@ -142,19 +150,19 @@ const Contact = () => {
 
             {/* --- COMPACT PROFESSIONAL BUTTON --- */}
             <div className="absolute bottom-5 left-0 right-0 flex justify-center z-30">
-                <a 
-                    href={googleMapsLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2.5 bg-white/95 backdrop-blur-md border border-slate-200/60 px-5 py-2.5 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group/btn"
-                >
-                    <div className="bg-blue-600 p-1 rounded-full text-white group-hover/btn:bg-blue-700 transition-colors">
-                        <Navigation className="w-3.5 h-3.5" />
-                    </div>
-                    <span className="text-sm font-bold text-slate-700 group-hover/btn:text-slate-900 tracking-wide">
-                        Get Directions
-                    </span>
-                </a>
+              <a
+                href={googleMapsLink}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2.5 bg-white/95 backdrop-blur-md border border-slate-200/60 px-5 py-2.5 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group/btn"
+              >
+                <div className="bg-blue-600 p-1 rounded-full text-white group-hover/btn:bg-blue-700 transition-colors">
+                  <Navigation className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-sm font-bold text-slate-700 group-hover/btn:text-slate-900 tracking-wide">
+                  Get Directions
+                </span>
+              </a>
             </div>
             {/* --- END BUTTON --- */}
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // 1. Added Import
 import { ShieldCheck, Award, CheckCircle, FileCheck, Building2, GraduationCap, FileText, ChevronRight, ExternalLink, Landmark, Users, X, Download, Calendar, DollarSign } from 'lucide-react';
+import { SEOHead, seoConfig } from '../seo';
 
 import facultyPDF from '../../assets/faculty.pdf';
 import aishePDF from '../../assets/AISHE Certificate (2023-24).pdf';
@@ -62,7 +63,7 @@ const Authenticity = () => {
     {
       title: "MSU AFFILIATION",
       subtitle: "University Recognition",
-      description: "Official affiliation certificate from  Maa Shakumbhari University.",
+      description: "Official affiliation certificate from Maa Shakambhari University, Saharanpur.",
       pdfUrl: msuAffiliationPDF,
       fileName: "msuaf.pdf",
       icon: <Building2 className="w-5 h-5 text-indigo-600" />,
@@ -135,6 +136,13 @@ const Authenticity = () => {
 
   return (
     <div style={customFontStyle} className="min-h-screen bg-slate-50 font-sans text-slate-800">
+      {/* SEO Meta Tags */}
+      <SEOHead
+        title={seoConfig.authenticity.title}
+        description={seoConfig.authenticity.description}
+        keywords={seoConfig.authenticity.keywords}
+        canonicalUrl={seoConfig.authenticity.canonicalUrl}
+      />
 
       {/* 1. HERO SECTION */}
       <section className="relative bg-white pt-20 pb-24 overflow-hidden">

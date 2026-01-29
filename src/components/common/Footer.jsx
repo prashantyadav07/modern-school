@@ -79,7 +79,7 @@ const Footer = () => {
             </div>
 
             <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 max-w-md mx-auto lg:mx-0">
-              Affiliated with Maa Shakumbhari University. Empowering future graduates with excellence and innovation since 2021.
+              Affiliated with Maa Shakambhari University, Saharanpur. Empowering future graduates with excellence and innovation since 2021.
             </p>
 
             {/* --- COMBINED SECTION: AFFILIATIONS & SOCIALS --- */}
@@ -149,9 +149,9 @@ const Footer = () => {
               Get In Touch
             </h3>
             <div className="space-y-4 flex flex-col items-center lg:items-start">
-              
+
               {/* --- UPDATED ADDRESS SECTION START --- */}
-              <a 
+              <a
                 href="https://www.google.com/maps/search/?api=1&query=J.S.+College+of+Education+Rajpur-Chhajpur+Kandhala+Road+Muzaffarnagar+(U.P)"
                 target="_blank"
                 rel="noopener noreferrer"
