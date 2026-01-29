@@ -5,20 +5,54 @@ Allow: /
 # Sitemap location
 Sitemap: https://www.jscollegeofeducation.com/sitemap.xml
 
-# Disallow internal paths
+# Disallow internal paths and development files
 Disallow: /api/
 Disallow: /*.json$
 Disallow: /assets/*.pdf$
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*?*
+Disallow: /*&*
 
-# Crawl-delay for politeness
+# Crawl-delay for politeness (1 second)
 Crawl-delay: 1
 
 # Specific bot rules
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
+Crawl-delay: 1
+
+# Mobile crawlers
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Block unwanted bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
