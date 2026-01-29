@@ -83,7 +83,15 @@ const Home = () => {
                     <div className="flex h-full">
                         {images.map((img, index) => (
                             <div className="flex-[0_0_100%] min-w-0 relative h-full" key={index}>
-                                <img src={img} alt="Campus" className="w-full h-full object-cover" />
+                                <img
+                                    src={img}
+                                    alt="Campus"
+                                    className="w-full h-full object-cover"
+                                    width={1920}
+                                    height={1080}
+                                    loading={index === 0 ? 'eager' : 'lazy'}
+                                    fetchPriority={index === 0 ? 'high' : 'auto'}
+                                />
                             </div>
                         ))}
                     </div>
@@ -246,6 +254,9 @@ const Home = () => {
                                     src={directorImg}
                                     alt="Director"
                                     className="w-[240px] h-[280px] sm:w-[280px] sm:h-[340px] md:w-[320px] md:h-[380px] object-cover rounded-2xl relative z-10 shadow-2xl"
+                                    width={320}
+                                    height={380}
+                                    loading="lazy"
                                 />
                             </div>
                         </motion.div>
@@ -290,17 +301,17 @@ const Home = () => {
                         <div className="relative z-10">
                             <ContainerStagger>
                                 <GalleryGrid className="h-[500px] sm:h-[500px] md:h-[500px] lg:h-[500px]">
-                                    <GalleryGridCell index={0}>
-                                        <img src={g1} alt="Achievement 1" className="w-full h-full object-cover" />
+                                        <GalleryGridCell index={0}>
+                                        <img src={g1} alt="Achievement 1" className="w-full h-full object-cover" width={1200} height={800} loading="lazy" />
                                     </GalleryGridCell>
-                                    <GalleryGridCell index={1}>
-                                        <img src={g2} alt="Achievement 2" className="w-full h-full object-cover" />
+                                        <GalleryGridCell index={1}>
+                                        <img src={g2} alt="Achievement 2" className="w-full h-full object-cover" width={1200} height={800} loading="lazy" />
                                     </GalleryGridCell>
-                                    <GalleryGridCell index={2}>
-                                        <img src={g3} alt="Achievement 3" className="w-full h-full object-cover" />
+                                        <GalleryGridCell index={2}>
+                                        <img src={g3} alt="Achievement 3" className="w-full h-full object-cover" width={1200} height={800} loading="lazy" />
                                     </GalleryGridCell>
-                                    <GalleryGridCell index={3}>
-                                        <img src={g4} alt="Achievement 4" className="w-full h-full object-cover" />
+                                        <GalleryGridCell index={3}>
+                                        <img src={g4} alt="Achievement 4" className="w-full h-full object-cover" width={1200} height={800} loading="lazy" />
                                     </GalleryGridCell>
                                 </GalleryGrid>
                             </ContainerStagger>
