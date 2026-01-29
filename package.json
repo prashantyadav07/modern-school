@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate-seo": "node scripts/generate-seo-files.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
@@ -20,7 +21,7 @@
     "motion": "^12.29.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.0",
-    "react-helmet-async": "^2.0.5",
+    "@dr.pogodin/react-helmet": "^3.0.5",
     "react-router-dom": "^7.12.0",
     "router-dom": "^3.0.3",
     "tailwind-merge": "^3.4.0",
