@@ -79,7 +79,7 @@ const Footer = () => {
             </div>
 
             <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 max-w-md mx-auto lg:mx-0">
-              Affiliated with Maa Shakambhari University, Saharanpur. Empowering future graduates with excellence and innovation since 2021.
+              Affiliated with Maa  Shakumbhari University, Saharanpur. Empowering future graduates with excellence and innovation since 2021.
             </p>
 
             {/* --- COMBINED SECTION: AFFILIATIONS & SOCIALS --- */}

@@ -64,7 +64,7 @@ export const siteConfig = {
     organization: {
         type: "EducationalOrganization",
         foundingYear: "",
-        affiliation: "Maa Shakambhari University, Saharanpur",
+        affiliation: "Maa  Shakumbhari University, Saharanpur",
         accreditation: "NCTE Approved"
     },
 

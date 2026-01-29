@@ -163,7 +163,7 @@ const Admissions = () => {
                         <div className="flex-1">
                             <h4 className="text-amber-900 font-bold text-base mb-1">Important Notice</h4>
                             <p className="text-amber-800/80 text-sm">
-                                Admissions are subject to <strong>State Government</strong> and <strong>Maa Shakambhari University</strong> rules. Please ensure all original documents are produced at the time of admission to avoid inconvenience.
+                                Admissions are subject to <strong>State Government</strong> and <strong>Maa  Shakumbhari University</strong> rules. Please ensure all original documents are produced at the time of admission to avoid inconvenience.
                             </p>
                         </div>
                     </div>

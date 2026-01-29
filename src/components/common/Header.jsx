@@ -43,7 +43,7 @@ const Header = () => {
                                 </h1>
                                 <div className="flex flex-col mt-1">
                                     <span className="text-orange-600 font-bold text-[10px] sm:text-xs md:text-sm lg:text-base uppercase tracking-wide sm:tracking-wider">
-                                        Affiliated to Maa Shakambhari University, Saharanpur (U.P)
+                                        Affiliated to Maa  Shakumbhari University, Saharanpur (U.P)
                                     </span>
                                     <span className="text-gray-600 font-medium text-[10px] sm:text-xs md:text-sm lg:text-[15px]">
                                         Recognized by UGC | A Tradition of Quality Education

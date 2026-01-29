@@ -63,7 +63,7 @@ const Authenticity = () => {
     {
       title: "MSU AFFILIATION",
       subtitle: "University Recognition",
-      description: "Official affiliation certificate from Maa Shakambhari University, Saharanpur.",
+      description: "Official affiliation certificate from Maa  Shakumbhari University, Saharanpur.",
       pdfUrl: msuAffiliationPDF,
       fileName: "msuaf.pdf",
       icon: <Building2 className="w-5 h-5 text-indigo-600" />,
