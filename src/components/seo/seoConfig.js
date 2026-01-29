@@ -10,7 +10,7 @@ const BASE_URL = siteConfig.siteUrl;
 export const seoConfig = {
     home: {
         title: "J.S. College of Education | B.A. & B.Sc. College in Muzaffarnagar, UP",
-        description: "J.S. College of Education, Muzaffarnagar - Premier  UGC approved institution offering B.A. and B.Sc. courses. Quality education with experienced faculty in Uttar Pradesh. Admissions open 2024-25.",
+        description: "J.S. College of Education, Muzaffarnagar - Premier  UGC approved institution offering B.A. and B.Sc. courses. Quality education with experienced faculty in Uttar Pradesh. Admissions open 2026-27.",
         keywords: "J.S. College of Education, education college muzaffarnagar, BA college UP, BSc college muzaffarnagar, teacher training institute,  UGC approved college",
         canonicalUrl: `${BASE_URL}/`,
         ogType: "website"
@@ -49,9 +49,9 @@ export const seoConfig = {
     },
 
     admissions: {
-        title: "Admissions 2024-25 - Apply Now | J.S. College of Education",
-        description: "Admissions open for 2024-25 at J.S. College of Education, Muzaffarnagar. Check eligibility, fee structure, application process, and important dates.",
-        keywords: "college admission, admission 2024-25, apply online, admission process, fee structure, eligibility criteria",
+        title: "Admissions 2026-27 - Apply Now | J.S. College of Education",
+        description: "Admissions open for 2026-27 at J.S. College of Education, Muzaffarnagar. Check eligibility, fee structure, application process, and important dates.",
+        keywords: "college admission, admission 2026-27, apply online, admission process, fee structure, eligibility criteria",
         canonicalUrl: `${BASE_URL}/admissions`,
         ogType: "website"
     },

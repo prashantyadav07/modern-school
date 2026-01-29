@@ -39,8 +39,8 @@ export const siteConfig = {
     // Social Media (add URLs when available)
     social: {
         facebook: "https://www.facebook.com/profile.php?id=100093939067263",
-        instagram: "",
-        twitter: "",
+        linkedin: "https://www.linkedin.com/in/j-s-college-of-education-8815aa3a9/",
+        twitter: "https://x.com/JSCollegeMZN",
         youtube: "https://www.youtube.com/@JSCOLLEGEOFEDUCATION"
     },
 
@@ -71,7 +71,7 @@ export const siteConfig = {
     // Default SEO
     defaultSEO: {
         title: "J.S. College of Education | B.A. & B.Sc. College in Muzaffarnagar",
-        description: "J.S. College of Education, Muzaffarnagar -  UGC approved institution offering B.A. and B.Sc. courses. Quality education with experienced faculty. Admissions open for 2024-25.",
+        description: "J.S. College of Education, Muzaffarnagar -  UGC approved institution offering B.A. and B.Sc. courses. Quality education with experienced faculty. Admissions open for 2026-27.",
         keywords: "J.S. College of Education, B.A. College Muzaffarnagar, B.Sc. College Muzaffarnagar, Education College UP, Teacher Training Institute,  UGC Approved College"
     },
 

@@ -116,10 +116,10 @@ const Footer = () => {
                     <a href="https://www.youtube.com/@JSCOLLEGEOFEDUCATION" target="_blank" rel="noopener noreferrer" className="p-2 rounded-md border border-zinc-800 bg-zinc-900/50 hover:bg-white hover:text-black text-white transition-all duration-300 flex items-center justify-center">
                       <Youtube className="w-3.5 h-3.5" />
                     </a>
-                    <a href="#" className="p-2 rounded-md border border-zinc-800 bg-zinc-900/50 hover:bg-white hover:text-black text-white transition-all duration-300 flex items-center justify-center">
-                      <Instagram className="w-3.5 h-3.5" />
+                    <a href="https://x.com/JSCollegeMZN" target="_blank" rel="noopener noreferrer" className="p-2 rounded-md border border-zinc-800 bg-zinc-900/50 hover:bg-white hover:text-black text-white transition-all duration-300 flex items-center justify-center">
+                      <Twitter className="w-3.5 h-3.5" />
                     </a>
-                    <a href="#" className="p-2 rounded-md border border-zinc-800 bg-zinc-900/50 hover:bg-white hover:text-black text-white transition-all duration-300 flex items-center justify-center">
+                    <a href="https://www.linkedin.com/in/j-s-college-of-education-8815aa3a9/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-md border border-zinc-800 bg-zinc-900/50 hover:bg-white hover:text-black text-white transition-all duration-300 flex items-center justify-center">
                       <Linkedin className="w-3.5 h-3.5" />
                     </a>
                   </div>

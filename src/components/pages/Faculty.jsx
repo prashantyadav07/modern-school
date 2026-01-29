@@ -47,7 +47,7 @@ const Faculty = () => {
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-6">
             <UserCheck className="w-3 h-3" />
-            Academic Session 2024-25
+            Academic Session 2026-27
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
             Our Esteemed <span className="text-blue-700">Faculty</span>
@@ -157,7 +157,7 @@ const Faculty = () => {
               </p>
               <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500">
                 <span>• REF: UGC/FAC/REG-9021</span>
-                <span>• LAST UPDATED: AUG 2024</span>
+                <span>• LAST UPDATED: AUG 2025</span>
               </div>
             </div>
             <div className="bg-slate-800 p-8 md:w-1/3 flex flex-col justify-center items-center text-center border-t md:border-t-0 md:border-l border-slate-700">
@@ -173,7 +173,7 @@ const Faculty = () => {
 
         <div className="text-center mt-12 pb-8">
           <p className="text-slate-400 text-xs uppercase tracking-[0.2em] font-medium">
-            © 2024 Institutional Academic Records System
+            © 2026 Institutional Academic Records System
           </p>
         </div>
 

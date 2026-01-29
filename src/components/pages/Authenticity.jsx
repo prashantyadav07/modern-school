@@ -171,7 +171,7 @@ const Authenticity = () => {
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Official Documentation</h2>
             <p className="text-slate-500 text-sm md:text-base">
-              Digitally signed and up-to-date for the academic session 2024-2025.
+              Digitally signed and up-to-date for the academic session 2026-2027.
             </p>
           </div>
 
