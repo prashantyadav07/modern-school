@@ -20,7 +20,7 @@ const Academics = () => {
     {
       icon: <Award className="w-12 h-12 text-blue-600" />,
       title: "Recognized Certification",
-      description: "NCTE approved programs with quality assurance",
+      description: " UGC approved programs with quality assurance",
       image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&auto=format&fit=crop"
     }
   ];

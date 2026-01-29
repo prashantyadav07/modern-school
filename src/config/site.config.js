@@ -38,10 +38,10 @@ export const siteConfig = {
 
     // Social Media (add URLs when available)
     social: {
-        facebook: "",
+        facebook: "https://www.facebook.com/profile.php?id=100093939067263",
         instagram: "",
         twitter: "",
-        youtube: ""
+        youtube: "https://www.youtube.com/@JSCOLLEGEOFEDUCATION"
     },
 
     // Courses Offered
@@ -65,14 +65,14 @@ export const siteConfig = {
         type: "EducationalOrganization",
         foundingYear: "",
         affiliation: "Maa  Shakumbhari University, Saharanpur",
-        accreditation: "NCTE Approved"
+        accreditation: " UGC Approved"
     },
 
     // Default SEO
     defaultSEO: {
         title: "J.S. College of Education | B.A. & B.Sc. College in Muzaffarnagar",
-        description: "J.S. College of Education, Muzaffarnagar - NCTE approved institution offering B.A. and B.Sc. courses. Quality education with experienced faculty. Admissions open for 2024-25.",
-        keywords: "J.S. College of Education, B.A. College Muzaffarnagar, B.Sc. College Muzaffarnagar, Education College UP, Teacher Training Institute, NCTE Approved College"
+        description: "J.S. College of Education, Muzaffarnagar -  UGC approved institution offering B.A. and B.Sc. courses. Quality education with experienced faculty. Admissions open for 2024-25.",
+        keywords: "J.S. College of Education, B.A. College Muzaffarnagar, B.Sc. College Muzaffarnagar, Education College UP, Teacher Training Institute,  UGC Approved College"
     },
 
     // Open Graph Image

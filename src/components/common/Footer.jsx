@@ -8,6 +8,7 @@ import {
   Twitter,
   Instagram,
   Linkedin,
+  Youtube,
   ArrowRight,
   ExternalLink
 } from 'lucide-react';
@@ -109,11 +110,18 @@ const Footer = () => {
 
                   {/* Social Icons (Moved Here) */}
                   <div className="flex gap-2">
-                    {[Facebook, Twitter, Instagram, Linkedin].map((Icon, idx) => (
-                      <a key={idx} href="#" className="p-2 rounded-md border border-zinc-800 bg-zinc-900/50 hover:bg-white hover:text-black text-white transition-all duration-300 flex items-center justify-center">
-                        <Icon className="w-3.5 h-3.5" />
-                      </a>
-                    ))}
+                    <a href="https://www.facebook.com/profile.php?id=100093939067263" target="_blank" rel="noopener noreferrer" className="p-2 rounded-md border border-zinc-800 bg-zinc-900/50 hover:bg-white hover:text-black text-white transition-all duration-300 flex items-center justify-center">
+                      <Facebook className="w-3.5 h-3.5" />
+                    </a>
+                    <a href="https://www.youtube.com/@JSCOLLEGEOFEDUCATION" target="_blank" rel="noopener noreferrer" className="p-2 rounded-md border border-zinc-800 bg-zinc-900/50 hover:bg-white hover:text-black text-white transition-all duration-300 flex items-center justify-center">
+                      <Youtube className="w-3.5 h-3.5" />
+                    </a>
+                    <a href="#" className="p-2 rounded-md border border-zinc-800 bg-zinc-900/50 hover:bg-white hover:text-black text-white transition-all duration-300 flex items-center justify-center">
+                      <Instagram className="w-3.5 h-3.5" />
+                    </a>
+                    <a href="#" className="p-2 rounded-md border border-zinc-800 bg-zinc-900/50 hover:bg-white hover:text-black text-white transition-all duration-300 flex items-center justify-center">
+                      <Linkedin className="w-3.5 h-3.5" />
+                    </a>
                   </div>
 
                 </div>

@@ -10,16 +10,16 @@ const BASE_URL = siteConfig.siteUrl;
 export const seoConfig = {
     home: {
         title: "J.S. College of Education | B.A. & B.Sc. College in Muzaffarnagar, UP",
-        description: "J.S. College of Education, Muzaffarnagar - Premier NCTE approved institution offering B.A. and B.Sc. courses. Quality education with experienced faculty in Uttar Pradesh. Admissions open 2024-25.",
-        keywords: "J.S. College of Education, education college muzaffarnagar, BA college UP, BSc college muzaffarnagar, teacher training institute, NCTE approved college",
+        description: "J.S. College of Education, Muzaffarnagar - Premier  UGC approved institution offering B.A. and B.Sc. courses. Quality education with experienced faculty in Uttar Pradesh. Admissions open 2024-25.",
+        keywords: "J.S. College of Education, education college muzaffarnagar, BA college UP, BSc college muzaffarnagar, teacher training institute,  UGC approved college",
         canonicalUrl: `${BASE_URL}/`,
         ogType: "website"
     },
 
     about: {
         title: "About Us - J.S. College of Education | Our History, Mission & Vision",
-        description: "Learn about J.S. College of Education's rich history, mission, vision and values. NCTE approved institution committed to excellence in teacher education in Muzaffarnagar, UP.",
-        keywords: "about j.s. college, college history, education mission, ncte approved, muzaffarnagar college",
+        description: "Learn about J.S. College of Education's rich history, mission, vision and values.  UGC approved institution committed to excellence in teacher education in Muzaffarnagar, UP.",
+        keywords: "about j.s. college, college history, education mission,  UGC approved, muzaffarnagar college",
         canonicalUrl: `${BASE_URL}/about`,
         ogType: "website"
     },
@@ -74,8 +74,8 @@ export const seoConfig = {
 
     authenticity: {
         title: "Authenticity & Certificates | J.S. College of Education",
-        description: "View official documents, NCTE approval, AISHE certificate, affiliation documents, and authenticity certificates of J.S. College of Education.",
-        keywords: "college certificates, NCTE approval, AISHE certificate, affiliation, authenticity documents",
+        description: "View official documents,  UGC approval, AISHE certificate, affiliation documents, and authenticity certificates of J.S. College of Education.",
+        keywords: "college certificates,  UGC approval, AISHE certificate, affiliation, authenticity documents",
         canonicalUrl: `${BASE_URL}/authenticity`,
         ogType: "website"
     },
