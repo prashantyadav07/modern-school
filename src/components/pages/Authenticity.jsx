@@ -36,6 +36,8 @@ import antiRaggingPDF from '../../assets/Anti ragging committee.pdf';
 import fireCertificatePDF from '../../assets/Fire certificate.pdf';
 import iqacPDF from '../../assets/Internal Quality Assurance Cell.pdf';
 import grievancePDF from '../../assets/Grievance Redressal Cell (1).pdf';
+import scCellPDF from '../../assets/Cell for SC.pdf';
+import iccPDF from '../../assets/Internal Complaint Committee.pdf';
 
 const customFontStyle = {
   fontFamily: "'Neue Montreal Regular', sans-serif",
@@ -217,6 +219,24 @@ const Authenticity = () => {
       fileName: "Grievance Redressal Cell (1).pdf",
       icon: <Users className="w-5 h-5 text-purple-600" />,
       image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1000"
+    },
+    {
+      title: "SC/ST Welfare Cell",
+      subtitle: "Equal Opportunity",
+      description: "Committee for the welfare and equal opportunity of SC/ST students.",
+      pdfUrl: scCellPDF,
+      fileName: "Cell for SC.pdf",
+      icon: <ShieldCheck className="w-5 h-5 text-indigo-600" />,
+      image: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&q=80&w=1000"
+    },
+    {
+      title: "Internal Complaint Committee",
+      subtitle: "Prevention & Redressal",
+      description: "Committee dedicated to the prevention of sexual harassment and ensuring a safe environment.",
+      pdfUrl: iccPDF,
+      fileName: "Internal Complaint Committee.pdf",
+      icon: <Users className="w-5 h-5 text-rose-600" />,
+      image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1000"
     }
   ];
 
