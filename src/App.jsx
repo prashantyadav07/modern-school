@@ -17,6 +17,7 @@ const Facilities = lazy(() => import('./components/pages/Facilities'));
 const Gallery = lazy(() => import('./components/pages/Gallery'));
 const Authenticity = lazy(() => import('./components/pages/Authenticity'));
 const Inquiry = lazy(() => import('./components/pages/Inquiry'));
+const Syllabus = lazy(() => import('./components/pages/Syllabus'));
 const Contact = lazy(() => import('./components/pages/Contact'));
 
 const customFontStyle = {
@@ -78,6 +79,7 @@ function App() {
               <Route path="/academics" element={<Academics />} />
               <Route path="/academics/courses" element={<Courses />} />
               <Route path="/academics/faculty" element={<Faculty />} />
+              <Route path="/academics/syllabus" element={<Syllabus />} />
               <Route path="/admissions" element={<Admissions />} />
               <Route path="/facilities" element={<Facilities />} />
               <Route path="/gallery" element={<Gallery />} />

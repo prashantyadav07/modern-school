@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // 1. Added Import
-import { ShieldCheck, Award, CheckCircle, FileCheck, Building2, GraduationCap, FileText, ChevronRight, ExternalLink, Landmark, Users, X, Download, Calendar, DollarSign } from 'lucide-react';
+import { ShieldCheck, Award, CheckCircle, FileCheck, Building2, GraduationCap, FileText, ChevronRight, ExternalLink, Landmark, Users, X, Download, Calendar, DollarSign, Flame } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { SEOHead, seoConfig } from '../seo';
 
 import facultyPDF from '../../assets/faculty.pdf';
@@ -13,6 +14,7 @@ import gemini from "../../assets/gemini.png"
 import Landpapers from "../../assets/Landpapers.jpg"
 import feeimg from "../../assets/feecollg.png"
 import modenc from "../../assets/clc.png"
+import popupImg from '../../assets/pop up.jpeg';
 
 // New PDF imports
 import trustDeedPDF from '../../assets/js.pdf';
@@ -22,6 +24,18 @@ import landRecordPDF from '../../assets/land.pdf';
 import landRecord1PDF from '../../assets/land1.pdf';
 import calendarPDF from '../../assets/calendar.pdf';
 import feePDF from '../../assets/fee.pdf';
+import feeStructureImage from '../../assets/college fee image.jfif';
+import financialDataPDF from '../../assets/JS COLLGE STATEMENT.pdf';
+import externalExamPDF from '../../assets/EXTERNAL EXAM ANNOUCEMENT 2025-26.pdf';
+import internalExamBAPDF from '../../assets/INTERNAL EXAM ANNOUNCEMENT B.A. 2025-26.pdf';
+import internalExamBSCPDF from '../../assets/INTERNAL EXAM ANNOUNCEMENT B.S.C 2025-26.pdf';
+import balanceSheetPDF from '../../assets/balance sheet.pdf';
+import buildingApprovalPDF from '../../assets/Building Approval and NOC.pdf';
+import feeRefundPDF from '../../assets/Fee Refund Policy.pdf';
+import antiRaggingPDF from '../../assets/Anti ragging committee.pdf';
+import fireCertificatePDF from '../../assets/Fire certificate.pdf';
+import iqacPDF from '../../assets/Internal Quality Assurance Cell.pdf';
+import grievancePDF from '../../assets/Grievance Redressal Cell (1).pdf';
 
 const customFontStyle = {
   fontFamily: "'Neue Montreal Regular', sans-serif",
@@ -31,6 +45,8 @@ const customFontStyle = {
 
 const Authenticity = () => {
   const [showPDFModal, setShowPDFModal] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [modalContent, setModalContent] = useState({ title: '', subtitle: '', options: [] });
   const navigate = useNavigate(); // 2. Added Hook for navigation
 
   // NOTE: Certifications section removed/commented out from grid based on your request 
@@ -92,8 +108,8 @@ const Authenticity = () => {
       title: "Fee Structure",
       subtitle: "Fee Details",
       description: "Detailed fee structure for all courses and programs offered by the institution.",
-      pdfUrl: feePDF,
-      fileName: "fee.pdf",
+      pdfUrl: feeStructureImage,
+      fileName: "college_fee.jpg",
       icon: <DollarSign className="w-5 h-5 text-amber-600" />,
       image: feeimg
     },
@@ -116,16 +132,143 @@ const Authenticity = () => {
       icon: <Award className="w-5 h-5 text-emerald-600" />,
       // Image: Clear Certificate / Diploma Scroll (FIXED)
       image: certificate
+    },
+    {
+      title: "Financial Data",
+      subtitle: "Financial Records",
+      description: "Official financial statements and records of the institution.",
+      pdfUrl: financialDataPDF,
+      fileName: "JS COLLGE STATEMENT.pdf",
+      icon: <FileText className="w-5 h-5 text-teal-600" />,
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1000"
+    },
+    {
+      title: "Announcement and Notification",
+      subtitle: "Latest Updates",
+      description: "Important announcements and examination notifications for students.",
+      // Custom options for the modal
+      options: [
+        { title: "EXTERNAL EXAM ANNOUNCEMENT", pdfUrl: externalExamPDF, fileName: "External_Exam.pdf" },
+        { title: "INTERNAL EXAM ANNOUNCEMENT B.A.", pdfUrl: internalExamBAPDF, fileName: "Internal_Exam_BA.pdf" },
+        { title: "INTERNAL EXAM ANNOUNCEMENT B.S.C", pdfUrl: internalExamBSCPDF, fileName: "Internal_Exam_BSC.pdf" }
+      ],
+      icon: <CheckCircle className="w-5 h-5 text-blue-600" />,
+      image: "https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&q=80&w=1000"
+    },
+    {
+      title: "Balance Sheet",
+      subtitle: "Financial Statements",
+      description: "Official financial statements and balance sheet of the institution.",
+      pdfUrl: balanceSheetPDF,
+      fileName: "balance sheet.pdf",
+      icon: <FileText className="w-5 h-5 text-teal-600" />,
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1000"
+    },
+    {
+      title: "Building Approval and NOC",
+      subtitle: "Infrastructure Compliance",
+      description: "Official building approval and No Objection Certificate documents.",
+      pdfUrl: buildingApprovalPDF,
+      fileName: "Building Approval and NOC.pdf",
+      icon: <Building2 className="w-5 h-5 text-indigo-600" />,
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000"
+    },
+    {
+      title: "Fee Refund Policy",
+      subtitle: "Student Fee Rules",
+      description: "Official policy regarding fee refunds for students.",
+      pdfUrl: feeRefundPDF,
+      fileName: "Fee Refund Policy.pdf",
+      icon: <DollarSign className="w-5 h-5 text-emerald-600" />,
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1000"
+    },
+    {
+      title: "Anti-Ragging Committee",
+      subtitle: "Safety & Compliance",
+      description: "Details of the anti-ragging committee members and regulations.",
+      pdfUrl: antiRaggingPDF,
+      fileName: "Anti ragging committee.pdf",
+      icon: <ShieldCheck className="w-5 h-5 text-red-600" />,
+      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1000"
+    },
+    {
+      title: "Fire Safety Certificate",
+      subtitle: "Campus Safety",
+      description: "Official fire safety certificate issued by the department.",
+      pdfUrl: fireCertificatePDF,
+      fileName: "Fire certificate.pdf",
+      icon: <Flame className="w-5 h-5 text-orange-600" />,
+      image: "https://images.unsplash.com/photo-1524419986249-348e8fa6ad4a?auto=format&fit=crop&q=80&w=1000"
+    },
+    {
+      title: "Internal Quality Assurance Cell",
+      subtitle: "Quality Standards",
+      description: "Ensuring continuous improvement and maintaining quality standards.",
+      pdfUrl: iqacPDF,
+      fileName: "Internal Quality Assurance Cell.pdf",
+      icon: <ShieldCheck className="w-5 h-5 text-blue-600" />,
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000"
+    },
+    {
+      title: "Grievance Redressal Cell",
+      subtitle: "Student Support",
+      description: "Mechanism for students to raise concerns and seek redressal.",
+      pdfUrl: grievancePDF,
+      fileName: "Grievance Redressal Cell (1).pdf",
+      icon: <Users className="w-5 h-5 text-purple-600" />,
+      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1000"
     }
   ];
 
-  const handlePDFClick = (pdfUrl, pdfUrl2) => {
-    // If there are two PDFs (Land Record case), show modal
-    if (pdfUrl2) {
+  const handleDisplayPopup = () => {
+    setShowPopup(true);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Changed to sessionStorage so it resets when the tab is closed, better for testing/UX
+      if (window.scrollY > 300 && !sessionStorage.getItem('popupShown')) {
+        setShowPopup(true);
+        sessionStorage.setItem('popupShown', 'true');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
+  const handlePDFClick = (doc) => {
+    // 1. Check for the legacy "Land Record" case (two PDFs directly on the object)
+    if (doc.pdfUrl2) {
+      setModalContent({
+        title: doc.title,
+        subtitle: "Select a document to view or download",
+        options: [
+          { title: `${doc.title} - Part 1`, pdfUrl: doc.pdfUrl, fileName: "land.pdf", color: "green" },
+          { title: `${doc.title} - Part 2`, pdfUrl: doc.pdfUrl2, fileName: "land1.pdf", color: "blue" }
+        ]
+      });
       setShowPDFModal(true);
-    } else {
-      // Otherwise, directly open the PDF
-      window.open(pdfUrl, '_blank');
+    }
+    // 2. Check for the new explicit "options" case (Announcement card)
+    else if (doc.options) {
+      setModalContent({
+        title: doc.title,
+        subtitle: "Select a notification to view",
+        options: doc.options.map((opt, idx) => ({
+          ...opt,
+          color: idx % 2 === 0 ? "blue" : "indigo" // Alternating colors
+        }))
+      });
+      setShowPDFModal(true);
+    }
+    // 3. Default case: Single PDF, open directly
+    else {
+      window.open(doc.pdfUrl, '_blank');
     }
   };
 
@@ -179,7 +322,7 @@ const Authenticity = () => {
             {documents.map((doc, index) => (
               <div
                 key={index}
-                onClick={() => handlePDFClick(doc.pdfUrl, doc.pdfUrl2)}
+                onClick={() => handlePDFClick(doc)}
                 className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200 hover:border-blue-300 transition-all duration-300 cursor-pointer flex flex-col"
               >
                 {/* Image Section - Matches Courses Style */}
@@ -221,7 +364,7 @@ const Authenticity = () => {
                       {doc.fileName}
                     </div>
                     <span className="flex items-center gap-1 text-xs font-bold text-blue-600 group-hover:translate-x-1 transition-transform">
-                      Download <ChevronRight size={14} />
+                      {doc.options || doc.pdfUrl2 ? "Select" : "Download"} <ChevronRight size={14} />
                     </span>
                   </div>
                 </div>
@@ -262,12 +405,12 @@ const Authenticity = () => {
             {/* Modal Header */}
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-green-50 rounded-lg">
-                  <Landmark className="w-6 h-6 text-green-600" />
+                <div className="p-2 bg-blue-50 rounded-lg">
+                  <Landmark className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900">Land Record Documents</h3>
-                  <p className="text-sm text-slate-500">Select a document to view or download</p>
+                  <h3 className="text-xl font-bold text-slate-900">{modalContent.title}</h3>
+                  <p className="text-sm text-slate-500">{modalContent.subtitle}</p>
                 </div>
               </div>
               <button
@@ -278,51 +421,31 @@ const Authenticity = () => {
               </button>
             </div>
 
-            {/* PDF Options */}
+            {/* Dynamic PDF Options */}
             <div className="space-y-3">
-              {/* PDF 1 */}
-              <button
-                onClick={() => handlePDFSelection(landRecordPDF)}
-                className="w-full p-4 bg-gradient-to-r from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 border-2 border-green-200 hover:border-green-400 rounded-xl transition-all duration-300 group"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-white rounded-lg shadow-sm">
-                      <FileCheck className="w-5 h-5 text-green-600" />
+              {modalContent.options.map((option, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => handlePDFSelection(option.pdfUrl)}
+                  className={`w-full p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-white hover:to-blue-50 border-2 border-slate-100 hover:border-blue-200 rounded-xl transition-all duration-300 group`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className={`p-2 bg-white rounded-lg shadow-sm text-${option.color || 'blue'}-600`}>
+                        <FileCheck className="w-5 h-5" />
+                      </div>
+                      <div className="text-left">
+                        <p className="font-bold text-slate-900 group-hover:text-blue-700 transition-colors text-sm md:text-base">{option.title}</p>
+                        <p className="text-xs text-slate-500 font-mono truncate max-w-[200px]">{option.fileName}</p>
+                      </div>
                     </div>
-                    <div className="text-left">
-                      <p className="font-bold text-slate-900 group-hover:text-green-700 transition-colors">Land Record - Part 1</p>
-                      <p className="text-xs text-slate-500 font-mono">land.pdf</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Download className="w-4 h-4 text-green-600 group-hover:translate-y-0.5 transition-transform" />
-                    <ChevronRight className="w-4 h-4 text-green-600 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </button>
-
-              {/* PDF 2 */}
-              <button
-                onClick={() => handlePDFSelection(landRecord1PDF)}
-                className="w-full p-4 bg-gradient-to-r from-blue-50 to-sky-50 hover:from-blue-100 hover:to-sky-100 border-2 border-blue-200 hover:border-blue-400 rounded-xl transition-all duration-300 group"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-white rounded-lg shadow-sm">
-                      <FileCheck className="w-5 h-5 text-blue-600" />
-                    </div>
-                    <div className="text-left">
-                      <p className="font-bold text-slate-900 group-hover:text-blue-700 transition-colors">Land Record - Part 2</p>
-                      <p className="text-xs text-slate-500 font-mono">land1.pdf</p>
+                    <div className="flex items-center gap-2">
+                      <Download className="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:translate-y-0.5 transition-all" />
+                      <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
                     </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Download className="w-4 h-4 text-blue-600 group-hover:translate-y-0.5 transition-transform" />
-                    <ChevronRight className="w-4 h-4 text-blue-600 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </button>
+                </button>
+              ))}
             </div>
 
             {/* Modal Footer */}
@@ -334,6 +457,36 @@ const Authenticity = () => {
           </div>
         </div>
       )}
+
+      {/* Popup Modal with Framer Motion */}
+      <AnimatePresence>
+        {showPopup && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-4"
+            onClick={closePopup}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="bg-white rounded-2xl shadow-2xl max-w-lg w-full relative overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={closePopup}
+                className="absolute top-3 right-3 p-2 bg-white/50 hover:bg-white rounded-full transition-colors z-10 shadow-sm"
+              >
+                <X className="w-5 h-5 text-slate-800" />
+              </button>
+              <img src={popupImg} alt="Special Announcement" className="w-full h-auto object-cover" />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

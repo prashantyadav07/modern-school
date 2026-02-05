@@ -18,6 +18,40 @@ import g3 from "../../assets/g3.jpeg";
 import g4 from "../../assets/g4.jpeg";
 import g5 from "../../assets/g5.jpeg";
 import g6 from "../../assets/g6.jpeg";
+// New images
+import gimage1 from "../../assets/gimage1.jpeg";
+import gimage2 from "../../assets/gimage2.jpeg";
+import gimage3 from "../../assets/gimage3.jpeg";
+import gimage4 from "../../assets/gimage4.jpeg";
+import gimage5 from "../../assets/gimage5.jpeg";
+import gimage6 from "../../assets/gimage6.jpeg";
+import gimage7 from "../../assets/gimage7.jpeg";
+import gimage8 from "../../assets/gimage8.jpeg";
+import gimage9 from "../../assets/gimage9.jpeg";
+import gimage10 from "../../assets/gimage10.jpeg";
+import gimage11 from "../../assets/gimage11.jpeg";
+import gimage12 from "../../assets/gimage12.jpeg";
+import gimage13 from "../../assets/gimage13.jpeg";
+import gimage14 from "../../assets/gimage14.jpeg";
+import gimage15 from "../../assets/gimage15.jpeg";
+import gimage16 from "../../assets/gimage16.jpeg";
+import gimage17 from "../../assets/gimage17.jpeg";
+import gimage18 from "../../assets/gimage18.jpeg";
+import gimage19 from "../../assets/gimage19.jpeg";
+import gimage20 from "../../assets/gimage20.jpeg";
+import gimage21 from "../../assets/gimage21.jpeg";
+import gimage22 from "../../assets/gimage22.jpeg";
+import gimage23 from "../../assets/gimage23.jpeg";
+import gimage24 from "../../assets/gimage24.jpeg";
+import gimage25 from "../../assets/gimage25.jpeg";
+import gimage26 from "../../assets/gimage26.jpeg";
+import gimage27 from "../../assets/gimage27.jpeg";
+import gimage28 from "../../assets/gimage28.jpeg";
+import gimage29 from "../../assets/gimage29.jpeg";
+import gimage30 from "../../assets/gimage30.jpeg";
+import gimage31 from "../../assets/gimage31.jpeg";
+import gimage32 from "../../assets/gimage32.jpeg";
+import gimage33 from "../../assets/gimage33.jpeg";
 
 
 const images = [
@@ -26,6 +60,17 @@ const images = [
   { id: 7, src: img14 }, { id: 8, src: img15 }, { id: 9, src: g1 },
   { id: 10, src: g2 }, { id: 11, src: g3 }, { id: 12, src: g4 },
   { id: 13, src: g5 }, { id: 14, src: g6 },
+  { id: 15, src: gimage1 }, { id: 16, src: gimage2 }, { id: 17, src: gimage3 },
+  { id: 18, src: gimage4 }, { id: 19, src: gimage5 }, { id: 20, src: gimage6 },
+  { id: 21, src: gimage7 }, { id: 22, src: gimage8 }, { id: 23, src: gimage9 },
+  { id: 24, src: gimage10 }, { id: 25, src: gimage11 }, { id: 26, src: gimage12 },
+  { id: 27, src: gimage13 }, { id: 28, src: gimage14 }, { id: 29, src: gimage15 },
+  { id: 30, src: gimage16 }, { id: 31, src: gimage17 }, { id: 32, src: gimage18 },
+  { id: 33, src: gimage19 }, { id: 34, src: gimage20 }, { id: 35, src: gimage21 },
+  { id: 36, src: gimage22 }, { id: 37, src: gimage23 }, { id: 38, src: gimage24 },
+  { id: 39, src: gimage25 }, { id: 40, src: gimage26 }, { id: 41, src: gimage27 },
+  { id: 42, src: gimage28 }, { id: 43, src: gimage29 }, { id: 44, src: gimage30 },
+  { id: 45, src: gimage31 }, { id: 46, src: gimage32 }, { id: 47, src: gimage33 },
 ];
 
 const Gallery = () => {

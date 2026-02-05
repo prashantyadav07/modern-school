@@ -41,6 +41,7 @@ const Navbar = () => {
             dropdown: [
                 { name: 'Courses Offered', path: '/academics/courses', icon: <BookOpen size={14} /> },
                 { name: 'Faculty Members', path: '/academics/faculty', icon: <Users size={14} /> },
+                { name: 'Course Syllabus', path: '/academics/syllabus', icon: <BookOpen size={14} /> },
             ]
         },
         { name: 'Admissions', path: '/admissions' },
@@ -56,7 +57,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav 
+        <nav
             className={`sticky top-0 z-50 transition-all duration-500 
             ${scrolled || isOpen ? 'bg-[#001a35] shadow-2xl' : 'bg-[#002147]'} 
             ${(visible || isOpen) ? 'translate-y-0' : '-translate-y-full'}`}
