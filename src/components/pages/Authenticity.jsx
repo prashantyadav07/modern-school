@@ -152,10 +152,11 @@ const Authenticity = () => {
       options: [
         { title: "EXTERNAL EXAM ANNOUNCEMENT", pdfUrl: externalExamPDF, fileName: "External_Exam.pdf" },
         { title: "INTERNAL EXAM ANNOUNCEMENT B.A.", pdfUrl: internalExamBAPDF, fileName: "Internal_Exam_BA.pdf" },
-        { title: "INTERNAL EXAM ANNOUNCEMENT B.S.C", pdfUrl: internalExamBSCPDF, fileName: "Internal_Exam_BSC.pdf" }
+        { title: "INTERNAL EXAM ANNOUNCEMENT B.S.C", pdfUrl: internalExamBSCPDF, fileName: "Internal_Exam_BSC.pdf" },
+        { title: "OFFICIAL NOTIFICATION IMAGE", pdfUrl: popupImg, fileName: "Notification_Image.jpg" }
       ],
       icon: <CheckCircle className="w-5 h-5 text-blue-600" />,
-      image: popupImg
+      image: "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?auto=format&fit=crop&q=80&w=1000"
     },
     {
       title: "Balance Sheet",
@@ -273,8 +274,14 @@ const Authenticity = () => {
     }
   };
 
-  const handlePDFSelection = (pdfUrl) => {
-    window.open(pdfUrl, '_blank');
+  const handlePDFSelection = (pdfUrl, fileName) => {
+    // Force download logic
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = fileName || 'document.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
     setShowPDFModal(false);
   };
 
@@ -427,7 +434,7 @@ const Authenticity = () => {
               {modalContent.options.map((option, idx) => (
                 <button
                   key={idx}
-                  onClick={() => handlePDFSelection(option.pdfUrl)}
+                  onClick={() => handlePDFSelection(option.pdfUrl, option.fileName)}
                   className={`w-full p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-white hover:to-blue-50 border-2 border-slate-100 hover:border-blue-200 rounded-xl transition-all duration-300 group`}
                 >
                   <div className="flex items-center justify-between">
