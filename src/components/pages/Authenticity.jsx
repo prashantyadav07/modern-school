@@ -47,7 +47,7 @@ const customFontStyle = {
 
 const Authenticity = () => {
   const [showPDFModal, setShowPDFModal] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
+
   const [modalContent, setModalContent] = useState({ title: '', subtitle: '', options: [] });
   const navigate = useNavigate(); // 2. Added Hook for navigation
 
@@ -155,7 +155,7 @@ const Authenticity = () => {
         { title: "INTERNAL EXAM ANNOUNCEMENT B.S.C", pdfUrl: internalExamBSCPDF, fileName: "Internal_Exam_BSC.pdf" }
       ],
       icon: <CheckCircle className="w-5 h-5 text-blue-600" />,
-      image: "https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&q=80&w=1000"
+      image: popupImg
     },
     {
       title: "Balance Sheet",
@@ -240,26 +240,7 @@ const Authenticity = () => {
     }
   ];
 
-  const handleDisplayPopup = () => {
-    setShowPopup(true);
-  };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // Changed to sessionStorage so it resets when the tab is closed, better for testing/UX
-      if (window.scrollY > 300 && !sessionStorage.getItem('popupShown')) {
-        setShowPopup(true);
-        sessionStorage.setItem('popupShown', 'true');
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const closePopup = () => {
-    setShowPopup(false);
-  };
 
   const handlePDFClick = (doc) => {
     // 1. Check for the legacy "Land Record" case (two PDFs directly on the object)
@@ -478,35 +459,7 @@ const Authenticity = () => {
         </div>
       )}
 
-      {/* Popup Modal with Framer Motion */}
-      <AnimatePresence>
-        {showPopup && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-4"
-            onClick={closePopup}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="bg-white rounded-2xl shadow-2xl max-w-lg w-full relative overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={closePopup}
-                className="absolute top-3 right-3 p-2 bg-white/50 hover:bg-white rounded-full transition-colors z-10 shadow-sm"
-              >
-                <X className="w-5 h-5 text-slate-800" />
-              </button>
-              <img src={popupImg} alt="Special Announcement" className="w-full h-auto object-cover" />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
     </div>
   );
 };
