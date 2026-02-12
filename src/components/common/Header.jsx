@@ -52,12 +52,7 @@ const Header = () => {
                             </div>
                         </div>
 
-                        {/* Right: Search & Inquiry (New Addition) */}
-                        <div className="flex flex-row items-center gap-4 w-full lg:w-auto justify-center lg:justify-end">
-                            <HeaderSearch />
-                        </div>
-
-                        {/* Right: Contact Details (Hidden on mobile if space is tight, or moved) */}
+                        {/* Right: Contact Details (Moved to branding area for clean look) */}
                         <div className="hidden xl:flex items-center gap-4 lg:gap-6">
                             <div className="flex items-center gap-2 lg:gap-3 border-l pl-6 border-gray-200">
                                 <div className="bg-orange-100 p-2 rounded-full">
