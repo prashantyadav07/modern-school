@@ -202,7 +202,7 @@ export const documents = [
         image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1000"
     },
     {
-        title: "Grievance Redressal Cell",
+        title: "Student Grievance Redressal Cell",
         subtitle: "Student Support",
         description: "Mechanism for students to raise concerns and seek redressal.",
         pdfUrl: grievancePDF,
