@@ -75,7 +75,7 @@ const Navbar = () => {
                         <img src={collegeLogo} alt="Logo" className="h-10 w-10 sm:h-12 sm:w-12 object-contain" />
                         <div className="hidden sm:flex flex-col">
                             <span className="text-white font-black text-xs sm:text-sm tracking-tight leading-none text-nowrap">J.S. COLLEGE</span>
-                            <span className="text-orange-500 font-bold text-[8px] sm:text-[10px] uppercase text-nowrap">Educating Since 2005</span>
+                            <span className="text-orange-500 font-bold text-[8px] sm:text-[10px] uppercase text-nowrap"></span>
                         </div>
                     </Link>
 
