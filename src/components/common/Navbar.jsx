@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, BookOpen, Users, Home } from 'lucide-react';
+import { Menu, X, ChevronDown, BookOpen, Users, Home, Search } from 'lucide-react';
+import HeaderSearch from './HeaderSearch';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -121,8 +122,11 @@ const Navbar = () => {
                             ))}
                         </div>
 
-                        {/* Far Right: Inquiry Button */}
-                        <div className="ml-6">
+                        {/* Far Right: Search & Inquiry Button */}
+                        <div className="ml-6 flex items-center gap-4">
+                            <div className='w-20 mr-28'>
+                                <HeaderSearch />
+                            </div>
                             <Link
                                 to="/inquiry"
                                 className="bg-transparent border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-7 py-2.5 rounded-sm font-black text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-lg inline-flex items-center gap-2"
@@ -132,16 +136,22 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* Mobile View: Home Link and Menu Toggle */}
-                    <div className="lg:hidden flex justify-between w-full items-center">
-                        <Link to="/" className="text-white font-black uppercase tracking-widest text-sm">
+                    {/* Mobile View: Home Link, Search, and Menu Toggle */}
+                    <div className="lg:hidden flex justify-between w-full items-center gap-2">
+                        <Link to="/" className="text-white font-black uppercase tracking-widest text-sm shrink-0">
                             <Home size={24} />
                         </Link>
+
+                        {/* Compact Search for Mobile Header */}
+                        <div className="flex-1 max-w-[200px]">
+                            <HeaderSearch />
+                        </div>
+
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="p-2 text-white hover:text-orange-500 transition-colors"
+                            className="p-2 text-white hover:text-orange-500 transition-colors shrink-0"
                         >
-                            {isOpen ? <X size={30} /> : <Menu size={30} />}
+                            {isOpen ? <X size={28} /> : <Menu size={28} />}
                         </button>
                     </div>
                 </div>
