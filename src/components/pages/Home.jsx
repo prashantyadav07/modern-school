@@ -30,6 +30,7 @@ import g5 from '../../assets/g5.jpeg';
 import g6 from '../../assets/g6.jpeg';
 
 
+
 const Home = () => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000, stopOnInteraction: false })]);
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -301,16 +302,16 @@ const Home = () => {
                         <div className="relative z-10">
                             <ContainerStagger>
                                 <GalleryGrid className="h-[500px] sm:h-[500px] md:h-[500px] lg:h-[500px]">
-                                        <GalleryGridCell index={0}>
+                                    <GalleryGridCell index={0}>
                                         <img src={g1} alt="Achievement 1" className="w-full h-full object-cover" width={1200} height={800} loading="lazy" />
                                     </GalleryGridCell>
-                                        <GalleryGridCell index={1}>
+                                    <GalleryGridCell index={1}>
                                         <img src={g2} alt="Achievement 2" className="w-full h-full object-cover" width={1200} height={800} loading="lazy" />
                                     </GalleryGridCell>
-                                        <GalleryGridCell index={2}>
+                                    <GalleryGridCell index={2}>
                                         <img src={g3} alt="Achievement 3" className="w-full h-full object-cover" width={1200} height={800} loading="lazy" />
                                     </GalleryGridCell>
-                                        <GalleryGridCell index={3}>
+                                    <GalleryGridCell index={3}>
                                         <img src={g4} alt="Achievement 4" className="w-full h-full object-cover" width={1200} height={800} loading="lazy" />
                                     </GalleryGridCell>
                                 </GalleryGrid>

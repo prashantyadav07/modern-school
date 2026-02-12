@@ -1,7 +1,7 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Clock, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import collegeLogo from '../../assets/logo1.png';
-
+import HeaderSearch from './HeaderSearch';
 
 const Header = () => {
     return (
@@ -27,8 +27,8 @@ const Header = () => {
 
             {/* 2. Main Branding Area */}
             <div className="bg-white py-3 sm:py-4 px-2 sm:px-4 shadow-sm relative overflow-hidden">
-                <div className="max-w-7xl mx-auto relative">
-                    <div className="flex flex-col lg:flex-row justify-between items-center gap-3 sm:gap-4 pb-2 sm:pb-3">
+                <div className="max-w-7xl mx-auto relative border-b border-gray-100 lg:border-0">
+                    <div className="flex flex-col lg:flex-row justify-between items-center gap-4 pb-4 lg:pb-0">
 
                         {/* Left: Logo & College Name */}
                         <div className="flex flex-row items-center gap-2 sm:gap-3 md:gap-5 text-left w-full lg:w-auto">
@@ -52,29 +52,20 @@ const Header = () => {
                             </div>
                         </div>
 
-                        {/* Right: Contact Details */}
-                        <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4">
-                            {/* Contact Info Group */}
-                            <div className="hidden xl:flex items-center gap-4 lg:gap-6">
-                                <div className="flex items-center gap-2 lg:gap-3">
-                                    <div className="bg-orange-100 p-2 lg:p-2.5 rounded-full">
-                                        <Phone className="w-4 h-4 lg:w-5 lg:h-5 text-orange-600" />
-                                    </div>
-                                    <div>
-                                        <p className="text-[10px] lg:text-[11px] uppercase text-gray-500 font-bold leading-none mb-1">Call Us</p>
-                                        <p className="text-base lg:text-lg font-bold text-[#002147] leading-none">+91 9759378701 <br />
-                                            +91 8273737248</p>
-                                    </div>
-                                </div>
+                        {/* Right: Search & Inquiry (New Addition) */}
+                        <div className="flex flex-row items-center gap-4 w-full lg:w-auto justify-center lg:justify-end">
+                            <HeaderSearch />
+                        </div>
 
-                                <div className="flex items-center gap-2 lg:gap-3 border-l pl-4 lg:pl-6 border-gray-200">
-                                    <div className="bg-blue-100 p-2 lg:p-2.5 rounded-full">
-                                        <Mail className="w-4 h-4 lg:w-5 lg:h-5 text-blue-700" />
-                                    </div>
-                                    <div>
-                                        <p className="text-[10px] lg:text-[11px] uppercase text-gray-500 font-bold leading-none mb-1">Email Address</p>
-                                        <p className="text-sm lg:text-[15px] font-bold text-[#002147] leading-none break-all">j.seducationcollege@gmail.com</p>
-                                    </div>
+                        {/* Right: Contact Details (Hidden on mobile if space is tight, or moved) */}
+                        <div className="hidden xl:flex items-center gap-4 lg:gap-6">
+                            <div className="flex items-center gap-2 lg:gap-3 border-l pl-6 border-gray-200">
+                                <div className="bg-orange-100 p-2 rounded-full">
+                                    <Phone className="w-4 h-4 text-orange-600" />
+                                </div>
+                                <div>
+                                    <p className="text-[9px] uppercase text-gray-400 font-bold leading-none mb-1">Call Us</p>
+                                    <p className="text-xs font-bold text-[#002147] leading-tight text-nowrap">+91 9759378701</p>
                                 </div>
                             </div>
                         </div>

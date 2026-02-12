@@ -28,7 +28,9 @@ const Faculty = () => {
       { name: "Dr. Arun Kumar", dob: "02-02-93", dept: "B.A. English", desig: "Asstt. Prof.", qual: "M.A., Ph.D (2022)" },
       { name: "Sh. Rashid Ali", dob: "15-08-95", dept: "B.A. Sociology", desig: "Asstt. Prof.", qual: "M.A., NET (2019)" },
       { name: "Ms. Pooja Chouhan", dob: "01-03-84", dept: "B.A. Home Science", desig: "Asstt. Prof.", qual: "M.Sc., NET (2021)" },
-      { name: "Sh. Dhruv Kumar Yadav", dob: "24/08/97", dept: "B.A.  History", desig: "Asstt. Prof.", qual: "M.A., NET  (2019)" }
+      { name: "Sh. Dhruv Kumar Yadav", dob: "24/08/97", dept: "B.A.  History", desig: "Asstt. Prof.", qual: "M.A., NET  (2019)" },
+      { name: "Sh. Prashant Kumar", dob: "10/12/92", dept: "B.A.  Pol-Sc.", desig: "Asstt. Prof.", qual: "M.A., NET  (2018)" },
+      { name: "Sh. Praveen Kumar", dob: "14/01/98", dept: "B.A.  Economics", desig: "Asstt. Prof.", qual: "M.A., NET  (2012)" },
     ]
   };
 
