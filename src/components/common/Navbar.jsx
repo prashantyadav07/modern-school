@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, BookOpen, Users, Home, Search } from 'lucide-react';
 import HeaderSearch from './HeaderSearch';
+import collegeLogo from '../../assets/logo1.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,14 +17,14 @@ const Navbar = () => {
             const currentScrollY = window.scrollY;
 
             // Set scrolled state for background color
-            setScrolled(currentScrollY > 50);
+            setScrolled(currentScrollY > 100);
 
             // Hide/show navbar based on scroll direction
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                // Scrolling down & past 100px
+            if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                // Scrolling down & past 200px
                 setVisible(false);
             } else {
-                // Scrolling up
+                // Scrolling up or at top
                 setVisible(true);
             }
 
@@ -60,18 +61,27 @@ const Navbar = () => {
     return (
         <nav
             className={`sticky top-0 z-50 transition-all duration-500 
-            ${scrolled || isOpen ? 'bg-[#001a35] shadow-2xl' : 'bg-[#002147]'} 
+            ${scrolled || isOpen ? 'bg-[#002147]/95 backdrop-blur-md shadow-2xl py-1' : 'bg-[#002147] py-0'} 
             ${(visible || isOpen) ? 'translate-y-0' : '-translate-y-full'}`}
         >
             {/* Bottom highlight line */}
-            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/10"></div>
+            <div className={`absolute bottom-0 left-0 w-full h-[1px] bg-white/10 ${scrolled ? 'opacity-0' : 'opacity-100'}`}></div>
 
-            <div className="container mx-auto px-4">
-                <div className="flex justify-between items-center h-16 md:h-20">
+            <div className="container mx-auto px-4 lg:px-6">
+                <div className="flex justify-between items-center h-16 md:h-18 lg:h-20">
+
+                    {/* Logo area - only show on scroll */}
+                    <Link to="/" className={`flex items-center gap-3 transition-all duration-500 ${scrolled ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10 pointer-events-none'}`}>
+                        <img src={collegeLogo} alt="Logo" className="h-10 w-10 sm:h-12 sm:w-12 object-contain" />
+                        <div className="hidden sm:flex flex-col">
+                            <span className="text-white font-black text-xs sm:text-sm tracking-tight leading-none text-nowrap">J.S. COLLEGE</span>
+                            <span className="text-orange-500 font-bold text-[8px] sm:text-[10px] uppercase text-nowrap">Educating Since 2005</span>
+                        </div>
+                    </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden lg:flex items-center justify-between w-full">
-                        <div className="flex items-center lg:gap-8 xl:gap-12">
+                    <div className="hidden lg:flex items-center justify-end flex-1 ml-8">
+                        <div className="flex items-center lg:gap-6 xl:gap-8">
                             {navItems.map((item, index) => (
                                 <div key={index} className="relative group">
                                     {item.dropdown ? (
@@ -81,24 +91,24 @@ const Navbar = () => {
                                             className="py-6"
                                         >
                                             <button
-                                                className={`flex items-center gap-1.5 font-bold text-[13px] uppercase tracking-[0.12em] transition-all duration-300 ${isActive(item.path)
+                                                className={`flex items-center gap-1.5 font-bold text-[12px] xl:text-[13px] uppercase tracking-[0.1em] transition-all duration-300 ${isActive(item.path)
                                                     ? 'text-orange-500'
                                                     : 'text-gray-100 hover:text-orange-400'
                                                     }`}
                                             >
                                                 {item.name}
-                                                <ChevronDown size={14} className={`transition-transform duration-300 ${activeDropdown === index ? 'rotate-180' : ''}`} />
+                                                <ChevronDown size={12} className={`transition-transform duration-300 ${activeDropdown === index ? 'rotate-180' : ''}`} />
                                             </button>
 
                                             {/* Premium Dropdown */}
-                                            <div className={`absolute top-full left-0 w-64 bg-white shadow-2xl rounded-b-lg border-t-4 border-orange-600 transition-all duration-300 transform ${activeDropdown === index ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-4'
+                                            <div className={`absolute top-full left-1/2 -translate-x-1/2 w-64 bg-white shadow-2xl rounded-xl border-t-4 border-orange-600 transition-all duration-300 transform ${activeDropdown === index ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-4'
                                                 }`}>
                                                 <div className="py-2">
                                                     {item.dropdown.map((subItem, subIndex) => (
                                                         <Link
                                                             key={subIndex}
                                                             to={subItem.path}
-                                                            className="flex items-center gap-3 px-6 py-4 text-[#002147] font-bold text-xs hover:bg-orange-50 hover:text-orange-600 transition-all border-b border-gray-50 last:border-0"
+                                                            className="flex items-center gap-3 px-6 py-4 text-[#002147] font-extrabold text-xs hover:bg-orange-50 hover:text-orange-600 transition-all border-b border-gray-50 last:border-0"
                                                         >
                                                             <span className="text-orange-600">{subItem.icon}</span>
                                                             {subItem.name}
@@ -110,8 +120,8 @@ const Navbar = () => {
                                     ) : (
                                         <Link
                                             to={item.path}
-                                            className={`relative py-2 font-bold text-[13px] uppercase tracking-[0.12em] transition-all duration-300 ${isActive(item.path)
-                                                ? 'text-orange-500 after:content-[""] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-orange-500'
+                                            className={`relative py-6 font-bold text-[12px] xl:text-[13px] uppercase tracking-[0.1em] transition-all duration-300 ${isActive(item.path)
+                                                ? 'text-orange-500 after:content-[""] after:absolute after:bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-orange-500'
                                                 : 'text-gray-100 hover:text-orange-400'
                                                 }`}
                                         >
@@ -123,35 +133,37 @@ const Navbar = () => {
                         </div>
 
                         {/* Far Right: Search & Inquiry Button */}
-                        <div className="ml-6 flex items-center gap-4">
-                            <div className='w-20 mr-28'>
+                        <div className="ml-8 flex items-center gap-4">
+                            <div className='w-48 xl:w-60'>
                                 <HeaderSearch />
                             </div>
                             <Link
                                 to="/inquiry"
-                                className="bg-transparent border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-7 py-2.5 rounded-sm font-black text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-lg inline-flex items-center gap-2"
+                                className="bg-orange-600 border border-orange-600 text-white hover:bg-transparent hover:text-orange-500 px-6 py-2.5 rounded-lg font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-orange-900/20 inline-flex items-center gap-2"
                             >
                                 Inquiry
                             </Link>
                         </div>
                     </div>
 
-                    {/* Mobile View: Home Link, Search, and Menu Toggle */}
-                    <div className="lg:hidden flex justify-between w-full items-center gap-2">
-                        <Link to="/" className="text-white font-black uppercase tracking-widest text-sm shrink-0">
-                            <Home size={24} />
-                        </Link>
+                    {/* Mobile View: Search, and Menu Toggle */}
+                    <div className="lg:hidden flex justify-between w-full items-center gap-4">
+                        {!scrolled && (
+                            <Link to="/" className="text-white font-black uppercase tracking-widest text-sm shrink-0">
+                                <Home size={24} />
+                            </Link>
+                        )}
 
-                        {/* Compact Search for Mobile Header */}
-                        <div className="flex-1 max-w-[200px]">
+                        {/* Always show search on mobile if not too small, otherwise hide label */}
+                        <div className="flex-1 max-w-[240px] md:max-w-[400px]">
                             <HeaderSearch />
                         </div>
 
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="p-2 text-white hover:text-orange-500 transition-colors shrink-0"
+                            className={`p-2 rounded-lg transition-all ${isOpen ? 'bg-orange-500 text-white' : 'text-white hover:bg-white/10'}`}
                         >
-                            {isOpen ? <X size={28} /> : <Menu size={28} />}
+                            {isOpen ? <X size={26} /> : <Menu size={26} />}
                         </button>
                     </div>
                 </div>
