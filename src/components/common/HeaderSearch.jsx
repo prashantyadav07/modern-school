@@ -49,7 +49,7 @@ const HeaderSearch = () => {
     return (
         <div className="flex items-center gap-2">
             {/* Compact Search Bar for Navbar */}
-            <div className="relative w-full min-w-[120px] sm:min-w-[180px] md:w-64 lg:w-72" ref={searchRef}>
+            <div className="relative w-full min-w-[120px] sm:min-w-[180px]" ref={searchRef}>
                 <div className={`relative flex items-center transition-all duration-300 rounded-xl ${isFocused
                     ? 'bg-white shadow-xl ring-2 ring-orange-500/20'
                     : 'bg-white/10 hover:bg-white/20 border border-white/10'}`}>
