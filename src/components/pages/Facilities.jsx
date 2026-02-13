@@ -1,56 +1,78 @@
 import React from 'react';
-import { Library, Wifi, FlaskConical, Users, Monitor, Utensils, Bus, Award } from 'lucide-react';
+import { Library, Wifi, FlaskConical, Users, Monitor, Utensils, Bus, Award, LucideBadgeAlert, Sprout } from 'lucide-react';
 import { SEOHead, seoConfig } from '../seo';
 import img1 from '../../assets/1.jpeg';
+import sciencelab from '../../assets/sciencelab.jpeg'
+import transport from '../../assets/transport.jpeg'
+import classroom from '../../assets/classroom.jpeg'
+import botany from '../../assets/botany.jpeg'
+import computerlab from '../../assets/computerlab.jpeg'
+import seminarhall from '../../assets/seminarhall.jpeg'
+import phonedis from '../../assets/phonedis.jpeg'
+import libr from '../../assets/libr.jpeg'
+import sport from '../../assets/sport.jpeg'
+import wifi from '../../assets/wifi.jpeg'
 const Facilities = () => {
     const facilities = [
         {
             icon: <Library className="w-6 h-6" />,
             title: 'Well-Stocked Library',
             description: 'Extensive collection of books, journals, and digital resources.',
-            image: 'https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=800&auto=format&fit=crop'
+            image: libr
         },
         {
             icon: <Monitor className="w-6 h-6" />,
             title: 'Computer Lab',
             description: 'Modern lab with high-speed internet and latest software.',
-            image: 'https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=800&auto=format&fit=crop'
+            image: computerlab
         },
         {
             icon: <Wifi className="w-6 h-6" />,
             title: 'Wi-Fi Campus',
             description: 'High-speed Wi-Fi connectivity for seamless learning everywhere.',
-            image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop'
+            image: wifi
         },
         {
             icon: <FlaskConical className="w-6 h-6" />,
             title: 'Science Labs',
             description: 'Well-equipped laboratories for Physics, Chemistry, and Biology.',
-            image: 'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=800&auto=format&fit=crop'
+            image: sciencelab
         },
         {
             icon: <Users className="w-6 h-6" />,
             title: 'Smart Classrooms',
             description: 'AC classrooms with smart boards and modern teaching aids.',
-            image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop'
+            image: classroom
         },
         {
             icon: <Award className="w-6 h-6" />,
             title: 'Seminar Hall',
             description: 'Spacious hall with audio-visual facilities for events.',
-            image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=800&auto=format&fit=crop'
+            image: seminarhall
         },
         {
-            icon: <Utensils className="w-6 h-6" />,
-            title: 'Cafeteria',
+            icon: <Sprout className="w-6 h-6" />,
+            title: 'Sports',
             description: 'Hygienic cafeteria providing nutritious food and beverages.',
-            image: 'https://images.unsplash.com/photo-1567521464027-f127ff144326?q=80&w=800&auto=format&fit=crop'
+            image: sport
         },
         {
             icon: <Bus className="w-6 h-6" />,
             title: 'Transportation',
             description: 'Safe bus facility for students from various locations.',
-            image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=800&auto=format&fit=crop'
+            image: transport
+        },
+        {
+            icon: <FlaskConical className="w-6 h-6" />,
+            title: 'Botany Lab',
+            description: 'Well-equipped laboratories for Physics, Chemistry, and Biology.',
+            image: botany
+        },
+        {
+            icon: <FlaskConical className="w-6 h-6" />,
+            title: 'Phone Distribution in College',
+            description: 'Smartphones are being distributed to the students of the college.',
+            image: phonedis
         }
     ];
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, BookOpen, Users, Home, Search } from 'lucide-react';
 import HeaderSearch from './HeaderSearch';
-import collegeLogo from '../../assets/logo1.png';
+
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -70,18 +70,11 @@ const Navbar = () => {
             <div className="container mx-auto px-4 lg:px-6">
                 <div className="flex justify-between items-center h-16 md:h-18 lg:h-20">
 
-                    {/* Logo area - only show on scroll */}
-                    <Link to="/" className={`flex items-center gap-3 transition-all duration-500 ${scrolled ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10 pointer-events-none'}`}>
-                        <img src={collegeLogo} alt="Logo" className="h-10 w-10 sm:h-12 sm:w-12 object-contain" />
-                        <div className="hidden sm:flex flex-col">
-                            <span className="text-white font-black text-xs sm:text-sm tracking-tight leading-none text-nowrap">J.S. COLLEGE</span>
-                            <span className="text-orange-500 font-bold text-[8px] sm:text-[10px] uppercase text-nowrap"></span>
-                        </div>
-                    </Link>
+
 
                     {/* Desktop Navigation */}
-                    <div className="hidden lg:flex items-center justify-end flex-1 ml-8">
-                        <div className="flex items-center lg:gap-6 xl:gap-8">
+                    <div className="hidden lg:flex items-center justify-end flex-1 ml-4 lg:ml-6 xl:ml-8">
+                        <div className="flex items-center lg:gap-3 xl:gap-8">
                             {navItems.map((item, index) => (
                                 <div key={index} className="relative group">
                                     {item.dropdown ? (
@@ -91,7 +84,7 @@ const Navbar = () => {
                                             className="py-6"
                                         >
                                             <button
-                                                className={`flex items-center gap-1.5 font-bold text-[12px] xl:text-[13px] uppercase tracking-[0.1em] transition-all duration-300 ${isActive(item.path)
+                                                className={`flex items-center gap-1.5 font-bold text-[11px] xl:text-[13px] uppercase tracking-[0.1em] transition-all duration-300 ${isActive(item.path)
                                                     ? 'text-orange-500'
                                                     : 'text-gray-100 hover:text-orange-400'
                                                     }`}
@@ -120,7 +113,7 @@ const Navbar = () => {
                                     ) : (
                                         <Link
                                             to={item.path}
-                                            className={`relative py-6 font-bold text-[12px] xl:text-[13px] uppercase tracking-[0.1em] transition-all duration-300 ${isActive(item.path)
+                                            className={`relative py-6 font-bold text-[11px] xl:text-[13px] uppercase tracking-[0.1em] transition-all duration-300 ${isActive(item.path)
                                                 ? 'text-orange-500 after:content-[""] after:absolute after:bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-orange-500'
                                                 : 'text-gray-100 hover:text-orange-400'
                                                 }`}
@@ -133,13 +126,13 @@ const Navbar = () => {
                         </div>
 
                         {/* Far Right: Search & Inquiry Button */}
-                        <div className="ml-8 flex items-center gap-4">
-                            <div className='w-48 xl:w-60'>
+                        <div className="ml-4 lg:ml-6 xl:ml-8 flex items-center gap-2 xl:gap-4">
+                            <div className='w-40 xl:w-60'>
                                 <HeaderSearch />
                             </div>
                             <Link
                                 to="/inquiry"
-                                className="bg-orange-600 border border-orange-600 text-white hover:bg-transparent hover:text-orange-500 px-6 py-2.5 rounded-lg font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-orange-900/20 inline-flex items-center gap-2"
+                                className="bg-orange-600 border border-orange-600 text-white hover:bg-transparent hover:text-orange-500 px-3 xl:px-6 py-2.5 rounded-lg font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-orange-900/20 inline-flex items-center gap-1.5 xl:gap-2 shrink-0"
                             >
                                 Inquiry
                             </Link>
