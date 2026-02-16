@@ -234,9 +234,13 @@ export const documents = [
     {
         title: "RTI Compliance ",
         subtitle: "Right to Information",
-        description: "Right to Information Act, 2005",
-        pdfUrl: rti,
-        fileName: "RTI.pdf",
+        description: `This institution is committed to transparency and accountability in accordance with the provisions of the Right to Information Act, 2005.
+
+The details of the Central Public Information Officer (CPIO) and the First Appellate Authority (FAA) are provided below for seeking information under the RTI Act.
+
+Applicants may submit their RTI application to the CPIO of the institution. In case of non-receipt of information within the prescribed time or dissatisfaction with the response, an appeal may be filed before the First Appellate Authority within 30 days as per the RTI Act, 2005.`,
+        // pdfUrl: rti,
+        // fileName: "RTI.pdf",
         iconName: "Users",
         iconColor: "text-rose-600",
         image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1000"

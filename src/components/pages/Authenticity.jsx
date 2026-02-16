@@ -47,8 +47,17 @@ const Authenticity = () => {
       });
       setShowPDFModal(true);
     }
-    else {
+    else if (doc.pdfUrl) {
       window.open(doc.pdfUrl, '_blank');
+    } else {
+      // Text only mode
+      setModalContent({
+        title: doc.title,
+        subtitle: "Information",
+        text: doc.description,
+        options: []
+      });
+      setShowPDFModal(true);
     }
   };
 
@@ -121,7 +130,7 @@ const Authenticity = () => {
                       {getIcon(doc.iconName, doc.iconColor)}
                     </div>
                     <span className="text-[10px] font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-2 py-1 rounded-md">
-                      PDF Document
+                      {doc.pdfUrl || doc.options || doc.pdfUrl2 ? "PDF Document" : "Info Card"}
                     </span>
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
@@ -138,10 +147,10 @@ const Authenticity = () => {
                   <div className="mt-auto pt-3 border-t border-slate-50 flex items-center justify-between">
                     <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
                       <FileCheck size={14} />
-                      {doc.fileName}
+                      {doc.fileName || "View Details"}
                     </div>
                     <span className="flex items-center gap-1 text-xs font-bold text-blue-600 group-hover:translate-x-1 transition-transform">
-                      {doc.options || doc.pdfUrl2 ? "Select" : "Download"} <ChevronRight size={14} />
+                      {doc.options || doc.pdfUrl2 ? "Select" : (doc.pdfUrl ? "Download" : "View")} <ChevronRight size={14} />
                     </span>
                   </div>
                 </div>
@@ -195,36 +204,46 @@ const Authenticity = () => {
             </div>
 
             <div className="space-y-3">
-              {modalContent.options.map((option, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => handlePDFSelection(option.pdfUrl, option.fileName)}
-                  className={`w-full p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-white hover:to-blue-50 border-2 border-slate-100 hover:border-blue-200 rounded-xl transition-all duration-300 group`}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className={`p-2 bg-white rounded-lg shadow-sm text-${option.color || 'blue'}-600`}>
-                        <FileCheck className="w-5 h-5" />
+              {modalContent.text ? (
+                <div className="p-4 bg-slate-50 rounded-xl border border-slate-100 max-h-[60vh] overflow-y-auto">
+                  <p className="text-sm text-slate-600 whitespace-pre-line leading-relaxed">
+                    {modalContent.text}
+                  </p>
+                </div>
+              ) : (
+                modalContent.options.map((option, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handlePDFSelection(option.pdfUrl, option.fileName)}
+                    className={`w-full p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-white hover:to-blue-50 border-2 border-slate-100 hover:border-blue-200 rounded-xl transition-all duration-300 group`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className={`p-2 bg-white rounded-lg shadow-sm text-${option.color || 'blue'}-600`}>
+                          <FileCheck className="w-5 h-5" />
+                        </div>
+                        <div className="text-left">
+                          <p className="font-bold text-slate-900 group-hover:text-blue-700 transition-colors text-sm md:text-base">{option.title}</p>
+                          <p className="text-xs text-slate-500 font-mono truncate max-w-[200px]">{option.fileName}</p>
+                        </div>
                       </div>
-                      <div className="text-left">
-                        <p className="font-bold text-slate-900 group-hover:text-blue-700 transition-colors text-sm md:text-base">{option.title}</p>
-                        <p className="text-xs text-slate-500 font-mono truncate max-w-[200px]">{option.fileName}</p>
+                      <div className="flex items-center gap-2">
+                        <Download className="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:translate-y-0.5 transition-all" />
+                        <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
                       </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Download className="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:translate-y-0.5 transition-all" />
-                      <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
-                    </div>
-                  </div>
-                </button>
-              ))}
+                  </button>
+                ))
+              )}
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-100">
-              <p className="text-xs text-slate-400 text-center">
-                Click on any document to open it in a new tab
-              </p>
-            </div>
+            {!modalContent.text && (
+              <div className="mt-6 pt-4 border-t border-slate-100">
+                <p className="text-xs text-slate-400 text-center">
+                  Click on any document to open it in a new tab
+                </p>
+              </div>
+            )}
           </div>
         </div>
       )}
