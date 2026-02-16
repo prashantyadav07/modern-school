@@ -27,12 +27,12 @@ import internalExamBSCPDF from '../assets/INTERNAL EXAM ANNOUNCEMENT B.S.C 2025-
 import balanceSheetPDF from '../assets/balance sheet.pdf';
 import buildingApprovalPDF from '../assets/Building Approval and NOC.pdf';
 import feeRefundPDF from '../assets/Fee Refund Policy.pdf';
-import antiRaggingPDF from '../assets/antiragging.pdf';
+import antiRaggingPDF from '../assets/ANTI RAGGING COMMITTEE (1).pdf';
 import fireCertificatePDF from '../assets/Fire certificate.pdf';
-import iqacPDF from '../assets/internalqua.pdf';
-import grievancePDF from '../assets/studentgri.pdf';
-import scCellPDF from '../assets/cellforsc.pdf';
-import iccPDF from '../assets/internalcomplain.pdf';
+import iqacPDF from '../assets/INTERNAL QUALITY ASSURANCE CELL (IQAC).pdf';
+import grievancePDF from '../assets/STUDENT GRIVANCE REDRESSAL CELL.pdf';
+import scCellPDF from '../assets/CELL FOR SC,ST,OBC,EWS,MINORITY STUDENTS.pdf';
+import iccPDF from '../assets/INTERNAL COMPLAINT COMMITTEE (2).pdf';
 import rti from '../assets/rti.pdf';
 
 export const documents = [
