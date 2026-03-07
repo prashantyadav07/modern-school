@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Users, BookOpen, Award, ArrowRight, Trophy, Star, Medal } from 'lucide-react';
+import { GraduationCap, Users, BookOpen, Award, ArrowRight, Trophy, Star, Medal, ShieldCheck } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 // eslint-disable-next-line no-unused-vars
@@ -262,6 +262,35 @@ const Home = () => {
                             </div>
                         </motion.div>
                     </div>
+                </div>
+            </section>
+
+            {/* 4.5 RTI COMPLIANCE SECTION */}
+            <section className="py-10 bg-white">
+                <div className="container mx-auto px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        className="max-w-5xl mx-auto bg-gradient-to-r from-rose-50 to-rose-100 rounded-3xl p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl border border-rose-200"
+                    >
+                        <div className="flex items-center gap-6">
+                            <div className="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center text-rose-600 shrink-0">
+                                <ShieldCheck size={32} />
+                            </div>
+                            <div>
+                                <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-1">RTI Compliance</h3>
+                                <p className="text-slate-600 text-sm md:text-base font-medium">Right to Information Act, 2005 - Transparency Portal</p>
+                            </div>
+                        </div>
+                        <Link
+                            to="/rti"
+                            className="bg-rose-600 text-white px-8 py-4 rounded-xl font-black text-sm uppercase tracking-widest hover:bg-rose-700 transition-all shadow-lg shadow-rose-900/20 flex items-center gap-3 shrink-0 group"
+                        >
+                            View RTI Details
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                    </motion.div>
                 </div>
             </section>
 

@@ -19,6 +19,8 @@ const Authenticity = lazy(() => import('./components/pages/Authenticity'));
 const Inquiry = lazy(() => import('./components/pages/Inquiry'));
 const Syllabus = lazy(() => import('./components/pages/Syllabus'));
 const Contact = lazy(() => import('./components/pages/Contact'));
+const RTI = lazy(() => import('./components/pages/RTI'));
+
 
 const customFontStyle = {
   fontFamily: "'Neue Montreal Regular', sans-serif",
@@ -86,6 +88,8 @@ function App() {
               <Route path="/authenticity" element={<Authenticity />} />
               <Route path="/inquiry" element={<Inquiry />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/rti" element={<RTI />} />
+
             </Routes>
           </Suspense>
         </main>

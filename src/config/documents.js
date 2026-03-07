@@ -1,7 +1,5 @@
 import { ShieldCheck, Award, CheckCircle, Building2, GraduationCap, FileText, Landmark, Users, Calendar, DollarSign, Flame } from 'lucide-react';
 
-import facultyPDF from '../assets/faculty.pdf';
-import aishePDF from '../assets/AISHE Certificate (2023-24).pdf';
 import certificate from '../assets/certifiacte.png'
 import trustimg from '../assets/trustimg.png'
 import affilation from '../assets/affilation.png'
@@ -12,35 +10,12 @@ import feeimg from "../assets/feecollg.png"
 import modenc from "../assets/clc.png"
 import popupImg from '../assets/pop up.jpeg';
 
-// New PDF imports
-import trustDeedPDF from '../assets/js.pdf';
-import managementCommitteePDF from '../assets/mdm.pdf';
-import msuAffiliationPDF from '../assets/msuaffilation.pdf';
-import landRecordPDF from '../assets/land.pdf';
-import landRecord1PDF from '../assets/land1.pdf';
-import calendarPDF from '../assets/calendar.pdf';
-import feeStructureImage from '../assets/college fee image.jfif';
-import financialDataPDF from '../assets/JS COLLGE STATEMENT.pdf';
-import externalExamPDF from '../assets/EXTERNAL EXAM ANNOUCEMENT 2025-26.pdf';
-import internalExamBAPDF from '../assets/INTERNAL EXAM ANNOUNCEMENT B.A. 2025-26.pdf';
-import internalExamBSCPDF from '../assets/INTERNAL EXAM ANNOUNCEMENT B.S.C 2025-26.pdf';
-import balanceSheetPDF from '../assets/balance sheet.pdf';
-import buildingApprovalPDF from '../assets/Building Approval and NOC.pdf';
-import feeRefundPDF from '../assets/Fee Refund Policy.pdf';
-import antiRaggingPDF from '../assets/ANTI RAGGING COMMITTEE (1).pdf';
-import fireCertificatePDF from '../assets/Fire certificate.pdf';
-import iqacPDF from '../assets/INTERNAL QUALITY ASSURANCE CELL (IQAC).pdf';
-import grievancePDF from '../assets/STUDENT GRIVANCE REDRESSAL CELL.pdf';
-import scCellPDF from '../assets/CELL FOR SC,ST,OBC,EWS,MINORITY STUDENTS.pdf';
-import iccPDF from '../assets/INTERNAL COMPLAINT COMMITTEE (2).pdf';
-import rti from '../assets/rti.pdf';
-
 export const documents = [
     {
         title: "Trust Deed",
         subtitle: "Legal Documentation",
         description: "Official trust deed document establishing the institution's legal foundation.",
-        pdfUrl: trustDeedPDF,
+        pdfUrl: "/downloads/js.pdf",
         fileName: "js.pdf",
         iconName: "FileText",
         iconColor: "text-purple-600",
@@ -50,7 +25,7 @@ export const documents = [
         title: "Management Committee",
         subtitle: "Governing Body",
         description: "Details of the management committee members and their roles.",
-        pdfUrl: managementCommitteePDF,
+        pdfUrl: "/downloads/mdm.pdf",
         fileName: "mdm.pdf",
         iconName: "Users",
         iconColor: "text-orange-600",
@@ -60,7 +35,7 @@ export const documents = [
         title: "MSU AFFILIATION",
         subtitle: "University Recognition",
         description: "Official affiliation certificate from Maa Shakumbhari University, Saharanpur.",
-        pdfUrl: msuAffiliationPDF,
+        pdfUrl: "/downloads/msuaffilation.pdf",
         fileName: "msuaf.pdf",
         iconName: "Building2",
         iconColor: "text-indigo-600",
@@ -70,8 +45,8 @@ export const documents = [
         title: "Land Record",
         subtitle: "Property Documentation",
         description: "Official land records and property documents of the institution.",
-        pdfUrl: landRecordPDF,
-        pdfUrl2: landRecord1PDF,
+        pdfUrl: "/downloads/land.pdf",
+        pdfUrl2: "/downloads/land1.pdf",
         fileName: "land.pdf, land1.pdf",
         iconName: "Landmark",
         iconColor: "text-green-600",
@@ -81,7 +56,7 @@ export const documents = [
         title: "Academic Calendar",
         subtitle: "Academic Year Schedule",
         description: "Complete academic calendar with important dates and events for the current session.",
-        pdfUrl: calendarPDF,
+        pdfUrl: "/downloads/calendar.pdf",
         fileName: "calendar.pdf",
         iconName: "Calendar",
         iconColor: "text-rose-600",
@@ -91,7 +66,7 @@ export const documents = [
         title: "Fee Structure",
         subtitle: "Fee Details",
         description: "Detailed fee structure for all courses and programs offered by the institution.",
-        pdfUrl: feeStructureImage,
+        pdfUrl: "/downloads/college_fee_image.jfif",
         fileName: "college_fee.jpg",
         iconName: "DollarSign",
         iconColor: "text-amber-600",
@@ -101,7 +76,7 @@ export const documents = [
         title: "Faculty Registry",
         subtitle: "Staff Credentials",
         description: "Complete list of teaching staff with their educational qualifications.",
-        pdfUrl: facultyPDF,
+        pdfUrl: "/downloads/faculty.pdf",
         fileName: "faculty_list.pdf",
         iconName: "GraduationCap",
         iconColor: "text-sky-600",
@@ -111,7 +86,7 @@ export const documents = [
         title: "AISHE Certificate",
         subtitle: "Academic Session 2023-24",
         description: "All India Survey on Higher Education certification for institutional recognition.",
-        pdfUrl: aishePDF,
+        pdfUrl: "/downloads/AISHE_Certificate_(2023-24).pdf",
         fileName: "AISHE_Certificate_2023-24.pdf",
         iconName: "Award",
         iconColor: "text-emerald-600",
@@ -121,7 +96,7 @@ export const documents = [
         title: "Financial Data",
         subtitle: "Financial Records",
         description: "Official financial statements and records of the institution.",
-        pdfUrl: financialDataPDF,
+        pdfUrl: "/downloads/JS_COLLGE_STATEMENT.pdf",
         fileName: "JS COLLGE STATEMENT.pdf",
         iconName: "FileText",
         iconColor: "text-teal-600",
@@ -132,9 +107,9 @@ export const documents = [
         subtitle: "Latest Updates",
         description: "Important announcements and examination notifications for students.",
         options: [
-            { title: "EXTERNAL EXAM ANNOUNCEMENT", pdfUrl: externalExamPDF, fileName: "External_Exam.pdf" },
-            { title: "INTERNAL EXAM ANNOUNCEMENT B.A.", pdfUrl: internalExamBAPDF, fileName: "Internal_Exam_BA.pdf" },
-            { title: "INTERNAL EXAM ANNOUNCEMENT B.S.C", pdfUrl: internalExamBSCPDF, fileName: "Internal_Exam_BSC.pdf" },
+            { title: "EXTERNAL EXAM ANNOUNCEMENT", pdfUrl: "/downloads/EXTERNAL_EXAM_ANNOUCEMENT_2025-26.pdf", fileName: "External_Exam.pdf" },
+            { title: "INTERNAL EXAM ANNOUNCEMENT B.A.", pdfUrl: "/downloads/INTERNAL_EXAM_ANNOUNCEMENT_B.A._2025-26.pdf", fileName: "Internal_Exam_BA.pdf" },
+            { title: "INTERNAL EXAM ANNOUNCEMENT B.S.C", pdfUrl: "/downloads/INTERNAL_EXAM_ANNOUNCEMENT_B.S.C_2025-26.pdf", fileName: "Internal_Exam_BSC.pdf" },
             { title: "OFFICIAL NOTIFICATION IMAGE", pdfUrl: popupImg, fileName: "Notification_Image.jpg" }
         ],
         iconName: "CheckCircle",
@@ -145,7 +120,7 @@ export const documents = [
         title: "Balance Sheet",
         subtitle: "Financial Statements",
         description: "Official financial statements and balance sheet of the institution.",
-        pdfUrl: balanceSheetPDF,
+        pdfUrl: "/downloads/balance_sheet.pdf",
         fileName: "balance sheet.pdf",
         iconName: "FileText",
         iconColor: "text-teal-600",
@@ -155,7 +130,7 @@ export const documents = [
         title: "Building Approval and NOC",
         subtitle: "Infrastructure Compliance",
         description: "Official building approval and No Objection Certificate documents.",
-        pdfUrl: buildingApprovalPDF,
+        pdfUrl: "/downloads/Building_Approval_and_NOC.pdf",
         fileName: "Building Approval and NOC.pdf",
         iconName: "Building2",
         iconColor: "text-indigo-600",
@@ -165,7 +140,7 @@ export const documents = [
         title: "Fee Refund Policy",
         subtitle: "Student Fee Rules",
         description: "Official policy regarding fee refunds for students.",
-        pdfUrl: feeRefundPDF,
+        pdfUrl: "/downloads/Fee_Refund_Policy.pdf",
         fileName: "Fee Refund Policy.pdf",
         iconName: "DollarSign",
         iconColor: "text-emerald-600",
@@ -175,7 +150,7 @@ export const documents = [
         title: "Anti-Ragging Committee",
         subtitle: "Safety & Compliance",
         description: "Details of the anti-ragging committee members and regulations.",
-        pdfUrl: antiRaggingPDF,
+        pdfUrl: "/downloads/ANTI_RAGGING_COMMITTEE_(1).pdf",
         fileName: "Anti ragging committee.pdf",
         iconName: "ShieldCheck",
         iconColor: "text-red-600",
@@ -185,7 +160,7 @@ export const documents = [
         title: "Fire Safety Certificate",
         subtitle: "Campus Safety",
         description: "Official fire safety certificate issued by the department.",
-        pdfUrl: fireCertificatePDF,
+        pdfUrl: "/downloads/Fire_certificate.pdf",
         fileName: "Fire certificate.pdf",
         iconName: "Flame",
         iconColor: "text-orange-600",
@@ -195,7 +170,7 @@ export const documents = [
         title: "Internal Quality Assurance Cell",
         subtitle: "Quality Standards",
         description: "Ensuring continuous improvement and maintaining quality standards.",
-        pdfUrl: iqacPDF,
+        pdfUrl: "/downloads/INTERNAL_QUALITY_ASSURANCE_CELL_(IQAC).pdf",
         fileName: "Internal Quality Assurance Cell.pdf",
         iconName: "ShieldCheck",
         iconColor: "text-blue-600",
@@ -205,7 +180,7 @@ export const documents = [
         title: "Student Grievance Redressal Cell",
         subtitle: "Student Support",
         description: "Mechanism for students to raise concerns and seek redressal.",
-        pdfUrl: grievancePDF,
+        pdfUrl: "/downloads/STUDENT_GRIVANCE_REDRESSAL_CELL.pdf",
         fileName: "Grievance Redressal Cell (1).pdf",
         iconName: "Users",
         iconColor: "text-purple-600",
@@ -215,7 +190,7 @@ export const documents = [
         title: "SC/ST Welfare Cell",
         subtitle: "Equal Opportunity",
         description: "Committee for the welfare and equal opportunity of SC/ST students.",
-        pdfUrl: scCellPDF,
+        pdfUrl: "/downloads/CELL_FOR_SC,ST,OBC,EWS,MINORITY_STUDENTS.pdf",
         fileName: "Cell for SC.pdf",
         iconName: "ShieldCheck",
         iconColor: "text-indigo-600",
@@ -225,7 +200,7 @@ export const documents = [
         title: "Internal Complaint Committee",
         subtitle: "Prevention & Redressal",
         description: "Committee dedicated to the prevention of sexual harassment and ensuring a safe environment.",
-        pdfUrl: iccPDF,
+        pdfUrl: "/downloads/INTERNAL_COMPLAINT_COMMITTEE_(2).pdf",
         fileName: "Internal Complaint Committee.pdf",
         iconName: "Users",
         iconColor: "text-rose-600",
@@ -239,8 +214,8 @@ export const documents = [
 The details of the Central Public Information Officer (CPIO) and the First Appellate Authority (FAA) are provided below for seeking information under the RTI Act.
 
 Applicants may submit their RTI application to the CPIO of the institution. In case of non-receipt of information within the prescribed time or dissatisfaction with the response, an appeal may be filed before the First Appellate Authority within 30 days as per the RTI Act, 2005.`,
-        // pdfUrl: rti,
-        // fileName: "RTI.pdf",
+        pdfUrl: "/downloads/JS_College_RTI_Compliance.pdf",
+        fileName: "JS_College_RTI_Compliance.pdf",
         iconName: "Users",
         iconColor: "text-rose-600",
         image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1000"
