@@ -21,7 +21,7 @@ const RTI = () => {
         name: "Dr. Deepali Gupta",
         designation: "Principal / Public Information Officer",
         address: "J.S. College of Education, Rajpur-Chhajpur, Kandhala Budhana Road, Muzzafarnagar, U.P.",
-        email: "jscollegemzn@gmail.com",
+        email: "j.seducationcollege@gmail.com",
         phone: "+91-XXXXXXXXXX" // Generic placeholder or actual if known
     };
 
